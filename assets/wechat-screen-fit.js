@@ -7,25 +7,20 @@
  let category='event',view='collection';
  const controls=document.createElement('nav');
  controls.className='wc-screen-controls';controls.setAttribute('aria-label','WeChat reading views');
- controls.innerHTML='<div class="wc-category-views"><button type="button" data-wc-category="event" aria-pressed="true">Event Story</button><button type="button" data-wc-category="research" aria-pressed="false">Research Update</button></div><button class="wc-reading-back" type="button">← Back to selection</button><button class="wc-video-why" type="button">Why this video →</button>';
+ controls.innerHTML='<div class="wc-category-views"><button type="button" data-wc-category="event" aria-pressed="true">Event Story</button><button type="button" data-wc-category="research" aria-pressed="false">Research Update</button></div><button class="wc-reading-back" type="button">← Back to selection</button>';
  page.querySelector('.wechat-heading-row').after(controls);
- const videos=()=>page.querySelector('[data-wechat-tab="videos"]').getAttribute('aria-selected')==='true';
  const apply=()=>{
   const compact=page.classList.contains('wc-paged-page');
-  const video=videos();
   page.classList.toggle('wc-focus-analysis',compact&&view==='analysis');
-  controls.querySelector('.wc-category-views').hidden=!compact||video||view==='analysis';
+  controls.querySelector('.wc-category-views').hidden=!compact||view==='analysis';
   controls.querySelector('.wc-reading-back').hidden=!compact||view!=='analysis';
-  controls.querySelector('.wc-video-why').hidden=!compact||!video||view==='analysis';
-  groups.forEach((group,index)=>{group.hidden=document.documentElement.lang!=='zh'&&compact&&!video&&index!==(category==='event'?0:1);});
+  groups.forEach((group,index)=>{group.hidden=document.documentElement.lang!=='zh'&&compact&&index!==(category==='event'?0:1);});
   controls.querySelectorAll('[data-wc-category]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.wcCategory===category)));
  };
  controls.querySelectorAll('[data-wc-category]').forEach(button=>button.addEventListener('click',()=>{category=button.dataset.wcCategory;view='collection';apply();}));
  controls.querySelector('.wc-reading-back').addEventListener('click',()=>{view='collection';apply();});
- controls.querySelector('.wc-video-why').addEventListener('click',()=>{view='analysis';apply();});
  page.addEventListener('click',event=>{
   if(event.target.closest('[data-wechat-sample]')){category=groups.indexOf(event.target.closest('.wechat-group'))===0?'event':'research';view='analysis';apply();}
-  else if(event.target.closest('[data-wechat-tab]')){view='collection';apply();}
  });
  const size=()=>{
   if(!area.clientHeight)return;

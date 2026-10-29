@@ -792,114 +792,6 @@ body.thinking-modal-open{overflow:hidden}
 /* Keep supplied paper covers complete without resampling the source images. */
 .wechat-page .wechat-item[data-wechat-sample="research1"] img,.wechat-page .wechat-item[data-wechat-sample="research2"] img{object-fit:contain}
 
-/* ==== assets/wechat-video-page.css ==== */
-/* Video mode reuses the WeChat shell; article geometry stays in its own styles. */
-.wechat-page #wechat-videos[hidden]{display:none!important}
-.wechat-video-mode .wechat-content-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-.wechat-video-mode .wechat-collection #wechat-videos:not([hidden]){display:block;height:100%}
-.wv-showcase{height:100%;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:18px}
-.wv-stage{display:grid;place-items:center;min-height:0}
-.wv-player-frame{position:relative;height:100%;aspect-ratio:9/16;max-width:100%;overflow:hidden;border-radius:18px;background:#083ca4;box-shadow:0 12px 35px #1428591a}
-.wv-player-frame video{display:block;width:100%;height:100%;object-fit:contain;background:#083ca4}
-.wv-player-frame video:fullscreen{object-fit:contain;background:#000}
-.wv-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;border:0;border-radius:inherit;color:white;background:linear-gradient(transparent 25%,#00195435);cursor:pointer}
-.wv-play[hidden]{display:none!important}
-.wv-play svg{width:54px;height:54px;padding:14px;box-sizing:border-box;border:1px solid #ffffff99;border-radius:50%;fill:currentColor;filter:drop-shadow(0 3px 10px #0004);background:#ffffff22;backdrop-filter:blur(5px);transition:background .2s,transform .2s}
-.wv-play:hover svg{background:#ffffff44;transform:scale(1.06)}
-.wv-play span{font:700 11px/1.3 Inter,Arial,sans-serif;letter-spacing:.08em;text-shadow:0 2px 5px #0008}
-.wv-details{width:100%;max-width:500px;margin:auto}
-.wv-title{margin:0;color:#090909;font:700 clamp(15px,1.3cqi,20px)/1.4 Inter,Arial,sans-serif;letter-spacing:.005em}
-.wv-meta{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:7px;font:400 12px/1.5 Inter,Arial,sans-serif;color:#7a8b9d}
-.wv-original{color:#ff432e;font:600 10px/1.4 Inter,Arial,sans-serif;text-decoration:none;white-space:nowrap;border-bottom:1px solid #ff432e70;padding-block:2px}
-.wv-toolbar{display:flex;align-items:center;gap:16px;margin-top:15px}
-.wv-counter{flex:none;color:#7a8b9d;font:600 13px/1.3 Inter,Arial,sans-serif;letter-spacing:.07em}
-.wv-switch{display:inline-flex;align-items:center;justify-content:center;gap:9px;flex-shrink:0;min-height:40px;padding:8px 16px;border:1px solid #ff432e;border-radius:999px;background:#fffaf5;color:#ff432e;font:700 11px/1.3 Inter,Arial,sans-serif;letter-spacing:.025em;cursor:pointer;transition:background .2s}
-.wv-switch:hover{background:#ffebe2}.wv-switch svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.wv-next{display:flex;gap:9px;align-items:center;min-width:0;margin-left:auto}
-.wv-next img{width:28px;height:46px;object-fit:contain;flex:none;border-radius:5px;background:#073ba1}
-.wv-next small{display:block;margin-bottom:3px;color:#7a8b9d;font:500 9px/1.3 Inter,Arial,sans-serif;letter-spacing:.035em}
-.wv-next strong{display:block;color:#667b8d;font:500 10px/1.4 Inter,Arial,sans-serif;max-width:180px}
-.wv-playback-status{margin:6px 0 0;min-height:0;font:400 11px/1.4 Inter,Arial,sans-serif;color:#667b8d}
-.wv-playback-status:empty{display:none}
-.wechat-video-mode .wechat-selection{display:flex;flex-direction:column;min-height:0;justify-content:initial}
-.wv-analysis{display:grid;grid-template-rows:repeat(2,minmax(min-content,1fr)) auto;gap:22px;flex:1;min-height:0}
-.wv-analysis-card{display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;padding:24px 26px;border:1px solid #ffffffb8;border-radius:22px;background:#fffefbc7;box-shadow:0 10px 30px #392b1607}
-.wv-card-heading{display:flex;align-items:center;gap:12px;margin-bottom:13px}
-.wv-card-icon{display:grid;place-items:center;flex:none;width:42px;height:42px;border-radius:50%;background:#ffe7dd;color:#ff432e}
-.wv-card-icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.wv-card-label{margin:0;color:#ff432e;font:600 12px/1.3 Inter,Arial,sans-serif;letter-spacing:.06em}
-.wv-analysis-card h4{margin:0;color:#090909;font:700 clamp(19px,1.75cqi,26px)/1.3 Inter,Arial,sans-serif;letter-spacing:.005em}
-.wv-card-description{margin:10px 0 0;color:#71869a;font:400 clamp(14px,1.2cqi,18px)/1.55 Inter,Arial,sans-serif;letter-spacing:.012em}
-.wv-decision{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:16px 0 0}
-.wv-decision span{color:#7b8b9e;font:500 9px/1.3 Inter,Arial,sans-serif;letter-spacing:.035em}
-.wv-decision strong{padding:6px 10px;border:1px solid #ffd2c0;border-radius:999px;background:#fff0e8;color:#f04932;font:600 10px/1.3 Inter,Arial,sans-serif;letter-spacing:.015em}
-.wv-trust{display:flex;align-items:center;justify-content:flex-end;gap:14px;min-height:52px;padding:0 16px;color:#ff432e}
-.wv-trust-arrow{flex:1 1 0;min-width:0;height:28px;stroke:#7a8b9d;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.wv-trust img{width:44px;height:44px;flex-shrink:0}
-.wv-trust strong{font:400 clamp(22px,2.15cqi,32px)/1.1 Anton,Impact,sans-serif;white-space:nowrap}
-.wv-switch:focus-visible,.wv-play:focus-visible,.wv-original:focus-visible,.wv-player-frame video:focus-visible{outline:2px solid #ff432e;outline-offset:4px}
-.wv-play:focus-visible{outline-offset:-4px;outline-color:#fff}
-@media(min-width:1100px) and (min-height:700px){
- .wechat-page.wechat-video-mode{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
- .wechat-video-mode .wechat-logic{padding-left:30px}
- .wechat-video-mode .wechat-selection{margin-top:24px}
- .wechat-video-mode .wv-stage{min-height:0}
- .wechat-video-mode .wv-showcase{gap:16px}
-}
-@media(min-width:1100px) and (min-height:700px) and (max-height:790px){
- .wechat-video-mode .wechat-selection{margin-top:14px}
- .wv-showcase{gap:12px}.wv-toolbar{margin-top:10px;gap:10px}.wv-title{font-size:14px;line-height:1.35}.wv-meta{font-size:11px;margin-top:5px}
- .wv-switch{min-height:36px;padding:7px 12px;font-size:10px}.wv-next img{width:23px;height:37px}.wv-next strong{font-size:9px}
- .wv-analysis{gap:14px}.wv-analysis-card{padding:16px 19px;border-radius:18px}.wv-card-heading{gap:10px;margin-bottom:9px}.wv-card-icon{width:32px;height:32px}.wv-card-icon svg{width:21px;height:21px}.wv-card-label{font-size:10px}
- .wv-analysis-card h4{font-size:18px;line-height:1.3}.wv-card-description{font-size:14px;line-height:1.45;margin-top:8px}.wv-decision{margin-top:10px;gap:6px}.wv-decision strong{font-size:9px;padding:5px 9px}
- .wv-trust{min-height:40px;gap:11px}.wv-trust img{width:36px;height:36px}.wv-trust strong{font-size:24px}
-}
-@media(max-width:1099px),(max-height:699px){
- .wv-stage{height:clamp(360px,56vh,570px)}
- .wv-analysis{gap:20px}.wv-analysis-card{padding:22px}.wv-showcase{height:auto}
-}
-@container section-window (max-width:800px){
- .wechat-video-mode .wechat-content-grid{grid-template-columns:minmax(0,1fr);gap:32px}
- .wv-stage{height:clamp(370px,62svh,580px)}
- .wv-details{max-width:520px}.wv-title{font-size:18px}.wv-meta{font-size:12px}.wv-next strong{font-size:11px}
- .wv-analysis{gap:18px}.wv-analysis-card h4{font-size:23px}.wv-card-description{font-size:16px}
- .wv-trust strong{font-size:28px}
-}
-@container section-window (max-width:480px){
- .wv-stage{height:clamp(350px,60svh,530px)}
- .wv-title{font-size:16px}.wv-meta{gap:10px;font-size:11px;flex-wrap:wrap}.wv-toolbar{gap:10px}
- .wv-counter{font-size:11px}.wv-switch{font-size:10px;padding-inline:12px}.wv-next{gap:7px}.wv-next img{width:24px;height:39px}.wv-next strong{font-size:9px;line-height:1.4}
- .wv-analysis-card{padding:20px;border-radius:18px}.wv-analysis-card h4{font-size:21px}.wv-card-description{font-size:15px}
- .wv-decision{gap:7px}.wv-trust{padding:0;gap:10px}.wv-trust img{width:38px;height:38px}.wv-trust strong{font-size:25px}
-}
-@media(prefers-reduced-motion:reduce){.wv-play:hover svg{transform:none}.wv-play svg,.wv-switch{transition:none}}
-
-/* Size the explanation cards to their copy instead of stretching each to half the column. */
-#wechat.wechat-video-mode .wv-analysis {
-  flex:1;
-  grid-template-rows:repeat(2,max-content) minmax(52px,1fr);
-  align-content:start;
-  gap:16px;
-}
-#wechat.wechat-video-mode .wv-analysis-card {
-  justify-content:flex-start;
-  padding-block:20px;
-}
-#wechat.wechat-video-mode .wv-card-heading {margin-bottom:10px;}
-#wechat.wechat-video-mode .wv-card-description {margin-top:8px;}
-#wechat.wechat-video-mode .wv-decision {margin-top:12px;}
-@container section-window (max-width:600px) {
-  #wechat.wechat-video-mode .wv-analysis {gap:12px;}
-  #wechat.wechat-video-mode .wv-analysis-card {padding-block:16px;}
-}
-
-/* Keep the trust line at the column foot without stretching the two cards. */
-#wechat.wechat-video-mode .wv-trust {align-self:end;}
-html[lang="zh"] #wechat .wechat-logic[data-wv-subtitle-align] {
-  padding-top:var(--wv-logic-offset,0px)!important;
-  box-sizing:border-box;
-}
-
 /* ==== assets/rednote-page.css ==== */
 /* Scoped editorial RedNote overview and the existing poster-wall visual language. */
 .rn-page{--rn-red:#ff4937;--rn-muted:#7c8fa1;--rn-rule:#dddcd6;color:#111;font-family:Inter,Arial,sans-serif}
@@ -2381,3 +2273,13 @@ html[lang="zh"] #contact .contact-heading {
   scrollbar-width:thin;
 }
 #rednote .rn-featured {overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;}
+
+/* ==== assets/wechat-articles-only.css ==== */
+/* Article-only collection: titles keep their existing shared anchors. */
+#wechat .wechat-collection {padding-top:8px;}
+@media (min-width:1100px) and (min-height:700px){
+ #wechat .wechat-collection #wechat-articles:not([hidden]) {gap:24px;}
+ #wechat #wechat-articles .wechat-group:not([hidden]) {row-gap:12px;}
+ #wechat #wechat-articles .wechat-item {align-content:center;}
+}
+#wechat.wc-paged-page .wechat-collection {padding-top:4px;}

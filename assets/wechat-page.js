@@ -1,7 +1,6 @@
 (() => {
  const page=document.querySelector('#wechat');if(!page)return;
  const reduced=matchMedia('(prefers-reduced-motion:reduce)');
- const tabs=[...page.querySelectorAll('[role=tab]')],panels=[...page.querySelectorAll('.wechat-tab-panel')];
  const selection=page.querySelector('.wechat-selection'),collection=page.querySelector('.wechat-collection');
  let entry=null,transition=null,bodyMotion=null,tabMotion=null,hideTimer=null,activeNode=null;
  const explanations=new WeakMap();
@@ -32,7 +31,7 @@
  function idle(){
   closeNode();window.WeChatArticleAnalysis?.reset(selection);selection.replaceChildren();const box=el('div','wechat-idle');
   box.innerHTML='<svg viewBox="0 0 155 106" aria-hidden="true"><path d="M130 98C148 28 67 1 21 29m20-25L20 30l33-5"/></svg>';
-  box.append(el('h4','',tabs[0].getAttribute('aria-selected')==='true'?'Select an article\nto see the thinking\nbehind it.':'Select a video\nto see the thinking\nbehind it.'));selection.append(box);
+  box.append(el('h4','','Select an article\nto see the thinking\nbehind it.'));selection.append(box);
  }
  function render(data,id){
   closeNode();
@@ -45,26 +44,11 @@
   transition=gsap.timeline().to(selection,{opacity:0,y:reduced.matches?0:-3,duration:.14,ease:'power2.out'}).call(()=>{update();gsap.set(selection,{opacity:1,clearProps:'transform'});bodyMotion=gsap.fromTo([...selection.children],{opacity:0,y:reduced.matches?0:6},{opacity:1,y:0,duration:.24,stagger:reduced.matches?0:.05,ease:'power2.out',clearProps:'opacity,transform'});});
  }
  page.querySelectorAll('[data-wechat-sample]').forEach(button=>button.addEventListener('click',()=>{const data=articles[button.dataset.wechatSample];if(!data)return;page.querySelectorAll('[data-wechat-sample]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));changeBody(()=>render(data,button.dataset.wechatSample));}));
- function switchTab(tab){
-  closeNode();transition?.kill();bodyMotion?.kill();tabMotion?.kill();
-  if(window.gsap)gsap.set([collection,selection],{clearProps:'opacity,transform'});
-  if(tab.getAttribute('aria-selected')==='true')return;
-  const videos=tab.dataset.wechatTab==='videos';
-  if(!videos)window.WeChatVideoPage.hide();
-  tabs.forEach(item=>{const active=item===tab;item.setAttribute('aria-selected',String(active));item.tabIndex=active?0:-1;});
-  panels.forEach(panel=>{panel.hidden=panel.id!==tab.getAttribute('aria-controls');});
-  page.querySelectorAll('[data-wechat-sample]').forEach(item=>item.setAttribute('aria-pressed','false'));
-  idle();if(videos)window.WeChatVideoPage.show();
-  if(window.gsap&&window.portfolioScreenMotion!==false)tabMotion=gsap.fromTo([collection,selection],{opacity:0,y:reduced.matches?0:4},{opacity:1,y:0,duration:.24,clearProps:'opacity,transform'});
- }
- tabs.forEach((tab,index)=>{tab.addEventListener('click',()=>switchTab(tab));tab.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();event.stopPropagation();const next=event.key==='Home'?0:event.key==='End'?tabs.length-1:(index+(event.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;switchTab(tabs[next]);tabs[next].focus({preventScroll:true});});});
  document.addEventListener('pointerdown',event=>{if(activeNode&&!activeNode.contains(event.target)&&!explanations.get(activeNode).contains(event.target))closeNode();});page.addEventListener('keydown',event=>{if(event.key==='Escape'&&activeNode){event.stopPropagation();closeNode();}});
  function animate(active){entry?.kill();const targets=[...page.querySelectorAll('.work-utility,.wechat-title,.wechat-subtitle,.wechat-tabs,.wechat-group-heading,.wechat-item,.wechat-logic-label,.wechat-logic-title,.wechat-logic-caption,.wechat-idle')].filter(node=>document.documentElement.lang!=='zh'||!node.matches('.wechat-title,.wechat-subtitle'));if(window.gsap)gsap.set(targets,{clearProps:'opacity,transform'});if(active&&window.gsap&&window.portfolioScreenMotion!==false)entry=gsap.fromTo(targets,{opacity:0,y:reduced.matches?0:8},{opacity:1,y:0,duration:.35,stagger:reduced.matches?0:.045,ease:'power3.out',clearProps:'opacity,transform'});}
  document.addEventListener('portfolio:sectionchange',event=>{closeNode();animate(event.detail.slide==='wechat');});reduced.addEventListener('change',()=>{transition?.kill();tabMotion?.kill();if(window.gsap)gsap.set([collection,selection],{clearProps:'opacity,transform'});animate(false);});
  window.WeChatPage={
-  setTab:name=>{const tab=tabs.find(tab=>tab.dataset.wechatTab===name);if(tab)switchTab(tab);},
   reset:()=>{
-   switchTab(tabs[0]);
    page.querySelectorAll('[data-wechat-sample]').forEach(button=>button.setAttribute('aria-pressed','false'));
    idle();
   }

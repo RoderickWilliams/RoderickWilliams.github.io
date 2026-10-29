@@ -11,7 +11,6 @@
   const compact=()=>wechat.classList.contains('wc-paged-page');
   const articleButtons=()=>[...wechat.querySelectorAll('[data-wechat-sample]')];
   const decisionButtons=()=>[...wechat.querySelectorAll('.wc-selector-item')];
-  const videos=()=>wechat.classList.contains('wechat-video-mode');
   function visible(node){return node&&!node.closest('[hidden]')&&node.getClientRects().length>0;}
   function move(nodes,delta){
     for(const node of nodes){
@@ -36,44 +35,25 @@
     resetScroll(wechat);
     return true;
   }
-  function showVideo(index,analysis=false){
-    window.WeChatPage.setTab('videos');
-    window.WeChatVideoPage.select(index);
-    window.WeChatReaderLayout?.show(analysis?'analysis':'collection');
-    resetScroll(wechat);
-    return true;
-  }
   function resetWechat(){
     window.WeChatPage.reset();
     window.WeChatReaderLayout?.show(compact()?'analysis':'collection');
     resetScroll(wechat);
   }
   function advanceWechat(direction){
-    if(!videos()){
-      const articles=articleButtons();
-      const index=articles.findIndex(button=>button.getAttribute('aria-pressed')==='true');
-      if(index<0)return direction>0?openArticle(0):false;
-      if(direction>0&&compact()&&!wechat.classList.contains('wc-focus-analysis')){
-        window.WeChatReaderLayout.show('analysis');resetScroll(wechat);return true;
-      }
-      const decisions=decisionButtons();
-      const current=decisions.findIndex(button=>button.getAttribute('aria-selected')==='true');
-      const next=current+direction;
-      if(next>=0&&next<decisions.length){decisions[next].click();resetScroll(wechat);return true;}
-      if(direction>0)return index<articles.length-1?openArticle(index+1):showVideo(0);
-      if(index>0)return openArticle(index-1,true);
-      resetWechat();return true;
+    const articles=articleButtons();
+    const index=articles.findIndex(button=>button.getAttribute('aria-pressed')==='true');
+    if(index<0)return direction>0?openArticle(0):false;
+    if(direction>0&&compact()&&!wechat.classList.contains('wc-focus-analysis')){
+      window.WeChatReaderLayout.show('analysis');resetScroll(wechat);return true;
     }
-    const video=window.WeChatVideoPage;
-    const analysis=wechat.classList.contains('wc-focus-analysis');
-    if(compact()&&((direction>0&&!analysis)||(direction<0&&analysis))){
-      window.WeChatReaderLayout.show(direction>0?'analysis':'collection');
-      resetScroll(wechat);return true;
-    }
-    if(direction>0)return video.current<video.count-1?showVideo(video.current+1):false;
-    if(video.current>0)return showVideo(video.current-1,true);
-    window.WeChatPage.setTab('articles');
-    return openArticle(articleButtons().length-1,true);
+    const decisions=decisionButtons();
+    const current=decisions.findIndex(button=>button.getAttribute('aria-selected')==='true');
+    const next=current+direction;
+    if(next>=0&&next<decisions.length){decisions[next].click();resetScroll(wechat);return true;}
+    if(direction>0)return index<articles.length-1?openArticle(index+1):false;
+    if(index>0)return openArticle(index-1,true);
+    resetWechat();return true;
   }
   function setAccount(index,detail='audience'){
     side='left';rednote.dataset.readingSide=side;
@@ -99,9 +79,9 @@
   }
   function scroll(slide,delta){
     if(slide==='wechat'){
-      if(!videos()&&!wechat.querySelector('[data-wechat-sample][aria-pressed="true"]'))return false;
+      if(!wechat.querySelector('[data-wechat-sample][aria-pressed="true"]'))return false;
       return move([
-        wechat.querySelector(videos()?'.wv-analysis':'.wc-strategy-body'),
+        wechat.querySelector('.wc-strategy-body'),
         wechat.querySelector('.wechat-selection'),wechat.querySelector('.wechat-logic'),area(wechat)
       ],delta);
     }

@@ -1,0 +1,8 @@
+/* Article-only collection: titles keep their existing shared anchors. */
+#wechat .wechat-collection {padding-top:8px;}
+@media (min-width:1100px) and (min-height:700px){
+ #wechat .wechat-collection #wechat-articles:not([hidden]) {gap:24px;}
+ #wechat #wechat-articles .wechat-group:not([hidden]) {row-gap:12px;}
+ #wechat #wechat-articles .wechat-item {align-content:center;}
+}
+#wechat.wc-paged-page .wechat-collection {padding-top:4px;}

@@ -3,12 +3,12 @@
  if(!stage)return;
  const scene=stage.querySelector('.skills-object-scene'),panel=stage.querySelector('.skills-object-popover'),hits=[...scene.querySelectorAll('[data-object]')];
  const skills={
-  ai:{en:'AI & WEB',zh:'AI 与网页',items:['Website design','AI product prototyping','Content systems','Data-informed workflows','Codex · Cursor · Trae'],itemsZh:['网页设计','AI 产品原型','内容体系','数据驱动的工作方法','Codex · Cursor · Trae'],side:'right'},
-  content:{en:'CONTENT',zh:'内容策划',items:['Brand storytelling','Editorial planning','Social media content'],itemsZh:['品牌叙事','内容策划','社媒内容'],side:'left'},
+  ai:{en:'AI VibeCoding',zh:'AI VibeCoding',items:['Website design','AI product design','Codex • Claude • DeepSeek Harness'],itemsZh:['网页设计','AI产品设计','Codex • Claude • DeepSeek Harness'],side:'right'},
+  content:{en:'CONTENT OPERATIONS',zh:'内容运营',items:['Brand storytelling','Editorial planning','Social media content'],itemsZh:['品牌叙事','内容策划','社媒内容'],side:'left'},
   design:{en:'DESIGN',zh:'图文设计',items:['Visual communication','Gaoding Design','Canva'],itemsZh:['视觉传达','稿定设计','Canva'],side:'left'},
   language:{en:'LANGUAGES',zh:'语言技能',items:['English: TEM-8','Mandarin: Native'],itemsZh:['英语（专业八级）','普通话（母语）'],side:'right'},
   office:{en:'OFFICE',zh:'日常办公',items:['Microsoft Office','WPS'],itemsZh:['Microsoft Office','WPS'],side:'right'},
-  social:{en:'SOCIAL & EVENTS',zh:'社媒与活动运营',items:['WeChat operations','RedNote operations','Event marketing','Cross-team coordination'],itemsZh:['微信运营','小红书运营','活动营销','跨团队协作'],side:'right'},
+  social:{en:'SOCIAL MEDIA & BRAND PROMOTION',zh:'社媒运营与品牌宣传',items:['WeChat official account operations','RedNote operations','Brand promotion','Event planning'],itemsZh:['公众号运营','小红书运营','品牌推广','活动策划'],side:'right'},
   video:{en:'VIDEO',zh:'视频剪辑',items:['Jianying'],itemsZh:['剪映'],side:'left'}
  };
  let active=null,pinned=false,leaveTimer=null;
