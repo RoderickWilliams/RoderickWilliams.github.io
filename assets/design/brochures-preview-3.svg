@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="640" viewBox="0 0 800 640">
+  <title>Brochure layout placeholder</title>
+  <defs><linearGradient id="fold"><stop stop-color="#797b731a"/><stop offset=".48" stop-color="#797b7300"/><stop offset=".5" stop-color="#797b7333"/><stop offset=".55" stop-color="#797b7300"/></linearGradient></defs>
+  <rect x="418" y="27" width="284" height="394" rx="3" fill="#252e2b" opacity=".08" transform="rotate(7 560 224)"/>
+  <g transform="rotate(7 560 210)">
+    <rect x="420" y="12" width="280" height="390" rx="2" fill="#dbe5e6" stroke="#c7cec2"/>
+    <rect x="444" y="38" width="106" height="7" fill="#85967e"/>
+    <circle cx="628" cy="132" r="51" fill="#c2d1bc"/>
+    <path d="M445 252h138m-138 22h194m-194 22h94" stroke="#637461" stroke-width="12"/>
+    <text x="444" y="368" font-family="Arial,sans-serif" font-size="15" fill="#556650">PLACEHOLDER</text>
+  </g>
+  <path d="M78 197 728 184v397l-331 25-319-29Z" fill="#373d36" opacity=".08"/>
+  <path d="M68 181 393 167l325 14v391l-325 14-325-14Z" fill="#fffef9" stroke="#d6d5cc"/>
+  <path d="M393 167v419" stroke="#d7d6cd"/>
+  <rect x="351" y="176" width="84" height="399" fill="url(#fold)"/>
+  <rect x="94" y="208" width="260" height="226" fill="#d0dee2"/>
+  <circle cx="224" cy="303" r="57" fill="#b6c8d3"/>
+  <path d="m117 407 94-72 48 35 73-72v109Z" fill="#8fa7b4"/>
+  <path d="M94 467h208m-208 19h179m-179 20h197m-197 20h125" stroke="#bdc1ba" stroke-width="6"/>
+  <rect x="429" y="218" width="223" height="14" fill="#6f8273"/>
+  <rect x="429" y="246" width="156" height="14" fill="#6f8273"/>
+  <path d="M429 290h251m-251 20h229m-229 20h245m-245 20h155" stroke="#bdc1ba" stroke-width="6"/>
+  <rect x="429" y="385" width="115" height="125" fill="#e7e7df"/>
+  <rect x="561" y="385" width="119" height="125" fill="#dae3d6"/>
+  <text x="429" y="553" font-family="Arial,sans-serif" font-size="15" fill="#75826f">PLACEHOLDER</text>
+</svg>

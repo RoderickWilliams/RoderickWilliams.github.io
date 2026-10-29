@@ -1,0 +1,23 @@
+/* Interaction feedback complements the existing section-specific timelines. */
+:root{--portfolio-motion-ease:cubic-bezier(.22,.75,.25,1)}
+.section-viewport .section-layer .portfolio-standard-button,
+.contact-email-button,.dp-open-project,.language-switch button{transition:background-color .2s ease,box-shadow .25s ease,scale .2s var(--portfolio-motion-ease)}
+.section-viewport .section-layer .portfolio-standard-button:active:not(:disabled),
+.contact-email-button:active,.dp-open-project:active,.language-switch button:active{scale:.975}
+.work-card-arrow,.wechat-item-arrow,.thinking-arrow,.dp-open-project svg,.contact-email-button svg{transition:translate .28s var(--portfolio-motion-ease),rotate .28s var(--portfolio-motion-ease)}
+.work-category-card:is(:hover,:focus-visible) .work-card-arrow,
+.thinking-cta:is(:hover,:focus-visible) .thinking-arrow{translate:5px 0}
+.wechat-item:is(:hover,:focus-visible) .wechat-item-arrow,
+.dp-open-project:is(:hover,:focus-visible) svg,
+.contact-email-button:is(:hover,:focus-visible) svg{translate:3px -3px}
+.sidebar-link svg{transition:rotate .3s var(--portfolio-motion-ease),scale .3s var(--portfolio-motion-ease)}
+.sidebar-link:is(:hover,:focus-visible) svg{rotate:-5deg;scale:1.06}
+.rn-note-link,.wc-original-link,.wv-original,.contact-channel dd a{transition:text-decoration-color .2s ease,text-underline-offset .2s ease}
+.rn-note-link:is(:hover,:focus-visible),.wc-original-link:is(:hover,:focus-visible),.wv-original:is(:hover,:focus-visible),.contact-channel dd a:is(:hover,:focus-visible){text-underline-offset:8px}
+.dp-project-media{transition:background-color .25s ease}
+.dp-project:focus-within .dp-project-media,.dp-project:hover .dp-project-media{background-color:#e6f0f4}
+@media(prefers-reduced-motion:reduce){
+ .section-viewport .section-layer .portfolio-standard-button,.contact-email-button,.dp-open-project,.language-switch button,.work-card-arrow,.wechat-item-arrow,.thinking-arrow,.dp-open-project svg,.contact-email-button svg,.sidebar-link svg,.rn-note-link,.wc-original-link,.wv-original,.contact-channel dd a,.dp-project-media{transition:none}
+ .section-viewport .section-layer .portfolio-standard-button:active,.contact-email-button:active,.dp-open-project:active,.language-switch button:active,.sidebar-link:is(:hover,:focus-visible) svg{scale:1;rotate:0deg}
+ .work-category-card:is(:hover,:focus-visible) .work-card-arrow,.thinking-cta:is(:hover,:focus-visible) .thinking-arrow,.wechat-item:is(:hover,:focus-visible) .wechat-item-arrow,.dp-open-project:is(:hover,:focus-visible) svg,.contact-email-button:is(:hover,:focus-visible) svg{translate:0 0}
+}

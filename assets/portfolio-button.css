@@ -1,0 +1,25 @@
+/* Shared Work-page portfolio action, positioned against the rounded viewport. */
+.section-viewport .section-layer>.portfolio-button-slot{position:absolute;top:40px;right:54px;z-index:25;pointer-events:auto}
+.section-viewport .section-layer .portfolio-standard-button{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;width:166px;height:56px;min-height:56px;margin:0;padding:0 27px;gap:0;border:2px solid #111;border-radius:999px;background:#ffffff2e;color:#111;font:800 14px/1.2 Inter,Arial,sans-serif;letter-spacing:0;white-space:nowrap;text-decoration:none;flex-shrink:0;transform:none;box-shadow:none}
+.section-viewport .section-layer .portfolio-standard-button:hover{background:#ffffff66;transform:none}
+.section-viewport .section-layer .portfolio-standard-button:focus-visible{outline:2px solid #ff4b32;outline-offset:4px}
+.section-viewport .portfolio-header-reserved{box-sizing:border-box;padding-right:190px;min-height:56px}
+.section-viewport .section-layer>.portfolio-button-slot.has-back-to-work{display:flex;align-items:center;gap:14px}
+.section-viewport .section-layer .portfolio-standard-button.portfolio-back-button{gap:8px;padding-inline:10px}
+.section-viewport .section-layer .portfolio-back-button svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transform:none}
+.section-viewport .portfolio-header-reserved.portfolio-header-with-back{padding-right:370px}
+@container section-window (max-width:1100px){
+ .section-viewport .section-layer>.portfolio-button-slot{top:32px;right:32px}
+}
+@container section-window (max-width:600px){
+ .section-viewport .section-layer>.portfolio-button-slot{top:26px;right:20px}
+ .section-viewport .section-layer .portfolio-standard-button{width:140px;height:44px;min-height:44px;padding:0 16px;font-size:11px}
+ .section-viewport .portfolio-header-reserved{padding-right:0;padding-top:60px;min-height:104px}
+ .section-viewport .portfolio-header-reserved.portfolio-header-with-back{padding-right:0}
+}
+@container section-window (max-width:340px){
+ .section-viewport .section-layer>.portfolio-button-slot.has-back-to-work{gap:8px}
+ .section-viewport .has-back-to-work .portfolio-standard-button{width:calc(50cqi - 24px);padding-inline:8px;font-size:9px}
+ .section-viewport .has-back-to-work .portfolio-back-button{gap:5px}
+ .section-viewport .has-back-to-work .portfolio-back-button svg{width:14px;height:14px}
+}

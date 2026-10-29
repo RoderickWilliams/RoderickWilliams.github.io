@@ -1,0 +1,12 @@
+{
+  "education": [
+    {"id":"cuhk","school":"The Chinese University of Hong Kong","degree":"Master of Arts in Chinese Studies","period":"September 2024 – July 2025","logo":"cuhk"},
+    {"id":"xisu","school":"Xi’an International Studies University","degree":"Bachelor of Arts in English Language and Literature","period":"September 2020 – June 2024","logo":"xisu"}
+  ],
+  "experience": [
+    {"year":2026,"id":"nsc","company":"National Supercomputing Center in Xi’an","role":"Assistant to the Marketing Director","period":"April 2026 – June 2026","location":"Xi’an, Shaanxi, China","logo":"nsc","bullets":["Managed visits for government, industry and research delegations, identified partnership opportunities and contributed to 10+ project conversions.","Planned 20+ events and seminars; managed official WeChat and video content, generating 10,000+ views and 75%+ engagement."]},
+    {"year":2025,"id":"cmb","company":"China Merchants Bank Co., Ltd. (CMB)","role":"Account Manager","period":"August 2025 – February 2026","location":"Xi’an Branch, Shaanxi, China","logo":"cmb","bullets":["Managed retail clients with AUM below RMB 200k through segmented services and multi-channel engagement, increasing monthly active users by approximately 40%.","Managed the full lifecycle of dozens of enterprise accounts, identifying leads and developing tailored solutions for long-term partnerships."]},
+    {"year":2024,"id":"nowcoder","company":"Beijing Niuke Technology Co., Ltd. (Nowcoder)","role":"Social Media Operation Assistant","period":"May 2024 – August 2024","location":"Shenzhen Branch, Guangdong, China","logo":"nowcoder","bullets":["Managed social accounts, developed 10+ reusable templates, produced 140+ posts and grew followers by 1,200+.","Analyzed account and competitor data to improve content strategy, delivering 10+ high-performing posts monthly."]},
+    {"year":2022,"id":"bytedance","company":"Beijing ByteDance Network Technology Co., Ltd.","role":"English Translation Assistant","period":"August 2022 – September 2022","location":"Beijing, China","logo":"bytedance","bullets":["Localized product, website, marketing and social content for overseas markets, improving translation efficiency by 20%.","Built a terminology database and delivered 10,000+ Chinese characters of translated content per week."]}
+  ]
+}

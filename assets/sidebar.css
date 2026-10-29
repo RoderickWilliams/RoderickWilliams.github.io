@@ -1,0 +1,164 @@
+:root {
+  --sidebar-width: 205px;
+  --sidebar-offset: 24px;
+  --sidebar-space: calc(var(--sidebar-offset) + var(--sidebar-width) + 24px);
+  --gutter: clamp(24px, 3vw, 56px);
+}
+body { background: var(--paper); }
+.sidebar-ambient {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 10% 36%, #fcd4c066 0, transparent 27%),
+    radial-gradient(ellipse at 18% 80%, #f8d99066 0, transparent 25%),
+    radial-gradient(ellipse at 38% 12%, #cfdaee66 0, transparent 29%),
+    var(--paper);
+}
+.page {
+  position: relative; z-index: 1;
+  margin: 0 0 0 var(--sidebar-space);
+  width: calc(100% - var(--sidebar-space)); max-width: none;
+  container-type: inline-size; container-name: portfolio;
+  --x: var(--gutter);
+}
+section { scroll-margin-top: 24px; }
+.scroll-progress { z-index: 60; }
+.glass-sidebar {
+  position: fixed; z-index: 50;
+  left: var(--sidebar-offset); top: 20px; bottom: 20px;
+  width: var(--sidebar-width); padding: 32px 18px 24px;
+  display: flex; flex-direction: column; gap: 0;
+  border: 1px solid rgba(255,255,255,.72); border-radius: 32px;
+  background: rgba(248,246,241,.66);
+  backdrop-filter: blur(24px) saturate(130%);
+  -webkit-backdrop-filter: blur(24px) saturate(130%);
+  box-shadow: 0 20px 60px #1212120f, inset 0 1px 0 #ffffffb8;
+  animation: sidebar-arrive .5s var(--ease) both;
+}
+@keyframes sidebar-arrive { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1; transform: translateX(0); } }
+.sidebar-brand {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 12px; flex-shrink: 0;
+  font-size: 20px; line-height: 1.4; font-weight: 800; letter-spacing: .035em;
+  white-space: nowrap;
+}
+.sidebar-brand .asterisk { width: 38px; height: 38px; flex: 0 0 38px; }
+.sidebar-brand .asterisk i { left: 16px; top: 0; height: 38px; width: 7px; border-radius: 2px; }
+.sidebar-links { display: grid; gap: 12px; margin-top: 48px; }
+.sidebar-link {
+  display: flex; align-items: center; position: relative;
+  min-height: 60px; padding: 0 20px; gap: 18px; border-radius: 18px;
+  color: rgba(23,23,23,.66); font-size: 18px; font-weight: 600; line-height: 1.4; letter-spacing: .01em;
+  transition: color .18s ease, background-color .18s ease, transform .18s ease;
+}
+.sidebar-link svg { width: 22px; height: 22px; flex: 0 0 22px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.sidebar-link::before {
+  content: ''; position: absolute; left: 0; top: 12px; bottom: 12px;
+  width: 4px; border-radius: 999px; background: var(--red); opacity: 0;
+  transition: opacity .2s ease;
+}
+.sidebar-link:hover { color: var(--ink); background: #ffffff6b; transform: translateX(2px); }
+.sidebar-link.active { background: rgba(255,249,235,.78); color: var(--ink); box-shadow: 0 8px 24px #281e1409, inset 0 1px 0 #ffffff99; }
+.sidebar-link.active::before { opacity: 1; }
+.sidebar-link.active svg { color: var(--red); }
+.language-switch {
+  position: relative; display: grid; grid-template-columns: 1fr 1fr;
+  margin-top: auto; padding: 5px; min-height: 54px; flex-shrink: 0;
+  border: 1px solid #ffffff80; border-radius: 999px; background: #ffffff6b;
+}
+.language-switch::before {
+  content: ''; position: absolute; top: 5px; bottom: 5px; left: 5px;
+  width: calc(50% - 5px); border-radius: 999px; background: #ffe1d2b8;
+  transform: translateX(100%); transition: transform .25s var(--ease);
+}
+.language-switch[data-language="zh"]::before { transform: translateX(0); }
+.language-switch button {
+  position: relative; border: 0; border-radius: 999px; background: transparent;
+  min-width: 0; padding: 10px 6px; font-size: 15px; font-weight: 600;
+  line-height: 1.4; color: #17171780; cursor: pointer; transition: color .2s ease;
+}
+.language-switch button[aria-pressed="true"] { color: var(--red); }
+.sidebar-toggle, .sidebar-backdrop { display: none; }
+.section-title { font-size: clamp(58px, 8cqi, 128px); }
+.work-title { font-size: clamp(72px, 11cqi, 170px); }
+.category-title { font-size: clamp(40px, 6cqi, 88px); }
+.rednote-grid {
+  width: min(calc(100% - var(--gutter) * 2), var(--content-max));
+  max-width: 100%; margin-inline: auto;
+}
+.experience-heading .section-title, .services-intro .section-title { font-size: clamp(42px, 5cqi, 80px); }
+.experience-heading, .services-intro { top: 32px; }
+.create h2 { font-size: clamp(46px, 6cqi, 96px); }
+.create p { font-size: clamp(32px, 4.4cqi, 66px); }
+.skill-group h3 { font-size: clamp(32px, 4.4cqi, 60px); }
+/* Chinese display/hand typography is owned by portfolio-zh.css. .display,
+   .section-title and .hand are no longer used by the current page. */
+@media (max-width:1199px) and (min-width:900px) {
+  :root { --sidebar-width: 205px; --sidebar-offset: 16px; --gutter: 24px; }
+  .glass-sidebar { padding-inline: 12px; }
+  .sidebar-brand { font-size: 18px; gap: 10px; padding-inline: 8px; }
+  .sidebar-brand .asterisk { flex-basis: 34px; width: 34px; }
+  .sidebar-link { padding-inline: 16px; font-size: 17px; }
+}
+@container portfolio (max-width:820px) {
+  .experience, .services { grid-template-columns: minmax(0,1fr); gap: 40px; }
+  .experience-heading, .services-intro { position: relative; top: auto; margin: 0; }
+  .service { grid-template-columns: 28px minmax(0,1fr) 24px; }
+  .service p { grid-column: 2; }
+  .service-arrow { grid-column: 3; grid-row: 1; }
+  .skill-groups { grid-template-columns: 1fr; }
+  .skill-group { border-right: 0; }
+  .contact { grid-template-columns: minmax(0,1fr); }
+  .contact-inner { padding: 56px var(--gutter); }
+  .red-panel, .contact:not(.in) .red-panel { padding: 64px var(--gutter) 112px; }
+  .red-panel::before { clip-path: polygon(0 6%,100% 0,100% 100%,0 100%); }
+  .footer { grid-template-columns: 1fr 1fr; }
+  .footer-cta { grid-column: 1/-1; justify-self: stretch; }
+  .rednote-grid { columns: 3; }
+}
+@container portfolio (max-width:620px) {
+  .vibe-track { grid-template-columns: minmax(0,1fr); }
+  .rednote-grid { columns: 2; }
+  .work-head { display: block; }
+  .work-note { display: inline-block; }
+  .footer { grid-template-columns: 1fr; }
+  .footer > div + div { border: 0; padding-left: 0; }
+}
+@media (max-width:899px) {
+  :root { --sidebar-width: 205px; --sidebar-offset: 12px; --sidebar-space: 0px; --gutter: 24px; }
+  .page { margin-left: 0; width: 100%; }
+  section { scroll-margin-top: 78px; }
+  .glass-sidebar {
+    top: 12px; bottom: 12px; padding-top: 62px;
+    visibility: hidden; opacity: 0; transform: translateX(calc(-100% - 20px));
+    transition: transform .4s var(--ease), opacity .3s, visibility .4s; animation: none;
+  }
+  .glass-sidebar.open { visibility: visible; opacity: 1; transform: translateX(0); }
+  .sidebar-links { margin-top: 24px; }
+  .sidebar-toggle {
+    display: grid; place-items: center; position: fixed; left: 24px; top: 24px; z-index: 60;
+    width: 42px; height: 42px; border: 1px solid #ffffffb8; border-radius: 14px;
+    background: #fffaf0ed; color: var(--ink); cursor: pointer; box-shadow: 0 4px 16px #1212120a;
+  }
+  .sidebar-toggle svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 2; fill: none; }
+  .sidebar-toggle[aria-expanded="true"] .menu-lines { display: none; }
+  .sidebar-toggle .menu-close { display: none; }
+  .sidebar-toggle[aria-expanded="true"] .menu-close { display: block; }
+  .sidebar-backdrop { display: block; position: fixed; inset: 0; z-index: 40; background: #1414141f; visibility: hidden; opacity: 0; transition: opacity .3s, visibility .3s; }
+  .sidebar-backdrop.open { visibility: visible; opacity: 1; }
+  body.drawer-open { overflow: hidden; }
+}
+@media (max-height:620px) {
+  .glass-sidebar { padding-block: 16px; overflow-y: auto; }
+  .sidebar-brand { padding-block: 8px; }
+  .sidebar-links { margin-top: 18px; gap: 6px; }
+  .sidebar-link { min-height: 48px; }
+  .language-switch { margin-top: auto; }
+}
+@media (max-height:620px) and (max-width:899px) {
+  .glass-sidebar { padding-top: 62px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .glass-sidebar { animation: none; }
+  .glass-sidebar, .sidebar-link, .sidebar-link::before, .language-switch::before, .sidebar-backdrop { transition: none; }
+  .sidebar-link:hover { transform: none; }
+}

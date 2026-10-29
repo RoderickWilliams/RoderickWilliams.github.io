@@ -1,0 +1,60 @@
+/* One Chinese type scale for the two WeChat analysis formats. */
+html[lang="zh"] #wechat :is(.wc-stage-copy h4,.wv-analysis-card h4) {
+  font-family:var(--zh-sans);
+  font-size:clamp(18px,1.6cqi,24px);
+  font-weight:700;
+  line-height:1.55;
+  letter-spacing:.01em;
+}
+html[lang="zh"] #wechat :is(.wc-stage-label,.wv-card-label,.wc-selector-copy strong) {
+  font-family:var(--zh-sans);
+  font-size:12px;
+  font-weight:600;
+  line-height:1.5;
+  letter-spacing:.025em;
+}
+html[lang="zh"] #wechat :is(.wc-stage-description,.wv-card-description) {
+  font-family:var(--zh-sans);
+  font-size:clamp(13px,1.08cqi,16px);
+  font-weight:400;
+  line-height:1.75;
+  letter-spacing:.012em;
+}
+html[lang="zh"] #wechat :is(.wc-keywords span,.wv-decision strong) {
+  font-family:var(--zh-sans);
+  font-size:10px;
+  font-weight:600;
+  line-height:1.3;
+  letter-spacing:.015em;
+}
+html[lang="zh"] #wechat .wc-selector-copy > span {font-family:var(--zh-sans);}
+
+/* Keep the existing RedNote card geometry; let the copy carry more visual weight. */
+html[lang="zh"] #rednote .rn-case-copy .rn-analysis-group h4 {
+  font-family:var(--zh-sans);
+  font-size:12px;
+  font-weight:600;
+  line-height:1.5;
+  letter-spacing:.025em;
+  margin-bottom:10px;
+}
+html[lang="zh"] #rednote .rn-case-copy .rn-analysis-group strong {
+  font-family:var(--zh-sans);
+  font-size:18px;
+  font-weight:700;
+  line-height:1.5;
+  letter-spacing:.01em;
+}
+html[lang="zh"] #rednote .rn-case-copy .rn-analysis-group p {
+  font-family:var(--zh-sans);
+  font-size:15px;
+  font-weight:400;
+  line-height:1.75;
+  letter-spacing:.015em;
+  margin-top:10px;
+}
+@container section-window (max-width:600px) {
+  html[lang="zh"] #rednote .rn-case-copy .rn-analysis-group h4 {font-size:11px;margin-bottom:8px;}
+  html[lang="zh"] #rednote .rn-case-copy .rn-analysis-group strong {font-size:18px;}
+  html[lang="zh"] #rednote .rn-case-copy .rn-analysis-group p {font-size:15px;line-height:1.65;margin-top:8px;}
+}

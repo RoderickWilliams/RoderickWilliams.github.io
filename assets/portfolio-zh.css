@@ -1,0 +1,316 @@
+/* Chinese typography only. English selectors, layout and assets are unchanged. */
+
+/* 中文自托管字体。均已按站点实际用字子集化，只有中文模式会触发下载：
+   思源黑体 700/900（参考图的重型正体黑，各约 140 KB）／霞鹜文楷屏幕版 31.4 KB。
+   得意黑仍保留注册（当前未被引用，浏览器不会下载），便于随时切回。 */
+@font-face{font-family:"Noto Sans SC ZH";src:url("fonts/NotoSansSC-zh-bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap;}
+@font-face{font-family:"Noto Sans SC ZH";src:url("fonts/NotoSansSC-zh-black.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap;}
+@font-face{font-family:"Smiley Sans Oblique";src:url("fonts/SmileySans-zh.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:"LXGW WenKai Screen";src:url("fonts/LXGWWenKai-zh-hand.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+
+html[lang="zh"] {
+  /* 正文与界面：仍用系统字体栈（苹方／雅黑），不额外下载中文字库 */
+  --zh-sans:"PingFang SC","Microsoft YaHei UI","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  /* 展示体：接替英文版 Anton 的角色——参考图用的正是重型正体黑（思源黑体 900） */
+  --zh-display:"Noto Sans SC ZH","PingFang SC","Microsoft YaHei",sans-serif;
+  /* 手写体：接替英文版 Caveat 的角色 */
+  --zh-hand:"LXGW WenKai Screen","Kaiti SC","STKaiti","KaiTi","FangSong",serif;
+  --portfolio-page-title-family:var(--zh-display);
+  --portfolio-page-title-size:clamp(40px,5.2cqi,68px);
+  /* 得意黑只有一个字重，写 400 才是真字形；写 700 会被浏览器伪加粗 */
+  --portfolio-page-title-weight:400;
+  --portfolio-page-title-leading:1.25;
+}
+html[lang="zh"] body,
+html[lang="zh"] button,
+html[lang="zh"] input,
+html[lang="zh"] dialog {font-family:var(--zh-sans);}
+html[lang="zh"] .page,
+html[lang="zh"] .thinking-surface,
+html[lang="zh"] .dp-viewer,
+html[lang="zh"] .rn-preview {line-break:strict;word-break:normal;overflow-wrap:break-word;}
+/* .hero-category（顶栏眉标）按用户要求照搬英文版：文案、字体、断行都不做中文改写，
+   相关中文覆盖已移除，交由英文版原有样式生效。 */
+html[lang="zh"] .sidebar-link,
+html[lang="zh"] .portfolio-standard-button,
+html[lang="zh"] .wechat-back-link {font-family:var(--zh-sans);letter-spacing:.02em;}
+/* 汉字没有 Caveat 那样的手写拉丁字体可用；用受控的中文书写体，并按汉字行高给足余量。 */
+html[lang="zh"] .hero-greeting {font-family:var(--zh-hand);font-weight:400;font-size:clamp(54px,5.8cqi,78px);line-height:1.2;letter-spacing:.01em;}
+/* 中文名字只有 3 个字，同字号下宽度远小于英文的 ZIBO WANG（约 225px vs 430px），
+   名字右侧会空出一大块。放大 + 加字距把宽度补到约 340px，让留白回到与英文版相当。 */
+html[lang="zh"] #home .hero-name {font-family:var(--zh-display);font-size:clamp(70px,9.8cqi,124px);font-weight:400;line-height:1.25;letter-spacing:.12em;}
+html[lang="zh"] #home .hero-im {font-family:var(--zh-display);font-size:.58em;font-weight:400;line-height:1.35;letter-spacing:.08em;}
+html[lang="zh"] .hero-name-row {white-space:nowrap;}
+/* 英文版把姓氏 WANG 标成品牌橙（hero-v2.css 的 .hero-wang）。中文把整个名字放进
+   了没有颜色的那个 hero-word，又把 .hero-wang 隐藏，橙色就丢了。这里把橙色给回名字。 */
+html[lang="zh"] .hero-wang {display:none;}
+html[lang="zh"] .hero-name-row .hero-word:not(.hero-wang) {color:var(--hero-red);}
+html[lang="zh"] .hero-statement {font-family:var(--zh-sans);font-weight:500;font-size:clamp(18px,1.9cqi,25px);line-height:1.65;letter-spacing:.015em;}
+html[lang="zh"] .hero-statement span:nth-child(2) {display:none;}
+html[lang="zh"] #about .about-title,
+html[lang="zh"] #skills .skills-title,
+html[lang="zh"] #contact .contact-title {font-family:var(--zh-display);font-size:clamp(40px,5.2cqi,68px);font-weight:400;line-height:1.25;letter-spacing:.02em;}
+html[lang="zh"] .about-panel .about-label {font-family:var(--zh-sans);font-size:clamp(20px,2cqi,27px);font-weight:700;line-height:1.4;letter-spacing:.02em;}
+html[lang="zh"] .about-panel .education-copy h3 {font-family:var(--zh-sans);font-size:clamp(18px,1.65cqi,23px);line-height:1.5;font-weight:700;letter-spacing:0;}
+html[lang="zh"] .about-panel .education-copy p {font-size:clamp(14px,1.2cqi,17px);line-height:1.7;}
+html[lang="zh"] .about-panel .education-copy .education-period {font-size:13px;line-height:1.6;font-variant-numeric:tabular-nums;}
+html[lang="zh"] .experience-hint {font-family:var(--zh-sans);font-size:14px;line-height:1.6;letter-spacing:0;}
+html[lang="zh"] .experience-tooltip {font-size:12px;white-space:nowrap;}
+html[lang="zh"] .popover-company {font-family:var(--zh-sans);font-size:clamp(19px,1.7cqi,24px);line-height:1.5;font-weight:700;}
+html[lang="zh"] .popover-role {font-size:17px;line-height:1.6;}
+html[lang="zh"] .popover-date,
+html[lang="zh"] .popover-location {font-size:13px;line-height:1.6;}
+html[lang="zh"] .popover-content li {font-size:14px;line-height:1.8;margin-block:7px;}
+html[lang="zh"] .work-landing .work-landing-title {font-family:var(--zh-display);font-weight:400;font-size:clamp(29px,4cqi,53px);line-height:1.3;letter-spacing:.015em;white-space:normal;}
+html[lang="zh"] .work-hub-heading {font-family:var(--zh-sans);font-size:clamp(21px,2cqi,28px);line-height:1.4;letter-spacing:.025em;font-weight:700;}
+html[lang="zh"] .work-landing .work-card-title {font-family:var(--zh-sans);font-size:clamp(21px,2.15cqi,28px);font-weight:700;line-height:1.35;}
+html[lang="zh"] .work-landing .work-card-description {font-size:clamp(13px,1.1cqi,16px);line-height:1.75;}
+html[lang="zh"] .trust-root,
+html[lang="zh"] .thinking-cta {font-family:var(--zh-sans);font-size:16px;line-height:1.4;font-weight:700;letter-spacing:.025em;}
+html[lang="zh"] .trust-branch strong {font-size:17px;line-height:1.5;}
+html[lang="zh"] .trust-branch small {font-size:12px;line-height:1.6;}
+html[lang="zh"] .thinking-modal-title {font-family:var(--zh-display);font-size:clamp(32px,3.6vw,54px);font-weight:400;line-height:1.3;letter-spacing:.015em;}
+html[lang="zh"] .thinking-modal-subtitle {font-size:15px;line-height:1.75;}
+html[lang="zh"] .thinking-modal-eyebrow,
+html[lang="zh"] .thinking-column-heading h3 {font-family:var(--zh-sans);font-size:13px;line-height:1.5;font-weight:700;letter-spacing:.05em;}
+html[lang="zh"] .thinking-column-heading p {font-size:14px;line-height:1.65;}
+html[lang="zh"] .thinking-node strong {font-family:var(--zh-sans);font-size:18px;line-height:1.5;letter-spacing:.02em;font-weight:700;}
+html[lang="zh"] .thinking-node-description {font-size:14px;line-height:1.7;}
+html[lang="zh"] .thinking-node-detail {font-family:var(--zh-sans);font-size:14px;line-height:1.8;}
+html[lang="zh"] .thinking-final-node {font-family:var(--zh-display);font-size:24px;line-height:1.35;font-weight:400;letter-spacing:.03em;}
+html[lang="zh"] .wechat-page .wechat-title,
+html[lang="zh"] .rn-title,
+html[lang="zh"] .rn-gallery-title,
+html[lang="zh"] .dp-title {font-family:var(--zh-display);font-size:clamp(40px,5.2cqi,68px);line-height:1.25;letter-spacing:.02em;font-weight:400;}
+html[lang="zh"] .wechat-subtitle,
+html[lang="zh"] .rn-subtitle,
+html[lang="zh"] .rn-gallery-description,
+html[lang="zh"] .dp-copy .dp-intro {font-family:var(--zh-sans);font-size:clamp(14px,1.15cqi,18px);line-height:1.7;letter-spacing:0;}
+html[lang="zh"] .wechat-page .wechat-group-heading {font-family:var(--zh-sans);font-size:clamp(18px,1.65cqi,24px);font-weight:700;line-height:1.4;letter-spacing:.03em;}
+html[lang="zh"] .wechat-page .wechat-item {grid-template-columns:clamp(76px,7.8cqi,112px) minmax(0,1fr) 16px;gap:12px;}
+html[lang="zh"] .wechat-page .wechat-item strong {font-family:var(--zh-sans);font-size:clamp(12px,1.1cqi,16px);line-height:1.65;letter-spacing:0;white-space:normal;overflow:visible;text-overflow:clip;display:block;-webkit-line-clamp:unset;}
+html[lang="zh"] .wechat-item-copy {min-width:0;}
+html[lang="zh"] .wechat-page .wechat-item small {font-size:11px;line-height:1.5;}
+html[lang="zh"] .wechat-page .wechat-item-tag {font-size:10px;letter-spacing:.04em;line-height:1.5;}
+html[lang="zh"] .wechat-page .wechat-logic-title {font-family:var(--zh-display);font-size:clamp(26px,2.6cqi,38px);font-weight:400;line-height:1.3;letter-spacing:.015em;}
+html[lang="zh"] .wechat-page .wechat-logic-title em {font-family:var(--zh-display);}
+html[lang="zh"] .wechat-page .wechat-logic-label,
+html[lang="zh"] .wechat-page .wc-stage-label,
+html[lang="zh"] .wv-card-label {font-size:12px;line-height:1.5;letter-spacing:.025em;}
+html[lang="zh"] .wechat-page .wechat-logic-caption {font-size:14px;line-height:1.7;}
+html[lang="zh"] .wechat-page .wc-selector-copy strong {font-size:13px;line-height:1.5;}
+html[lang="zh"] .wechat-page .wc-selector-copy > span {font-size:11px;line-height:1.6;}
+html[lang="zh"] .wechat-page .wc-stage-copy h4,
+html[lang="zh"] .wechat-page .wv-analysis-card h4 {font-family:var(--zh-sans);font-size:clamp(18px,1.6cqi,24px);line-height:1.55;letter-spacing:.01em;}
+html[lang="zh"] .wechat-page .wc-stage-description,
+html[lang="zh"] .wechat-page .wv-card-description {font-size:clamp(13px,1.08cqi,16px);line-height:1.75;}
+html[lang="zh"] .wechat-page .wc-strategy-body {min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;align-content:start;gap:16px;}
+html[lang="zh"] .wc-keywords span {font-size:11px;line-height:1.6;}
+html[lang="zh"] .wv-title {font-family:var(--zh-sans);font-size:15px;line-height:1.6;white-space:normal;}
+html[lang="zh"] .wv-next {min-width:0;max-width:190px;white-space:normal;text-align:left;}
+html[lang="zh"] .wv-next strong {font-size:11px;line-height:1.55;white-space:normal;overflow-wrap:break-word;}
+html[lang="zh"] .wv-meta {font-size:11px;line-height:1.55;}
+html[lang="zh"] .wv-trust strong,
+html[lang="zh"] .wc-build-trust strong {font-family:var(--zh-sans);font-size:21px;font-weight:700;letter-spacing:.035em;}
+html[lang="zh"] .rn-account-copy h3 {font-family:var(--zh-sans);font-size:23px;line-height:1.4;letter-spacing:.02em;}
+html[lang="zh"] .rn-account-copy dd {font-size:15px;line-height:1.8;}
+html[lang="zh"] .rn-account-copy dt,
+html[lang="zh"] .rn-analysis-group h4 {font-size:11px;line-height:1.6;letter-spacing:.04em;}
+html[lang="zh"] .rn-featured-heading h2 {font-family:var(--zh-display);font-size:26px;font-weight:400;line-height:1.3;letter-spacing:.025em;}
+html[lang="zh"] .rn-note-heading h3,
+html[lang="zh"] .rn-case-copy h3 {font-family:var(--zh-sans);font-size:clamp(18px,1.65cqi,23px);line-height:1.6;letter-spacing:0;}
+html[lang="zh"] .rn-case-copy .rn-analysis-group strong {font-size:17px;line-height:1.65;}
+html[lang="zh"] .rn-case-copy .rn-analysis-group p,
+html[lang="zh"] .rn-decision-band p {font-size:15px;line-height:1.8;}
+html[lang="zh"] .rn-performance p,
+html[lang="zh"] .rn-engagement-note {font-size:13px;line-height:1.7;}
+html[lang="zh"] .rn-account-detail-tabs button,
+html[lang="zh"] .rn-case-detail-tabs button {font-size:12px;line-height:1.5;letter-spacing:.015em;}
+html[lang="zh"] .rn-note-choice strong {font-size:13px;line-height:1.6;}
+html[lang="zh"] .rn-gallery-card h3,
+html[lang="zh"] .rn-wall-title {font-family:var(--zh-sans);font-size:15px;line-height:1.7;letter-spacing:0;}
+html[lang="zh"] .dp-project h2 {font-family:var(--zh-sans);font-size:clamp(18px,1.6cqi,23px);font-weight:700;line-height:1.5;letter-spacing:.01em;}
+html[lang="zh"] .dp-project-brand {font-size:12px;line-height:1.5;}
+html[lang="zh"] .dp-format-nav button {font-size:14px;line-height:1.5;}
+html[lang="zh"] .dp-open-project {font-size:13px;line-height:1.6;}
+html[lang="zh"] .dp-viewer-header h2 {font-family:var(--zh-sans);font-size:22px;line-height:1.55;font-weight:700;}
+html[lang="zh"] .dp-viewer-header p,
+html[lang="zh"] .dp-viewer-footer {font-size:13px;line-height:1.6;}
+html[lang="zh"] .skills-unpack-hint {font-family:var(--zh-hand);font-size:clamp(16px,1.75cqi,23px);line-height:1.6;letter-spacing:.03em;}
+html[lang="zh"] .skills-object-popover {font-family:var(--zh-sans);}
+html[lang="zh"] #skills .skills-object-popover h3 {font-family:var(--zh-sans);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:.025em;}
+html[lang="zh"] #skills .skills-object-popover ul {font-family:var(--zh-sans);}
+html[lang="zh"] #skills .skills-object-popover li {font-size:14px;line-height:1.75;}
+html[lang="zh"] .contact-handline {font-family:var(--zh-hand);font-size:clamp(29px,3.6cqi,49px);line-height:1.4;letter-spacing:.025em;white-space:normal;}
+html[lang="zh"] .contact-invitation {font-size:clamp(16px,1.5cqi,21px);line-height:1.8;}
+html[lang="zh"] .contact-scope {font-size:14px;line-height:1.8;}
+html[lang="zh"] .contact-scope > span[aria-hidden="true"] {display:none;}
+html[lang="zh"] .contact-scope-event {display:none;}
+html[lang="zh"] .contact-details h2 {font-family:var(--zh-sans);font-size:32px;line-height:1.4;letter-spacing:.05em;}
+html[lang="zh"] .contact-card-role,
+html[lang="zh"] .contact-channel dd {font-size:16px;line-height:1.7;}
+html[lang="zh"] .contact-closing p {font-size:12px;line-height:1.8;letter-spacing:.02em;}
+html[lang="zh"] .contact-thanks {font-family:var(--zh-hand);font-size:40px;line-height:1.2;letter-spacing:.01em;}
+/* Four Chinese article cards share one bounded selection panel. */
+html[lang="zh"] #wechat:not(.wechat-video-mode) .wechat-collection {min-height:0;overflow:hidden;padding-right:0;}
+html[lang="zh"] #wechat .wechat-collection #wechat-articles:not([hidden]) {height:100%;min-height:0;display:grid;grid-template-rows:repeat(2,minmax(0,1fr));align-content:stretch;gap:16px;}
+html[lang="zh"] #wechat #wechat-articles .wechat-group:not([hidden]) {height:100%;min-height:0;display:grid;grid-template-rows:auto repeat(2,minmax(0,1fr));gap:8px;margin:0;}
+html[lang="zh"] #wechat #wechat-articles .wechat-group-heading {font-size:18px;line-height:1.3;margin:0;gap:12px;}
+html[lang="zh"] #wechat #wechat-articles .wechat-item {height:100%;min-height:0;grid-template-columns:72px minmax(0,1fr) 14px;gap:10px;margin:0;padding:4px 4px 4px 0;}
+html[lang="zh"] #wechat #wechat-articles .wechat-item-tag {display:none;}
+html[lang="zh"] #wechat #wechat-articles .wechat-item strong {font-size:clamp(11px,1.05cqi,15px);line-height:1.45;}
+html[lang="zh"] #wechat #wechat-articles .wechat-item small {font-size:10px;line-height:1.3;margin-top:4px;}
+html[lang="zh"] #wechat #wechat-articles .wechat-item img {width:72px;height:auto;max-height:100%;aspect-ratio:16/10;object-fit:cover;border-radius:9px;}
+html[lang="zh"] #wechat:not(.wechat-video-mode):not(.wc-focus-analysis) .wc-screen-controls {display:none;}
+html[lang="zh"] #rednote .rn-account-copy dd {font-size:15px;line-height:1.8;}
+html[lang="zh"] #rednote .rn-account-copy {min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;}
+html[lang="zh"] #rednote .rn-case-copy .rn-analysis-group p,
+html[lang="zh"] #rednote .rn-decision-band p {font-size:15px;line-height:1.8;}
+html[lang="zh"] #rednote .rn-case-copy .rn-analysis-group {min-height:min-content;}
+html[lang="zh"] #rednote .rn-case-copy {overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;}
+@media(max-width:1100px),(max-height:780px) {
+  html[lang="zh"] #about .about-title,
+  html[lang="zh"] #skills .skills-title,
+  html[lang="zh"] .portfolio-page-title,
+  html[lang="zh"] .wechat-page .wechat-title,
+  html[lang="zh"] .rn-title {font-size:clamp(35px,4.6cqi,52px);}
+  html[lang="zh"] .wechat-page .wechat-item {gap:8px;grid-template-columns:72px minmax(0,1fr) 14px;}
+  html[lang="zh"] .wechat-page .wechat-item strong {font-size:12px;line-height:1.55;}
+  html[lang="zh"] #rednote .rn-account-copy dd,
+  html[lang="zh"] #rednote .rn-case-copy .rn-analysis-group p,
+  html[lang="zh"] #rednote .rn-decision-band p {font-size:14px;line-height:1.7;}
+  html[lang="zh"] .contact-invitation {font-size:16px;}
+}
+@media(max-width:720px) {
+  html[lang="zh"] #home .hero-name {font-size:clamp(48px,11cqi,70px);}
+  html[lang="zh"] .hero-greeting {font-size:36px;}
+  html[lang="zh"] .hero-statement {font-size:17px;line-height:1.75;}
+  html[lang="zh"] .work-landing .work-landing-title {font-size:clamp(27px,6.8cqi,38px);line-height:1.5;}
+  html[lang="zh"] .thinking-modal-title {font-size:32px;}
+  html[lang="zh"] .thinking-node-description {font-size:14px;}
+  html[lang="zh"] .rn-note-heading h3 {font-size:18px;line-height:1.6;}
+  html[lang="zh"] .rn-account-copy h3 {font-size:21px;}
+  html[lang="zh"] .wv-next {max-width:150px;}
+  html[lang="zh"] .dp-project h2 {font-size:18px;}
+  html[lang="zh"] .contact-handline {font-size:29px;}
+  html[lang="zh"] .contact-thanks {font-size:25px;}
+}
+/* 这里原本让 Caveat / Inter 去渲染汉字，但两者都没有汉字字形，浏览器只能落到系统兜底，
+   实际字体和行高度量都不可控。改为中文自有字体栈，字号仍与英文版对齐。 */
+html[lang="zh"] .contact-closing {font-family:var(--zh-sans);line-break:strict;letter-spacing:.01em;overflow-wrap:break-word;}
+html[lang="zh"] .contact-closing p {font-size:13px;font-weight:700;line-height:1.55;letter-spacing:.01em;}
+html[lang="zh"] #about .locale-resume-zh .popover-role {font-size:16px;line-height:1.65;}
+html[lang="zh"] #about .locale-resume-zh .popover-bullets {list-style:none;padding-left:0;margin-top:16px;}
+html[lang="zh"] #about .locale-resume-zh .resume-detail {font-size:14px;line-height:1.8;margin:0;}
+html[lang="zh"] #about .locale-resume-zh .resume-detail + .resume-detail {margin-top:18px;}
+html[lang="zh"] #about .locale-resume-zh .resume-detail strong {display:block;font-size:14px;font-weight:700;line-height:1.6;margin-bottom:5px;color:#222;}
+@container section-window (max-width:950px) {
+  html[lang="zh"] .hero-greeting {font-size:64px;}
+}
+@container section-window (max-width:500px) {
+  html[lang="zh"] .hero-greeting {font-size:54px;}
+}
+@container section-window (max-width:1000px) and (min-width:721px) {
+  html[lang="zh"] .contact-thanks {font-size:32px;}
+}
+@container section-window (max-width:720px) {
+  html[lang="zh"] .contact-closing p {font-size:11px;line-height:1.45;}
+  html[lang="zh"] .contact-thanks {font-size:26px;}
+  html[lang="zh"] #wechat #wechat-articles .wechat-item {grid-template-columns:64px minmax(0,1fr) 12px;gap:8px;}
+  html[lang="zh"] #wechat #wechat-articles .wechat-item img {width:64px;}
+}
+
+/* ===================================================================
+   中文版首页 Hero 重做（依据 2026-10 设计说明 + 参考图）
+   新增元素默认为 display:none，只在 html[lang="zh"] 下显示，
+   英文版首页的 DOM 与观感完全不受影响。
+   =================================================================== */
+.zh-hero-eyebrow,
+.zh-hero-title,
+.zh-hero-tail {display:none;}
+
+html[lang="zh"] .zh-hero-eyebrow,
+html[lang="zh"] .zh-hero-title,
+html[lang="zh"] .zh-hero-tail {display:block;}
+
+/* 左栏：五块内容左对齐成一组，整组垂直居中（不再顶在 23% 处） */
+html[lang="zh"] .hero-text {top:50%;transform:translateY(-50%);left:clamp(40px,5.4cqi,88px);}
+html[lang="zh"] .hero-greeting,
+html[lang="zh"] .hero-im,
+html[lang="zh"] .hero-name-row,
+html[lang="zh"] .hero-statement-wrap {display:none;}
+/* 大标题外壳不再贡献字号与行高，尺寸全部交给 .zh-hero-title */
+html[lang="zh"] #home .hero-name {font-size:0;line-height:0;letter-spacing:0;margin:0;}
+
+/* 英文引导语 + 短橙线 */
+html[lang="zh"] .zh-hero-eyebrow {display:flex;align-items:center;gap:clamp(12px,1.6cqi,20px);margin:0 0 clamp(16px,2.2cqi,30px);
+  font:700 clamp(12px,1.3cqi,16px)/1 Inter,Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#3c4653;}
+html[lang="zh"] .zh-hero-dash {flex:0 0 clamp(36px,4cqi,46px);width:clamp(36px,4cqi,46px);height:5px;border-radius:999px;
+  background:linear-gradient(90deg,#ffb300,#f87521);}
+
+/* 主标题：恰好两行，展示体（得意黑） */
+html[lang="zh"] .zh-hero-title {position:relative;font-family:var(--zh-display);font-weight:900;
+  font-size:clamp(54px,9.5cqi,124px);line-height:1.12;letter-spacing:0;color:#0e1420;}
+/* 下划线只覆盖「王子博」三个字（宽度随名字自适应），并置于文字之后：
+   .zh-hero-name 建立层叠上下文，下划线用负 z-index 画在文字下面，笔画不再被压住。 */
+html[lang="zh"] .zh-hero-name {position:relative;z-index:0;}
+html[lang="zh"] .zh-hero-underline {position:absolute;left:0;right:0;bottom:-.02em;width:100%;height:.18em;z-index:-1;}
+
+/* 职业定位（本页唯一的说明行） */
+html[lang="zh"] .zh-hero-role {margin:clamp(24px,3.2cqi,44px) 0 0;font-family:var(--zh-display);font-weight:700;
+  font-size:clamp(22px,2.6cqi,40px);line-height:1.25;letter-spacing:.01em;color:#0e1420;}
+html[lang="zh"] .zh-hero-times {color:#f87521;}
+
+/* 唯一 CTA */
+html[lang="zh"] .zh-hero-cta {display:inline-flex;align-items:center;justify-content:center;gap:clamp(14px,1.8cqi,22px);
+  margin-top:clamp(26px,3.4cqi,46px);width:clamp(216px,23cqi,306px);height:clamp(60px,6.2cqi,84px);
+  border-radius:999px;color:#fff;text-decoration:none;background:linear-gradient(135deg,#ff8a2b,#f36d20);
+  box-shadow:0 14px 30px #f8752129;font:700 clamp(16px,1.55cqi,22px)/1 Inter,"PingFang SC","Microsoft YaHei",sans-serif;
+  letter-spacing:.04em;transition:transform .18s ease,box-shadow .18s ease;}
+html[lang="zh"] .zh-hero-cta svg {width:clamp(20px,1.9cqi,26px);height:clamp(20px,1.9cqi,26px);fill:none;stroke:currentColor;
+  stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .18s ease;}
+html[lang="zh"] .zh-hero-cta:hover {transform:translateY(-2px);box-shadow:0 18px 36px #f8752138;}
+html[lang="zh"] .zh-hero-cta:hover svg {transform:translateX(4px);}
+html[lang="zh"] .zh-hero-cta:focus-visible {outline:3px solid #0e1420;outline-offset:4px;}
+
+/* 右栏人物与背景按用户要求照搬英文版：不再隐藏 .hero-art，也不再使用中文专属分层背景。
+   人物素材本来就是同一张 assets/hero/zibo-character.png。 */
+
+/* 笔记本一档：收窄栏距与视觉规模 */
+@container section-window (max-width:1240px) {
+  html[lang="zh"] .zh-hero-title {font-size:clamp(50px,9cqi,100px);}
+  html[lang="zh"] .zh-hero-role {font-size:clamp(21px,2.4cqi,32px);}
+  html[lang="zh"] .zh-hero-cta {width:clamp(200px,22cqi,268px);height:clamp(56px,5.8cqi,72px);}
+}
+
+/* 手机：上下结构，文字在前人物在后；CTA 触控高度 ≥44px */
+@container section-window (max-width:767px) {
+  html[lang="zh"] .hero-text {position:relative;top:auto;transform:none;left:0;width:auto;
+    padding:clamp(84px,22cqi,120px) clamp(20px,6cqi,32px) 0;}
+  html[lang="zh"] .zh-hero-title {font-size:clamp(40px,12cqi,64px);}
+  html[lang="zh"] .zh-hero-role {font-size:clamp(19px,5.4cqi,26px);}
+  html[lang="zh"] .zh-hero-cta {width:100%;max-width:320px;height:56px;}
+  html[lang="zh"] .hero-visual {position:relative;right:auto;top:auto;width:100%;margin-top:8px;}
+}
+
+/* ===================================================================
+   非首页标题块统一对齐参考图（小红书页）实测口径：
+   眉标 y≈74、标题 y≈153（68px）、副标题 y≈246。
+   只用 translate（独立变换属性），不改 position，也不干扰 GSAP 的 transform；
+   微信/设计/小红书三页本就吻合，无需改动。
+   =================================================================== */
+html[lang="zh"] .section-layer[data-section="about"] .hero-category,
+html[lang="zh"] .section-layer[data-section="skills"] .hero-category {translate:0 3px;}
+html[lang="zh"] .section-layer[data-section="work"] .hero-category {translate:0 -2px;}
+html[lang="zh"] .section-layer[data-section="wechat"] .hero-category {translate:0 10px;}
+html[lang="zh"] .section-layer[data-section="contact"] .hero-category {translate:0 25px;}
+
+html[lang="zh"] .section-layer[data-section="about"] .about-title,
+html[lang="zh"] .section-layer[data-section="skills"] .skills-title {translate:0 -19px;}
+html[lang="zh"] .section-layer[data-section="work"] .work-landing-title {
+  translate:0 -31px;font-size:clamp(40px,5.2cqi,68px);}
+html[lang="zh"] .section-layer[data-section="wechat"] .wechat-title,
+html[lang="zh"] .section-layer[data-section="wechat"] .wechat-subtitle {translate:0 14px;}
+html[lang="zh"] .section-layer[data-section="design"] .dp-title,
+html[lang="zh"] .section-layer[data-section="design"] .dp-intro {translate:0 12px;}
+html[lang="zh"] .section-layer[data-section="contact"] .contact-title {translate:0 -1px;}

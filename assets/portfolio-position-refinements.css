@@ -1,0 +1,37 @@
+/* Match the English hero group's anchor to the existing Chinese composition. */
+html[lang="en"] #home .hero-text {
+  position:absolute;
+  top:50%;
+  left:clamp(40px,5.4cqi,88px);
+  transform:translateY(-50%);
+  margin:0;
+}
+html[lang="zh"] #home .zh-hero-title {font-size:clamp(48px,8.55cqi,112px);}
+html[lang="en"] #contact .contact-heading,
+html[lang="zh"] #contact .contact-heading {
+  margin-top:var(--contact-heading-shift,0px)!important;
+  flex-shrink:0;
+}
+.section-viewport {--contact-zh-title-origin:129px;}
+@container section-window (max-width:1240px) {
+  html[lang="zh"] #home .zh-hero-title {font-size:clamp(45px,8.1cqi,90px);}
+}
+@container section-window (max-width:1100px) {
+  #contact {--contact-zh-title-origin:115px;}
+}
+@container section-window (max-width:850px) {
+  #contact {--contact-zh-title-origin:111px;}
+}
+@container section-window (max-width:767px) {
+  html[lang="en"] #home .hero-text {
+    position:relative;top:auto;left:0;transform:none;width:auto;margin:0;
+    padding:max(144px,22cqi) clamp(20px,6cqi,32px) 0;
+  }
+  html[lang="zh"] #home .zh-hero-title {font-size:clamp(36px,10.8cqi,58px);}
+}
+@container section-window (max-width:600px) {
+  #contact {--contact-zh-title-origin:159px;}
+}
+@container section-window (max-width:480px) {
+  #contact {--contact-zh-title-origin:147px;}
+}

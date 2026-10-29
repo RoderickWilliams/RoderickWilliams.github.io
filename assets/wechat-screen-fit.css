@@ -1,0 +1,88 @@
+/* Small windows show a complete collection or analysis view, never a long stacked page. */
+.wc-screen-controls{display:none}
+.wechat-page.wc-paged-page{height:var(--wechat-screen-height,100%);min-height:0;display:flex;flex-direction:column;gap:12px;padding:22px}
+.wechat-page.wc-paged-page>.work-utility{flex:none;min-height:38px}
+.wechat-page.wc-paged-page .work-utility .hero-category{display:none}
+.wechat-page.wc-paged-page .wechat-utility-actions{width:100%;justify-content:space-between}
+.wechat-page.wc-paged-page .work-utility .hero-portfolio{height:38px;min-height:38px;padding:10px 16px;font-size:10px}
+.wechat-page.wc-paged-page .wechat-back-link{min-height:38px;padding:8px 12px;font-size:9px}
+.wechat-page.wc-paged-page .wechat-heading-row{display:flex;flex-direction:column;flex:none;gap:10px;margin:0}
+.wechat-page.wc-paged-page .wechat-heading-row>div:first-child{padding:0}
+.wechat-page.wc-paged-page .wechat-subtitle{font-size:14px;line-height:1.4;margin-top:6px}
+.wechat-page.wc-paged-page .wechat-tabs{width:100%;position:static;inset:auto;gap:8px}
+.wechat-page.wc-paged-page .wechat-tabs button{min-height:38px;flex:1;padding:8px 12px;font-size:12px}
+.wechat-page.wc-paged-page .wc-screen-controls{display:flex;flex:none;min-height:32px}
+.wc-screen-controls [hidden]{display:none!important}
+.wc-category-views{display:flex;gap:8px;width:100%}
+.wc-screen-controls button{border:1px solid #dedbd2;border-radius:24px;background:#fffaf5;color:#718397;padding:7px 12px;font:600 11px/1.3 Inter,Arial,sans-serif;cursor:pointer}
+.wc-category-views button{flex:1}
+.wc-category-views button[aria-pressed=true]{color:#ff432e;border-color:#ff432e;background:#fff0e9}
+.wc-screen-controls button:focus-visible{outline:2px solid #ff432e;outline-offset:3px}
+.wechat-page.wc-paged-page .wechat-content-grid{display:flex;flex-direction:column;flex:1;min-height:0;margin:0;gap:0}
+.wechat-page.wc-paged-page .wechat-collection{flex:1;min-height:0}
+.wechat-page.wc-paged-page .wechat-logic{display:none}
+.wechat-page.wc-paged-page #wechat-articles:not([hidden]){height:100%;display:block}
+.wechat-page.wc-paged-page .wechat-group:not([hidden]){height:100%;display:grid;grid-template-rows:auto repeat(2,minmax(0,1fr));gap:14px;margin:0;min-height:0}
+.wechat-page.wc-paged-page .wechat-group[hidden]{display:none!important}
+.wechat-page.wc-paged-page .wechat-group-heading{margin:0;font-size:20px}
+.wechat-page.wc-paged-page .wechat-item{height:100%;margin:0;padding:8px 0;grid-template-columns:96px minmax(0,1fr) 16px;gap:12px}
+.wechat-page.wc-paged-page .wechat-item img{width:96px;height:auto;aspect-ratio:16/9}
+.wechat-page.wc-paged-page .wechat-item strong{font-size:13px;line-height:1.4}
+.wechat-page.wc-paged-page .wechat-item small{font-size:11px;line-height:1.4;margin-top:6px}
+.wechat-page.wc-paged-page .wechat-item-tag{font-size:10px;margin-bottom:6px}
+.wechat-page.wc-paged-page.wc-focus-analysis .wechat-heading-row>div:first-child,.wechat-page.wc-paged-page.wc-focus-analysis .wechat-collection{display:none}
+.wechat-page.wc-paged-page.wc-focus-analysis .wechat-logic{display:flex;flex-direction:column;height:100%;padding:0;border:0;min-height:0}
+.wechat-page.wc-paged-page .wechat-logic-label{font-size:12px;margin:0 0 5px}
+.wechat-page.wc-paged-page .wechat-logic-title{font-size:clamp(28px,8cqi,40px);line-height:1.1}
+.wechat-page.wc-paged-page .wc-logic-header{align-items:baseline;flex-wrap:wrap;gap:6px 12px}
+.wechat-page.wc-paged-page .wc-original-link{font-size:9px;margin-bottom:0}
+.wechat-page.wc-paged-page .wechat-logic-caption{font-size:13px;line-height:1.4;margin-top:7px}
+.wechat-page.wc-paged-page .wechat-selection{flex:1;min-height:0;display:flex;flex-direction:column;margin-top:12px}
+.wechat-page.wc-paged-page .wc-decision-selector{flex:none;margin-bottom:8px;padding-bottom:8px;gap:5px}
+.wechat-page.wc-paged-page .wc-selector-item{padding:5px;gap:6px;flex-direction:column;border-radius:14px}
+.wechat-page.wc-paged-page .wc-number{width:26px;height:26px;font-size:11px}
+.wechat-page.wc-paged-page .wc-selector-copy strong{font-size:11px;line-height:1.25}
+.wechat-page.wc-paged-page .wc-selector-copy>span{font-size:10px;line-height:1.3;margin-top:3px}
+.wechat-page.wc-paged-page .wc-strategy-body{flex:1;height:auto;min-height:min-content;grid-template-rows:auto auto auto;align-content:space-between;gap:10px}
+.wechat-page.wc-paged-page .wc-stage{grid-template-columns:34px minmax(0,1fr);gap:12px;padding:0;min-height:min-content}
+.wechat-page.wc-paged-page .wc-stage-icon{width:32px;height:32px}
+.wechat-page.wc-paged-page .wc-stage-icon svg{width:21px;height:21px}
+.wechat-page.wc-paged-page .wc-stage-label{font-size:10px;line-height:1.3;margin-bottom:4px}
+.wechat-page.wc-paged-page .wc-stage-copy h4{font-size:18px;line-height:1.2;letter-spacing:0}
+.wechat-page.wc-paged-page .wc-stage-description{font-size:12px;line-height:1.4;margin-top:6px;letter-spacing:0}
+.wechat-page.wc-paged-page .wc-keywords{gap:4px;margin-top:6px}
+.wechat-page.wc-paged-page .wc-keywords span{font-size:10px;line-height:1.3;padding:4px 7px}
+.wechat-page.wc-paged-page .wc-stage-copy:after{margin-top:8px}
+.wechat-page.wc-paged-page .wc-stage:not(:last-child):after{top:38px;left:16px;bottom:0;font-size:17px}
+.wechat-page.wc-paged-page .wc-strategy-footer{min-height:36px;margin-top:10px;gap:10px;flex:none;grid-template-columns:minmax(0,1fr) 32px auto}
+.wechat-page.wc-paged-page .wc-progress-step{width:28px;height:28px;font-size:11px}
+.wechat-page.wc-paged-page .wc-build-trust{gap:6px}
+.wechat-page.wc-paged-page .wc-build-trust strong{font-size:17px}
+.wechat-page.wc-paged-page .wc-build-trust .build-trust-icon{width:28px;height:28px}
+.wechat-page.wc-paged-page .wv-showcase{height:100%;min-height:0;gap:12px;grid-template-rows:minmax(0,1fr) auto}
+.wechat-page.wc-paged-page .wv-stage{height:auto;min-height:0;padding:0}
+.wechat-page.wc-paged-page .wv-details{padding:0}
+.wechat-page.wc-paged-page .wv-title{font-size:14px;line-height:1.35}
+.wechat-page.wc-paged-page .wv-meta{font-size:10px;gap:10px;margin-top:5px;flex-wrap:wrap}
+.wechat-page.wc-paged-page .wv-toolbar{gap:10px;flex-wrap:nowrap;margin-top:10px}
+.wechat-page.wc-paged-page .wv-next{display:none}
+.wechat-page.wc-paged-page .wv-switch{font-size:10px;min-height:34px;padding:7px 12px}
+.wechat-page.wc-paged-page .wv-analysis{gap:12px;grid-template-rows:repeat(2,minmax(min-content,1fr)) auto}
+.wechat-page.wc-paged-page .wv-analysis-card{padding:16px;border-radius:18px}
+.wechat-page.wc-paged-page .wv-card-heading{gap:10px;margin-bottom:8px}
+.wechat-page.wc-paged-page .wv-card-icon{width:28px;height:28px}
+.wechat-page.wc-paged-page .wv-card-icon svg{width:20px;height:20px}
+.wechat-page.wc-paged-page .wv-card-label{font-size:10px}
+.wechat-page.wc-paged-page .wv-analysis-card h4{font-size:18px;line-height:1.3}
+.wechat-page.wc-paged-page .wv-card-description{font-size:13px;line-height:1.45;margin-top:8px}
+.wechat-page.wc-paged-page .wv-decision{margin-top:10px;gap:6px}
+.wechat-page.wc-paged-page .wv-decision strong{font-size:9px;padding:5px 8px}
+.wechat-page.wc-paged-page .wv-trust{min-height:36px;padding:0;gap:10px}
+.wechat-page.wc-paged-page .wv-trust img{width:32px;height:32px}
+.wechat-page.wc-paged-page .wv-trust strong{font-size:22px}
+/* Keep long phone analyses complete by reclaiming repeated heading space. */
+.wechat-page.wc-paged-page.wc-focus-analysis{padding:16px;gap:8px}
+.wechat-page.wc-paged-page.wc-focus-analysis .wechat-logic-label{display:none}
+.wechat-page.wc-paged-page.wc-focus-analysis .wc-strategy-body{gap:6px}
+.wechat-page.wc-paged-page.wc-focus-analysis .wc-stage-copy:after{margin-top:4px}
+.wechat-page.wc-paged-page.wc-focus-analysis .wc-selector-item{padding:3px;gap:4px}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="680" viewBox="0 0 600 680">
+  <title>Social content layouts placeholder</title>
+  <rect x="197" y="54" width="339" height="395" rx="10" fill="#252e2b" opacity=".06"/>
+  <rect x="184" y="40" width="339" height="395" rx="10" fill="#e4e9dd" stroke="#cdd5c6"/>
+  <path d="M213 72h115m-115 33h247" stroke="#a0af96" stroke-width="7"/>
+  <circle cx="356" cy="225" r="77" fill="#c3d1b7"/>
+  <path d="M301 225h110m-55-55v110" stroke="#92a681" stroke-width="22"/>
+  <rect x="215" y="357" width="258" height="10" fill="#b4c1a8"/>
+  <rect x="215" y="382" width="178" height="10" fill="#b4c1a8"/>
+  <rect x="49" y="149" width="322" height="406" rx="10" fill="#252e2b" opacity=".08"/>
+  <rect x="35" y="134" width="322" height="406" rx="10" fill="#fffdf9" stroke="#d6d5cc"/>
+  <rect x="61" y="160" width="154" height="8" fill="#a5b6be"/>
+  <path d="M61 199h229m-229 29h160" stroke="#58798b" stroke-width="14"/>
+  <rect x="61" y="266" width="270" height="189" rx="5" fill="#d6dde5"/>
+  <circle cx="199" cy="359" r="66" fill="#aec4ce"/>
+  <path d="m101 422 102-112 86 112Z" fill="#7e9cac"/>
+  <text x="61" y="507" font-family="Arial,sans-serif" font-size="15" fill="#697d99">PLACEHOLDER</text>
+  <rect x="276" y="409" width="260" height="217" rx="10" fill="#252e2b" opacity=".06"/>
+  <rect x="263" y="397" width="260" height="217" rx="10" fill="#eee8de" stroke="#d8d1c6"/>
+  <circle cx="306" cy="443" r="16" fill="#da9b88"/>
+  <path d="M282 482h205m-205 23h146m-146 33h205m-205 20h191m-191 20h106" stroke="#b8afa1" stroke-width="7"/>
+</svg>

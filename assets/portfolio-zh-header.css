@@ -1,0 +1,68 @@
+/* The same stationary header geometry in both languages and every section. */
+.section-viewport .zh-page-header {
+  position:absolute;top:28px;left:32px;right:24px;z-index:45;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  height:56px;box-sizing:border-box;pointer-events:none;
+  font-family:Inter,Arial,sans-serif;
+}
+.section-viewport .zh-page-header * {animation:none!important;transition:none!important;}
+.section-viewport .zh-page-header,
+.section-viewport .zh-page-header :is(.hero-category,.zh-header-actions,.portfolio-button-slot,.hero-resume-actions) {
+  transform:none!important;translate:none!important;opacity:1!important;visibility:visible!important;
+}
+.section-viewport .zh-page-header .hero-category {
+  position:static!important;display:flex!important;align-items:center;gap:14px;
+  margin:0!important;padding:0!important;flex:none;pointer-events:auto;
+  color:#111;font:800 14px/1.15 Inter,Arial,sans-serif;letter-spacing:-.015em;white-space:nowrap;
+}
+.section-viewport .zh-page-header .hero-category br {display:block!important;}
+.section-viewport .zh-page-header .hero-category .asterisk {width:42px;height:42px;flex:0 0 42px;}
+.section-viewport .zh-page-header .hero-category .asterisk i {top:0;left:17px;width:8px;height:42px;}
+.section-viewport .zh-page-header :is(.zh-header-actions,.portfolio-button-slot,.hero-resume-actions) {
+  position:static!important;inset:auto!important;display:flex;align-items:center;justify-content:flex-end;
+  gap:8px!important;margin:0!important;padding:0!important;width:auto;min-height:0;pointer-events:auto;
+}
+.section-viewport .zh-page-header .zh-header-actions {margin-left:auto!important;}
+.section-viewport .zh-page-header :is(.portfolio-standard-button,.hero-resume-button) {
+  display:inline-flex!important;align-items:center;justify-content:center;box-sizing:border-box;flex:none;
+  width:166px!important;height:56px!important;min-height:56px!important;margin:0!important;padding:0 12px!important;
+  border:2px solid #111;border-radius:999px;font:800 14px/1.2 Inter,'Microsoft YaHei',Arial,sans-serif!important;
+  letter-spacing:0;white-space:nowrap;text-decoration:none;gap:8px!important;
+  transform:none!important;translate:none!important;scale:none!important;opacity:1!important;box-shadow:none!important;
+}
+.section-viewport .zh-page-header .hero-resume-button {border-color:#e87524;background:#e87524;color:#fff;cursor:default;}
+.section-viewport .zh-page-header .portfolio-standard-button {background:#ffffff2e;color:#111;}
+.section-viewport .zh-page-header .portfolio-standard-button:focus-visible {outline:2px solid #ff4938;outline-offset:4px;}
+.section-viewport .zh-page-header :is(.portfolio-standard-button,.hero-resume-button) svg {
+  width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;
+  transform:none!important;translate:none!important;rotate:none!important;
+}
+@container section-window (max-width:820px) {
+  .section-viewport .zh-page-header {top:20px;left:20px;right:20px;height:100px;flex-direction:column;align-items:stretch;gap:12px;}
+  .section-viewport .zh-page-header .hero-category {height:44px;font-size:12px;gap:12px;}
+  .section-viewport .zh-page-header .hero-category .asterisk {width:36px;height:36px;flex-basis:36px;}
+  .section-viewport .zh-page-header .hero-category .asterisk i {left:14px;width:8px;height:36px;}
+  .section-viewport .zh-page-header .zh-header-actions {height:44px;margin-left:0!important;}
+  .section-viewport .zh-page-header :is(.portfolio-standard-button,.hero-resume-button) {
+    width:clamp(88px,calc((100cqi - 56px)/3),140px)!important;height:44px!important;min-height:44px!important;
+    padding:0 6px!important;font-size:11px!important;gap:5px!important;
+  }
+  html[lang="zh"] #contact .contact-utility {min-height:144px!important;}
+}
+@container section-window (max-width:767px) {
+  html[lang="zh"] #home .hero-text {padding-top:max(144px,22cqi)!important;}
+}
+@container section-window (max-width:360px) {
+  .section-viewport .zh-page-header :is(.portfolio-standard-button,.hero-resume-button) {font-size:10px!important;}
+  .section-viewport .zh-page-header :is(.portfolio-standard-button,.hero-resume-button) svg {width:12px;height:12px;}
+}
+
+/* The two fixed-language CV actions never fade during navigation in either locale. */
+.section-viewport .hero-resume-actions[hidden] {display:none!important;}
+.section-viewport :is(.hero-resume-actions,.hero-resume-button) {
+  opacity:1!important;animation:none!important;transition:none!important;
+}
+
+/* The remaining CV action is a real downloadable PDF link in both locales. */
+.section-viewport .zh-page-header a.hero-resume-button[href] {cursor:pointer;}
+.section-viewport .zh-page-header a.hero-resume-button:focus-visible {outline:2px solid #ff4938;outline-offset:4px;}

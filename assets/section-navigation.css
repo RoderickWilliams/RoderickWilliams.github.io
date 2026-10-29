@@ -1,0 +1,68 @@
+/* One stationary rounded viewport; every section keeps its own reading area. */
+html,body { width:100%; height:100%; overflow:hidden; }
+html { scroll-behavior:auto; }
+.page.section-viewport {
+  position:fixed; top:var(--shell-padding); bottom:var(--shell-padding); left:var(--sidebar-space); right:var(--shell-padding);
+  width:auto; max-width:none; height:auto; margin:0; overflow:hidden; isolation:isolate;
+  border-radius:var(--panel-radius); background:var(--panel-bg);
+  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+  box-shadow:0 18px 50px #2f25170c,inset 0 1px 0 #ffffffc7;
+  container-type:inline-size; container-name:section-window;
+}
+.section-viewport::after { content:''; position:absolute; inset:0; z-index:30; border:1px solid #ffffffe6; border-radius:inherit; pointer-events:none; }
+.section-layer { position:absolute; inset:0; width:100%; height:100%; min-width:0; transform-origin:center; }
+.section-layer[hidden] { display:none!important; }
+.section-scroll-area { width:100%; height:100%; overflow-y:auto; overflow-x:hidden; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#ac947c70 transparent; scroll-behavior:auto; }
+.section-scroll-area::-webkit-scrollbar { width:6px; }
+.section-scroll-area::-webkit-scrollbar-thumb { background:#ac947c70; border-radius:6px; }
+.section-scroll-area:focus-visible { outline:2px solid var(--hero-red); outline-offset:-6px; }
+.section-scroll-area :is(h1,h2)[tabindex='-1']:focus { outline:none; }
+.section-viewport #home.hero-card { border-color:transparent; border-radius:0; background:none; backdrop-filter:none; -webkit-backdrop-filter:none; box-shadow:none; }
+.section-viewport :is(.experience-heading,.services-intro) { position:relative; top:auto; }
+.section-viewport :is(.experience,.services,.work,.wechat,.rednote,.skills-head,.skill-groups,.footer) { --x:clamp(24px,5cqi,72px); --gutter:clamp(24px,5cqi,72px); }
+.section-viewport :is(.experience,.services) { padding-block:clamp(56px,8cqi,110px); }
+.section-viewport .work { padding-top:clamp(56px,8cqi,110px); }
+.section-viewport .work-title { font-size:clamp(72px,10cqi,144px); }
+.section-viewport .work-head { padding-bottom:28px; }
+.section-viewport .work-head>div:first-child:after { margin-top:28px; }
+.section-viewport .work-tabs { margin-top:28px; }
+.section-viewport :is(.vibe-sticky,.rednote-sticky) { position:relative; top:auto; height:auto; overflow:visible; }
+.section-viewport .vibe { height:auto; padding-block:56px 88px; }
+.section-viewport .rednote { height:auto; }
+.section-viewport .category-title { font-size:clamp(40px,6cqi,80px); }
+.scroll-progress { display:none; }
+@container section-window (max-width:900px) {
+  .experience,.services { grid-template-columns:minmax(0,1fr); gap:40px; }
+  .experience-heading,.services-intro { margin-bottom:0; }
+  .service { grid-template-columns:32px minmax(0,1fr) 24px; }
+  .service p { grid-column:2; }
+  .service-arrow { grid-column:3; grid-row:1; }
+  .skill-groups { grid-template-columns:minmax(0,1fr); }
+  .skill-group { border-right:0; }
+  .contact { grid-template-columns:minmax(0,1fr); }
+  .contact-inner { padding:56px 28px; gap:28px; }
+  .red-panel,.contact:not(.in) .red-panel { padding:64px 28px 112px; }
+  .red-panel:before { clip-path:polygon(0 6%,100% 0,100% 100%,0 100%); }
+  .footer { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+  .footer-cta { grid-column:1/-1; justify-self:stretch; }
+}
+@container section-window (max-width:600px) {
+  .section-title { font-size:clamp(40px,12cqi,72px); }
+  .vibe-track { grid-template-columns:minmax(0,1fr); }
+  .project { width:100%; }
+  .rednote-grid { columns:2; }
+  .work-title { font-size:clamp(64px,16cqi,96px); }
+  .work-tabs { gap:12px; }
+  .article-row { grid-template-columns:28px minmax(0,1fr); gap:14px; }
+  .article-row h3 { font-size:22px; }
+  .article-row .read { display:none; }
+  .service { grid-template-columns:28px minmax(0,1fr); gap:14px; }
+  .service-arrow { display:none; }
+  .footer { grid-template-columns:minmax(0,1fr); }
+  .footer>div+div { border:0; padding-left:0; }
+}
+@media (max-width:899px) {
+  .page.section-viewport { top:76px; bottom:16px; left:16px; right:16px; margin:0; width:auto; }
+  .section-scroll-area { -webkit-overflow-scrolling:touch; }
+}
+

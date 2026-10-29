@@ -1,0 +1,65 @@
+/* Align Chinese page headings to About's existing header rhythm. */
+html[lang="zh"] [data-zh-heading-align] {
+  --zh-reference-padding-x:54px;
+  --zh-reference-padding-top:40px;
+  --zh-reference-utility-height:56px;
+  --zh-reference-heading-gap:52px;
+  --zh-reference-heading-lift:-19px;
+  margin-top:calc(var(--zh-heading-base-top,0px) + var(--zh-heading-shift-top,0px))!important;
+  margin-left:calc(var(--zh-heading-base-left,0px) + var(--zh-heading-shift-left,0px))!important;
+  flex-shrink:0;
+}
+/* Replace previous per-page title nudges without changing GSAP transforms. */
+html[lang="zh"] #about-title,
+html[lang="zh"] #work-landing-title,
+html[lang="zh"] #wechat-title,
+html[lang="zh"] #rednote-title,
+html[lang="zh"] #rn-gallery-title,
+html[lang="zh"] #design-title,
+html[lang="zh"] #skills-title {translate:none;}
+/* Explicit final states also cover locale changes during an existing tween. */
+html[lang="zh"] :is(#about-title,#work-landing-title,#wechat-title,#rednote-title,#rn-gallery-title,#design-title,#skills-title),
+html[lang="zh"] :is(#about-title,#work-landing-title,#wechat-title,#rednote-title,#rn-gallery-title,#design-title,#skills-title) > span {
+  animation:none!important;transition:none!important;
+  transform:none!important;translate:none!important;rotate:none!important;scale:none!important;
+  opacity:1!important;visibility:visible!important;clip-path:none!important;filter:none!important;
+}
+html[lang="zh"] :is(.wechat-subtitle,.rn-subtitle,.rn-gallery-description,.dp-copy .dp-intro) {
+  display:block;clear:both;float:none;translate:none!important;
+  transform:none!important;opacity:1!important;animation:none!important;transition:none!important;
+  text-align:left;text-indent:0;
+}
+html[lang="zh"] [data-zh-caption-align] {
+  margin-top:calc(var(--zh-caption-base-top,0px) + var(--zh-caption-shift-top,0px))!important;
+  margin-left:calc(var(--zh-caption-base-left,0px) + var(--zh-caption-shift-left,0px))!important;
+}
+html[lang="zh"] #wechat .wechat-heading-row > div:first-child {display:flex;flex-direction:column;align-items:flex-start;}
+html[lang="zh"] #wechat .wechat-subtitle {margin-top:10px;align-self:stretch;}
+html[lang="zh"] #rednote-title {margin-bottom:0;}
+html[lang="zh"] #rednote .rn-subtitle {margin-top:10px;flex-shrink:0;}
+html[lang="zh"] #rednote-notes .rn-gallery-header {display:block;}
+html[lang="zh"] #rednote-notes .rn-gallery-description {margin-top:10px;}
+html[lang="zh"] #design .dp-copy {translate:none;}
+@container section-window (max-width:1100px) {
+  html[lang="zh"] [data-zh-heading-align] {
+    --zh-reference-padding-x:38px;
+    --zh-reference-padding-top:34px;
+    --zh-reference-heading-gap:44px;
+  }
+}
+@container section-window (max-width:850px) {
+  html[lang="zh"] [data-zh-heading-align] {
+    --zh-reference-padding-x:30px;
+    --zh-reference-padding-top:30px;
+  }
+}
+@container section-window (max-width:600px) {
+  html[lang="zh"] [data-zh-heading-align] {--zh-reference-utility-height:104px;}
+}
+@container section-window (max-width:480px) {
+  html[lang="zh"] [data-zh-heading-align] {
+    --zh-reference-padding-x:20px;
+    --zh-reference-padding-top:26px;
+    --zh-reference-heading-gap:36px;
+  }
+}

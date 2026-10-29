@@ -1,0 +1,26 @@
+/* Page title reference: the approved RedNote title scale. Future page titles use
+   .portfolio-page-title instead of an independently selected font size. */
+:root{
+ --portfolio-page-title-size:clamp(32px,5.75cqi,76px);
+ --portfolio-page-title-family:Anton,Impact,'Arial Narrow',sans-serif;
+ --portfolio-page-title-weight:400;
+ --portfolio-page-title-leading:1.04;
+ --portfolio-page-title-spacing:.002em;
+}
+.portfolio-page-title,.rn-title,.wechat-page .wechat-title{
+ font-family:var(--portfolio-page-title-family);
+ font-size:var(--portfolio-page-title-size);
+ font-weight:var(--portfolio-page-title-weight);
+ font-synthesis:none;
+ line-height:var(--portfolio-page-title-leading);
+ letter-spacing:var(--portfolio-page-title-spacing);
+}
+@container section-window (max-width:1100px) and (min-width:801px){
+ .portfolio-page-title,.rn-title,.wechat-page .wechat-title{--portfolio-page-title-size:5.65cqi}
+}
+@container section-window (max-width:800px) and (min-width:481px){
+ .portfolio-page-title,.rn-title,.wechat-page .wechat-title{--portfolio-page-title-size:8cqi}
+}
+@container section-window (max-width:480px){
+ .portfolio-page-title,.rn-title,.wechat-page .wechat-title{--portfolio-page-title-size:9.2cqi}
+}

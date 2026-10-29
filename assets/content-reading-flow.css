@@ -1,0 +1,10 @@
+/* Internal readers consume overflow before the outer section changes. */
+#wechat .wv-analysis,
+#rednote .rn-account-copy,
+#rednote .rn-case-copy {
+  min-height:0;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  scrollbar-width:thin;
+}
+#rednote .rn-featured {overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;}

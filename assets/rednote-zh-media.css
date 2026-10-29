@@ -1,0 +1,20 @@
+/* Give the two Chinese featured covers more of the reading area. */
+html[lang="zh"] #rednote .rn-case-main {
+  grid-template-columns:minmax(0,var(--rn-zh-cover-width,40fr)) minmax(0,60fr);
+}
+html[lang="zh"] #rednote .rn-case-media {
+  align-self:stretch;
+  justify-content:center;
+  gap:10px;
+}
+html[lang="zh"] #rednote .rn-case-media .rn-cover-button {
+  flex:0 0 auto;
+  width:100%;
+  height:auto;
+}
+html[lang="zh"] #rednote .rn-case-media .rn-source-panel {
+  width:100%;
+  height:auto;
+  aspect-ratio:var(--rn-panel-ratio);
+}
+html[lang="zh"] #rednote .rn-case-metrics {flex:none;}

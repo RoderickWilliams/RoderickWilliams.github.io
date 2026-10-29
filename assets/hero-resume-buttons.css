@@ -1,0 +1,10 @@
+/* Fixed-language secondary actions; the Hero illustration and copy retain their layout. */
+#home .hero-header-actions{display:flex;align-items:center;gap:14px;margin-left:auto}
+#home .hero-resume-actions{display:flex;align-items:center;gap:8px}
+#home .hero-resume-button{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;flex-shrink:0;gap:8px;width:166px;height:56px;min-height:56px;padding:0 12px;border:2px solid #e87524;border-radius:999px;background:#e87524;color:#fff;font:800 14px/1.2 Inter,'Microsoft YaHei',Arial,sans-serif;letter-spacing:0;white-space:nowrap;opacity:1;cursor:default}
+#home .hero-resume-button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+#home .hero-header-actions .hero-portfolio{margin-left:0}
+@container section-window (max-width:1050px){#home .hero-header-actions{gap:10px}}
+@container section-window (max-width:750px){#home .hero-header-actions{flex-wrap:wrap;justify-content:flex-end;gap:10px}#home .hero-resume-actions{order:2}}
+@container section-window (max-width:600px){#home .hero-resume-button{width:140px;height:44px;min-height:44px;font-size:11px;padding:0 12px}}
+@container section-window (max-width:500px){#home .hero-header-actions{width:100%;margin-left:0;justify-content:space-between;align-items:flex-start}#home .hero-resume-actions{width:100%;justify-content:flex-start;gap:10px}}

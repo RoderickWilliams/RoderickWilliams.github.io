@@ -1,0 +1,159 @@
+/* Scoped to WHY THIS CONTENT; the collection and global shell retain geometry. */
+.wc-logic-header{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.wc-original-link{flex-shrink:0;color:#ff432e;font:500 10px/1.4 Inter,Arial,sans-serif;text-decoration:none;position:relative;margin-bottom:3px}
+.wc-original-link:after{content:'';position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(.65);transform-origin:left;transition:transform .2s ease-out}
+.wc-original-link:hover:after{transform:scaleX(1)}.wc-original-link span{display:inline-block;transition:transform .2s}.wc-original-link:hover span{transform:translate(2px,-2px)}
+.wc-decision-selector{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0 0 22px;border-bottom:1px solid #73839120;padding-bottom:18px;gap:4px}
+.wc-decision-selector:has(.wc-selector-item:nth-child(2):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}
+.wc-selector-item{display:flex;align-items:flex-start;gap:7px;padding:10px 5px;border:0;border-radius:22px;background:transparent;text-align:left;cursor:pointer;min-width:0;transition:background-color .2s}
+.wc-selector-item:hover{background:#fff0e659}.wc-selector-item[aria-selected=true]{background:#fff0e680}
+.wc-number{display:grid;place-items:center;width:28px;height:28px;flex-shrink:0;border-radius:50%;background:#edf0ef;color:#758c9a;font:600 12px/1 Inter,Arial,sans-serif}
+.wc-selector-item[aria-selected=true] .wc-number{color:white;background:#ff432e}.wc-selector-copy{min-width:0}.wc-selector-copy strong{display:block;color:#687f90;font:400 11px/1.25 Anton,Impact,sans-serif;overflow-wrap:normal}
+.wc-selector-copy>span{display:block;margin-top:5px;color:#778d9d;font:400 10px/1.4 Inter,Arial,sans-serif}.wc-selector-item[aria-selected=true] strong{color:#ff432e}
+.wc-strategy-body{display:grid;grid-template-rows:170px 190px 175px;min-height:535px;height:535px}
+.wc-stage{display:grid;grid-template-columns:48px minmax(0,1fr);gap:15px;position:relative;align-content:start;padding-top:7px}
+.wc-stage:not(:last-child):after{content:'↓';position:absolute;left:23px;top:75px;bottom:10px;color:#ff8065;font:400 24px/1 Inter,Arial,sans-serif;display:flex;align-items:center}
+.wc-stage-icon{display:grid;place-items:center;width:47px;height:47px;border:1px solid #ffb59c66;border-radius:50%;color:#ff432e;background:#fffaf238}
+.wc-stage-icon svg{width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.wc-stage:last-child .wc-stage-icon{background:#ffe8df;border-color:transparent}
+.wc-stage-copy{min-width:0}.wc-stage-copy:after{content:'';display:block;height:1px;background:#73839110;margin-top:22px}.wc-stage:last-child .wc-stage-copy:after{display:none}
+.wc-stage-label{margin:0 0 7px;color:#ff432e;font:500 12px/1.3 Inter,Arial,sans-serif}
+.wc-stage-copy h4{margin:0;color:#090909;font:400 20px/1.2 Anton,Impact,sans-serif;overflow-wrap:normal}
+.wc-stage-description{margin:9px 0 0;color:#778d9d;font:400 13px/1.45 Inter,Arial,sans-serif}
+.wc-keywords{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}.wc-keywords span{padding:5px 9px;border-radius:999px;background:#edf0ef;color:#778d9d;font:400 10px/1.4 Inter,Arial,sans-serif}
+.wc-strategy-footer{display:flex;align-items:center;gap:13px;margin-top:10px;min-height:44px;flex-wrap:wrap}
+.wc-progress{display:flex;align-items:center;gap:16px}.wc-progress-step{position:relative;width:32px;height:32px;border:1px solid #dce0e1;border-radius:50%;background:transparent;color:#778d9d;font:500 12px/1 Inter,Arial,sans-serif;cursor:pointer}
+.wc-progress-step:not(:last-child):after{content:'';position:absolute;left:100%;top:50%;width:17px;height:1px;background:#dce0e1}.wc-progress-step[aria-current=step]{border-color:#ff432e;background:#ff432e;color:white}
+.wc-final-arrow{font-size:26px;color:#778d9d}.wc-build-trust{display:flex;align-items:center;gap:8px;color:#ff432e}.wc-build-trust .build-trust-icon{width:32px;height:32px}.wc-build-trust strong{font:400 19px/1.2 Anton,Impact,sans-serif;white-space:nowrap}
+.wc-selector-item:focus-visible,.wc-progress-step:focus-visible,.wc-original-link:focus-visible{outline:2px solid #ff432e;outline-offset:3px}
+@container section-window (min-width:1400px){.wc-number{width:38px;height:38px;font-size:16px}.wc-selector-copy strong{font-size:15px}.wc-selector-copy>span{font-size:13px}.wc-stage{grid-template-columns:62px minmax(0,1fr);gap:20px}.wc-stage-icon{width:60px;height:60px}.wc-stage-icon svg{width:34px;height:34px}.wc-stage-copy h4{font-size:26px}.wc-stage-description{font-size:16px}.wc-keywords span{font-size:12px}}
+@container section-window (max-width:800px){.wc-selector-copy strong{font-size:13px}.wc-selector-copy>span{font-size:12px}.wc-number{width:32px;height:32px}.wc-strategy-body{grid-template-rows:140px 160px 145px;height:445px;min-height:445px}.wc-stage-copy h4{font-size:23px}.wc-stage-description{font-size:14px}}
+@container section-window (max-width:480px){.wc-selector-item{flex-direction:column;gap:7px;border-radius:15px;padding:10px 7px}.wc-selector-copy strong{font-size:11px}.wc-selector-copy>span{font-size:10px}.wc-strategy-body{grid-template-rows:170px 190px 175px;height:535px;min-height:535px}.wc-stage-copy h4{font-size:20px}.wc-stage-description{font-size:13px}.wc-progress{gap:12px}.wc-progress-step:not(:last-child):after{width:13px}.wc-strategy-footer{gap:10px}.wc-build-trust strong{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.wc-original-link,.wc-original-link:after,.wc-original-link span,.wc-selector-item{transition:none}.wc-original-link:hover span{transform:none}}
+
+/* Desktop: editorial list left, full strategy aligned beside the page intro. */
+@media (min-width:1100px) and (min-height:700px){
+ .wechat-page{height:100%;min-height:100%;padding:26px 28px 22px;display:grid;grid-template-columns:minmax(0,.84fr) minmax(0,1fr);grid-template-rows:56px 120px minmax(0,1fr);column-gap:28px;row-gap:12px;box-sizing:border-box}
+ .wechat-page>.work-utility{grid-column:1/-1;grid-row:1}
+ .wechat-heading-row{display:contents}
+ .wechat-heading-row>div:first-child{grid-column:1;grid-row:2;align-self:center}
+ .wechat-page .wechat-title{font-size:clamp(42px,4.6cqi,72px)}
+ .wechat-subtitle{font-size:clamp(13px,1.25cqi,18px);line-height:1.35;margin-top:6px}
+ .wechat-tabs{position:absolute;top:98px;right:28px;gap:7px}
+ .wechat-tabs button{min-height:40px;padding:8px 18px;font-size:13px}
+ .wechat-content-grid{display:contents}
+ .wechat-collection{grid-column:1;grid-row:3;min-height:0}
+ .wechat-logic{grid-column:2;grid-row:2/4;min-height:0;display:flex;flex-direction:column;padding:56px 0 0 26px;border-left:1px solid #6d625b26;box-sizing:border-box;overflow:visible}
+ .wechat-logic-label{margin:0 0 5px;font-size:12px}
+ .wc-logic-header{flex-wrap:nowrap;gap:10px;align-items:baseline}
+ .wechat-page .wechat-logic-title{font-size:clamp(25px,3cqi,46px)}
+ .wc-original-link{font-size:9px}
+ .wechat-logic-caption{font-size:clamp(11px,1cqi,15px);line-height:1.4;margin-top:7px}
+ .wechat-selection{flex:1;min-height:0;margin-top:20px;display:flex;flex-direction:column}
+ .wc-decision-selector{flex-shrink:0;margin-bottom:12px;padding-bottom:12px}
+ .wc-selector-item{gap:6px;padding:7px 4px}.wc-number{width:30px;height:30px;font-size:13px}
+ .wc-selector-copy strong{font-size:clamp(10px,1cqi,14px)}.wc-selector-copy>span{font-size:clamp(10px,.85cqi,12px);line-height:1.3;margin-top:4px}
+ .wc-strategy-body{flex:1;min-height:0;height:auto;grid-template-rows:1fr 1fr 1fr;gap:6px}
+ .wc-stage{grid-template-columns:48px minmax(0,1fr);gap:16px;padding-top:5px;min-height:0}
+ .wc-stage-icon{width:46px;height:46px}.wc-stage-icon svg{width:27px;height:27px}
+ .wc-stage:not(:last-child):after{top:58px;bottom:0;left:22px;font-size:20px}
+ .wc-stage-label{font-size:11px;margin-bottom:5px}
+ .wc-stage-copy h4{font-size:clamp(17px,1.55cqi,25px);line-height:1.2}
+ .wc-stage-description{font-size:clamp(11px,1cqi,15px);line-height:1.4;margin-top:6px}
+ .wc-keywords{gap:6px;margin-top:8px}.wc-keywords span{font-size:clamp(9px,.85cqi,12px);padding:4px 8px}
+ .wc-stage-copy:after{margin-top:14px}
+ .wc-strategy-footer{flex-shrink:0;flex-wrap:nowrap;justify-content:space-between;min-height:40px;margin-top:8px;gap:10px}
+ .wc-build-trust strong{font-size:clamp(16px,1.5cqi,23px)}.wc-build-trust .build-trust-icon{width:32px;height:32px}
+ .wc-progress{gap:20px}.wc-progress-step:not(:last-child):after{width:21px}
+ .wechat-group+.wechat-group{margin-top:22px}.wechat-group-heading{font-size:20px;margin-bottom:10px}
+ .wechat-item{grid-template-columns:118px minmax(0,1fr) 20px;gap:16px;padding:8px 10px 8px 0;margin-bottom:6px}
+ .wechat-item img{width:118px;height:74px}.wechat-item strong{font-size:12px;line-height:1.4}.wechat-item small{font-size:10px;margin-top:5px}.wechat-item-tag{font-size:10px;margin-bottom:4px}
+ .wechat-idle{padding-top:25px}.wechat-idle h4{font-size:21px}
+}
+@media (min-width:1100px) and (min-height:700px) and (max-height:790px){
+ .wechat-page{padding-top:20px;padding-bottom:16px;grid-template-rows:48px 100px minmax(0,1fr);row-gap:10px}
+ .wechat-tabs{top:82px}.wechat-logic{padding-top:46px}.wechat-selection{margin-top:14px}
+ .wc-decision-selector{margin-bottom:7px;padding-bottom:8px}.wc-number{width:26px;height:26px;font-size:11px}
+ .wc-stage{grid-template-columns:40px minmax(0,1fr);gap:12px}.wc-stage-icon{width:38px;height:38px}.wc-stage-icon svg{width:24px;height:24px}.wc-stage:not(:last-child):after{top:48px;left:18px}
+ .wc-stage-label{font-size:10px}.wc-stage-copy h4{font-size:17px}.wc-stage-description{font-size:11px}.wc-keywords span{font-size:9px}.wc-stage-copy:after{margin-top:10px}
+ .wechat-item img{height:65px}.wechat-item{padding-block:6px}.wechat-group+.wechat-group{margin-top:16px}
+}
+
+/* Reading comfort: full-height collection rhythm and larger strategy type. */
+@media (min-width:1100px) and (min-height:700px){
+ .wechat-collection .wechat-tab-panel:not([hidden]){height:100%;display:grid;grid-template-rows:repeat(2,minmax(0,1fr));gap:24px}
+ .wechat-collection #wechat-videos:not([hidden]){grid-template-rows:minmax(0,1fr)}
+ .wechat-collection .wechat-group{display:grid;grid-template-rows:auto repeat(2,minmax(0,1fr));gap:14px;min-height:0;margin:0}
+ .wechat-group-heading{font-size:clamp(20px,1.7cqi,27px);margin:0;line-height:1.25}
+ .wechat-item{height:100%;margin:0;align-items:center;padding:12px 13px 12px 0;gap:20px;grid-template-columns:clamp(112px,11cqi,160px) minmax(0,1fr) 22px}
+ .wechat-item img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+ .wechat-item strong{font-size:clamp(13px,1.15cqi,17px);line-height:1.5;letter-spacing:.008em}
+ .wechat-item small{font-size:clamp(11px,.95cqi,14px);line-height:1.5;margin-top:8px}
+ .wechat-item-tag{font-size:clamp(11px,.9cqi,13px);margin-bottom:7px}
+ .wechat-logic-label{font-size:clamp(13px,1.15cqi,18px);letter-spacing:.025em;margin-bottom:6px}
+ .wechat-page .wechat-logic-title{font-size:clamp(30px,3.3cqi,50px);letter-spacing:.015em}
+ .wc-original-link{font-size:clamp(10px,.95cqi,14px);letter-spacing:.012em}
+ .wechat-logic-caption{font-size:clamp(14px,1.15cqi,18px);line-height:1.5;letter-spacing:.012em;margin-top:9px}
+ .wechat-selection{margin-top:22px}
+ .wc-decision-selector{gap:8px;padding-bottom:16px;margin-bottom:14px}
+ .wc-selector-item{gap:9px;padding:9px 5px;align-items:center}
+ .wc-number{width:34px;height:34px;font-size:15px}
+ .wc-selector-copy strong{font-size:clamp(12px,1.1cqi,16px);line-height:1.35;letter-spacing:.018em}
+ .wc-selector-copy>span{font-size:clamp(11px,.95cqi,14px);line-height:1.45;margin-top:5px;letter-spacing:.01em}
+ .wc-strategy-body{grid-template-rows:1fr 1.15fr 1.15fr;gap:12px}
+ .wc-stage{grid-template-columns:50px minmax(0,1fr);gap:19px;padding-top:6px}
+ .wc-stage-icon{width:48px;height:48px}.wc-stage-icon svg{width:29px;height:29px}
+ .wc-stage-label{font-size:clamp(12px,1.05cqi,15px);line-height:1.4;letter-spacing:.045em;margin-bottom:7px}
+ .wc-stage-copy h4{font-size:clamp(21px,1.9cqi,30px);line-height:1.25;letter-spacing:.018em}
+ .wc-stage-description{font-size:clamp(14px,1.15cqi,18px);line-height:1.5;letter-spacing:.015em;margin-top:8px}
+ .wc-keywords{gap:8px;margin-top:11px}.wc-keywords span{font-size:clamp(11px,.95cqi,14px);line-height:1.4;letter-spacing:.01em;padding:5px 10px}
+ .wc-stage-copy:after{margin-top:16px}.wc-stage:not(:last-child):after{top:64px;left:24px}
+ .wc-strategy-footer{min-height:44px;margin-top:14px;gap:14px}
+ .wc-progress-step{width:36px;height:36px;font-size:14px}.wc-progress{gap:22px}.wc-progress-step:not(:last-child):after{width:23px}
+ .wc-build-trust strong{font-size:clamp(19px,1.65cqi,26px);letter-spacing:.015em}.wc-build-trust .build-trust-icon{width:36px;height:36px}
+}
+@media (min-width:1100px) and (min-height:700px) and (max-height:790px){
+ .wechat-collection .wechat-tab-panel:not([hidden]){gap:18px}.wechat-collection .wechat-group{gap:10px}.wechat-item{padding-block:9px;gap:14px}
+ .wechat-selection{margin-top:14px}.wc-decision-selector{margin-bottom:8px;padding-bottom:10px}.wc-selector-item{padding-block:6px}
+ .wc-strategy-body{gap:8px}.wc-stage{gap:15px;grid-template-columns:42px minmax(0,1fr);padding-top:2px}
+ .wc-stage-icon{width:40px;height:40px}.wc-stage-icon svg{width:26px;height:26px}.wc-stage:not(:last-child):after{top:51px;left:20px}
+ .wc-stage-label{margin-bottom:5px}.wc-stage-copy h4{font-size:21px}.wc-stage-description{font-size:14px;margin-top:6px;line-height:1.45}.wc-keywords{margin-top:8px;gap:6px}.wc-keywords span{padding:4px 8px;font-size:11px}.wc-stage-copy:after{margin-top:10px}
+ .wc-strategy-footer{margin-top:8px;gap:10px}.wc-progress{gap:16px}.wc-progress-step{width:32px;height:32px}.wc-progress-step:not(:last-child):after{width:17px}
+}
+
+/* Handwritten empty-selection cue and reference-style trust path. */
+.wechat-idle svg{margin-top:24px;margin-bottom:18px}
+.wechat-idle h4{font-family:Caveat,'Segoe Print','Comic Sans MS',cursive;font-weight:500;font-size:clamp(28px,2.65cqi,40px);line-height:1.25;letter-spacing:.012em}
+.wc-strategy-footer{display:grid;grid-template-columns:minmax(0,1fr) minmax(38px,.26fr) auto;align-items:center;column-gap:20px;min-height:52px}
+.wc-progress{display:flex;align-items:center;width:100%;gap:0}
+.wc-progress-step{flex-shrink:0;width:clamp(32px,3.2cqi,50px);height:clamp(32px,3.2cqi,50px);font-size:clamp(13px,1.3cqi,20px);border:1.5px solid #dce0e1;background:#fafaf780;color:#778d9d}
+.wc-progress-step[aria-current=step]{background:linear-gradient(135deg,#ff6748,#ff351c);border-color:#ff6445;color:#fff}
+.wc-progress-step:not(:last-child):after{display:none}
+.wc-progress-line{flex:1;min-width:12px;height:1.5px;position:relative;background:#dce0e1}
+.wc-progress-line:after{content:'';position:absolute;width:3px;height:3px;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:#7a8f9f}
+.wc-progress-line.wc-line-active{background:linear-gradient(to right,#ff8c78 50%,#dce0e1 50%)}
+.wc-progress-line.wc-line-active:after,.wc-progress-line.wc-line-complete:after{background:#ff432e}
+.wc-progress-line.wc-line-complete{background:#ff8c78}
+.wc-final-arrow{display:block;width:100%;font-size:0;line-height:0;color:#778d9d}
+.wc-final-arrow svg{display:block;width:100%;height:24px;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.wc-build-trust{gap:12px}.wc-build-trust .build-trust-icon{width:clamp(32px,3.5cqi,52px);height:clamp(32px,3.5cqi,52px)}
+.wc-build-trust strong{font-size:clamp(18px,2cqi,30px);line-height:1.1;letter-spacing:.005em}
+@container section-window (max-width:480px){.wc-strategy-footer{column-gap:10px;grid-template-columns:minmax(0,1fr) 32px auto}.wc-build-trust{gap:7px}.wc-build-trust strong{font-size:17px}.wc-build-trust .build-trust-icon{width:29px;height:29px}.wc-progress-step{width:29px;height:29px;font-size:12px}.wechat-idle h4{font-size:30px}}
+
+/* Empty selection: keep the arrow and handwritten prompt together at lower left. */
+@media (min-width:1100px) and (min-height:700px){
+ .wechat-logic:not(.wc-analysis-active) .wechat-selection{justify-content:flex-end}
+ .wechat-logic:not(.wc-analysis-active) .wechat-idle{align-self:flex-start;padding:0 0 clamp(16px,2vh,30px) 20px;max-width:350px;box-sizing:border-box}
+ .wechat-logic:not(.wc-analysis-active) .wechat-idle svg{margin:0 0 17px 4px;width:155px;height:106px}
+ .wechat-logic:not(.wc-analysis-active) .wechat-idle h4{margin:0;max-width:330px;font-size:clamp(28px,2.65cqi,40px);line-height:1.25}
+}
+@media (min-width:1100px) and (min-height:700px) and (max-height:790px){
+ .wechat-logic:not(.wc-analysis-active) .wechat-idle{padding-bottom:8px;padding-left:16px}
+ .wechat-logic:not(.wc-analysis-active) .wechat-idle svg{height:88px;width:130px;margin-bottom:14px}
+ .wechat-logic:not(.wc-analysis-active) .wechat-idle h4{font-size:28px}
+}
+
+/* Preserve the complete panoramic event cover at its original resolution. */
+.wechat-page .wechat-item[data-wechat-sample="event2"] img{object-fit:contain}
+
+/* Keep supplied paper covers complete without resampling the source images. */
+.wechat-page .wechat-item[data-wechat-sample="research1"] img,.wechat-page .wechat-item[data-wechat-sample="research2"] img{object-fit:contain}

@@ -1,0 +1,83 @@
+/* Each physical item is an independent transparent asset; only its image moves. */
+#skills.skills-panel{position:relative;isolation:isolate;height:100%;min-height:0;display:grid;grid-template-rows:auto auto minmax(0,1fr);padding:40px 54px 48px;box-sizing:border-box;background:linear-gradient(125deg,#fffaf2 0%,#f8f4ed 56%,#f0f5ef 100%);color:#111;overflow:clip}
+#skills .skills-head{width:auto;margin:52px 0 0;padding:0;opacity:1;transform:none}
+#skills .skills-title{display:flex;align-items:baseline;margin:0;white-space:nowrap;font:400 clamp(70px,8cqi,110px)/1.04 Anton,Impact,'Arial Narrow',sans-serif;letter-spacing:.005em;overflow-wrap:normal}
+#skills .skills-object-stage{position:relative;isolation:isolate;display:grid;place-items:center;min-width:0;min-height:0;margin-top:18px;background:radial-gradient(ellipse at 49% 71%,#e9c29b66 0%,#f2dcc638 36%,transparent 76%);border-radius:24px}
+#skills .skills-scene-decor{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;border-radius:24px}
+#skills .skills-scene-decor span{position:absolute;display:block}
+#skills .skills-decor-orb{left:10%;top:18%;width:66px;height:66px;border-radius:50%;background:radial-gradient(circle at 29% 24%,#fcf4ff 0%,#e5d2ee 19%,#b999d0 54%,#987db666 100%);box-shadow:7px 17px 20px #a68dbd26,inset -6px -5px 12px #86689c33;opacity:.82}
+#skills .skills-decor-orbit{left:5%;bottom:14%;width:92px;height:92px;border:2px solid #9bbcaf88;border-radius:50%;transform:rotate(-24deg) scaleY(.7)}
+#skills .skills-decor-orbit::after{content:'';position:absolute;right:3px;top:8px;width:12px;height:12px;border-radius:50%;background:#adcbbbab;box-shadow:0 3px 8px #729e861b}
+#skills .skills-decor-square{right:6%;top:13%;width:53px;height:53px;border:2px solid #d1ab7b77;border-radius:17px;transform:rotate(16deg)}
+#skills .skills-decor-square::after{content:'';position:absolute;inset:11px;border:1px solid #d1ab7b55;border-radius:8px}
+#skills .skills-decor-dots{left:21%;top:7%;width:62px;height:47px;background:radial-gradient(circle,#cdb29188 1.2px,transparent 1.5px) 0 0/13px 13px;opacity:.58}
+#skills .skills-decor-loop{position:absolute;right:4%;bottom:9%;width:118px;height:82px;color:#9bbda990;transform:rotate(9deg)}
+#skills .skills-object-scene{position:relative;z-index:1;margin:0;min-width:0;min-height:0;flex:none}
+#skills .skills-workspace-wash{left:13%;right:13%;top:8%;bottom:2%;border-radius:47% 42% 32% 33%/39% 48% 18% 26%;transform:rotate(-4deg);background:linear-gradient(128deg,#e8ede0b3 0%,#f1dec4b3 57%,#e8bb9475 100%);box-shadow:inset 0 0 75px #fff8e8a6}
+#skills .skills-workspace-grid{inset:10% 10% 4%;border-radius:35%;opacity:.35;background-image:linear-gradient(#bea58624 1px,transparent 1px),linear-gradient(90deg,#bea58624 1px,transparent 1px);background-size:28px 28px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 73%)}
+#skills .skills-decor-glasses{position:absolute;left:5%;bottom:16%;width:142px;height:79px;transform:rotate(-15deg);filter:drop-shadow(0 12px 8px #77a79224);opacity:.85}
+#skills .skills-decor-paperclip{position:absolute;right:8%;top:10%;width:48px;height:102px;transform:rotate(24deg);opacity:.75}
+#skills .skills-decor-swatches{right:6%;bottom:18%;width:104px;height:80px;transform:rotate(13deg)}
+#skills .skills-decor-swatches i{position:absolute;left:0;top:0;width:76px;height:54px;border:5px solid #fffaf0;border-radius:8px;box-sizing:border-box;background:#b6c9b9;box-shadow:0 9px 14px #a0896c1b;transform:rotate(-21deg);transform-origin:10% 80%}
+#skills .skills-decor-swatches i:nth-child(2){background:#d5b797;transform:rotate(-5deg)}
+#skills .skills-decor-swatches i:nth-child(3){background:#e7ccb2;transform:rotate(13deg)}
+#skills .skills-ground-shadow{position:absolute;left:14%;top:87%;width:72%;height:11%;z-index:0;border-radius:50%;background:radial-gradient(ellipse,#65402037 0%,#89653f1c 40%,transparent 71%);pointer-events:none}
+#skills .skills-depth-defs{position:absolute;pointer-events:none}
+#skills .skills-bag-rear,#skills .skills-inner-contact,#skills .skills-near-contact,#skills .skills-bag-handle,#skills .skills-bag-cover-hit{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#skills .skills-bag-rear{z-index:1}
+#skills .skills-inner-contact{z-index:2;mix-blend-mode:multiply}
+/* Global aperture clips both sprites and their hit areas. Hidden portions cannot
+   reappear past the side wall, including when an individual image is lifted. */
+#skills .skills-packed-contents{position:absolute;inset:0;z-index:3;pointer-events:none;isolation:isolate}
+#skills .skills-bag-front-plane{position:absolute;inset:0;z-index:4;pointer-events:none}
+#skills .skills-near-contact{z-index:5;mix-blend-mode:multiply}
+#skills .skills-bag-handle{z-index:6}
+#skills .skills-bag-cover-hit{z-index:7}
+#skills .skills-bag-cover-hit path,#skills .skills-bag-cover-hit use{pointer-events:fill}
+#skills .skills-object-hit{position:absolute;display:block;margin:0;padding:0;border:0;border-radius:9px;background:transparent;cursor:pointer;touch-action:manipulation;pointer-events:none;outline:none;overflow:visible;height:auto;transform-origin:50% 85%;transform:perspective(calc(var(--scene-height,400px)*3)) rotateZ(var(--lean,0deg)) rotateX(var(--recline,0deg)) rotateY(var(--turn,0deg))}
+#skills .skills-object-hit img{position:absolute;left:0;top:0;display:block;width:100%;height:100%;object-fit:contain;object-position:center top;pointer-events:none;user-select:none;transform:translate(0,0);transition:transform 300ms cubic-bezier(.22,.75,.25,1),filter 300ms;filter:drop-shadow(2px 5px 4px #33241b35)}
+/* Stable hit contours keep a raised image from flickering under the cursor. */
+#skills .skills-object-hit::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:auto;clip-path:var(--hit-contour);border-radius:inherit}
+#skills .skills-object-hit.is-active img{transform:translate(calc(var(--scene-width,600px)*var(--pull-x)),calc(var(--scene-height,400px)*var(--pull-y)));filter:drop-shadow(0 8px 6px #35271e18)}
+#skills .skills-object-hit:focus-visible{outline:2px solid #ce773f;outline-offset:5px}
+/* Depth 0: supported at the back; keyboard buried behind the front objects. */
+#skills .skills-object-hit[data-object="ai"]{left:31.5%;top:16%;width:36%;aspect-ratio:1373/993;z-index:1;--lean:-2deg;--recline:12deg;--turn:4deg;--pull-x:0;--pull-y:-.022;--hit-contour:polygon(0 12%,90% 0,95% 57%,100% 85%,20% 88%,4% 66%)}
+/* Depth 2: notebooks lean on the side walls, inside the opening footprint. */
+#skills .skills-object-hit[data-object="content"]{left:22.8%;top:25.5%;width:17.8%;aspect-ratio:1018/1407;z-index:4;--lean:-8deg;--recline:16deg;--turn:7deg;--pull-x:-.012;--pull-y:-.018;--hit-contour:polygon(0 11%,78% 0,96% 72%,21% 66%)}
+#skills .skills-object-hit[data-object="office"]{left:66%;top:30.5%;width:15.8%;aspect-ratio:994/1435;z-index:2;--lean:5deg;--recline:10deg;--turn:-8deg;--pull-x:.008;--pull-y:-.018;--hit-contour:polygon(14% 0,99% 18%,89% 75%,9% 67%,0 50%)}
+/* Deep right pocket: phone rests against the planner and reveals only its top. */
+#skills .skills-object-hit[data-object="social"]{left:65.5%;top:38.5%;width:11.2%;aspect-ratio:909/1430;z-index:3;--lean:11deg;--recline:20deg;--turn:-16deg;--pull-x:.006;--pull-y:-.017;--hit-contour:polygon(26% 0,95% 12%,96% 42%,76% 75%,25% 73%,5% 62%,10% 35%)}
+/* Depth 4: camera lies obliquely; the earcups overlap its left corner and rim. */
+#skills .skills-object-hit[data-object="video"]{left:55%;top:43.8%;width:19.5%;aspect-ratio:1535/976;z-index:5;--lean:9deg;--recline:17deg;--turn:-9deg;--pull-x:.007;--pull-y:-.018;--hit-contour:polygon(2% 18%,18% 0,42% 9%,52% 23%,86% 39%,100% 61%,83% 94%,53% 100%,22% 85%,0 65%)}
+#skills .skills-object-hit[data-object="language"]{left:47.5%;top:25.8%;width:20.7%;aspect-ratio:870/1114;z-index:6;--lean:-7deg;--recline:5deg;--turn:8deg;--pull-x:-.005;--pull-y:-.018;--hit-contour:polygon(evenodd,3% 56%,6% 36%,14% 15%,28% 5%,45% 3%,64% 6%,79% 20%,91% 38%,95% 57%,100% 75%,91% 93%,75% 100%,32% 100%,13% 89%,0 77%,3% 56%,20% 52%,22% 35%,32% 20%,46% 15%,58% 17%,68% 26%,76% 39%,81% 47%,76% 53%,66% 46%,54% 43%,40% 43%,30% 53%,20% 52%,3% 56%)}
+/* Raise the front tablet's printed title above the handle; its base stays buried. */
+#skills .skills-object-hit[data-object="design"]{left:29.8%;top:33.5%;width:27.5%;aspect-ratio:1485/999;z-index:7;--lean:-4deg;--recline:10deg;--turn:4deg;--pull-x:-.007;--pull-y:-.019;--hit-contour:polygon(0 12%,88% 0,100% 63%,14% 70%)}
+#skills .skills-bag-shell{position:absolute;left:14.5%;top:43%;width:71%;height:51%;pointer-events:none;overflow:visible}
+#skills .skills-bag-shell img{position:absolute;left:0;top:0;display:block;width:100%;height:100%;object-fit:contain;pointer-events:none;user-select:none;filter:drop-shadow(0 15px 13px #a1784624)}
+#skills .skills-unpack-hint{position:absolute;left:71%;top:8%;width:24%;margin:0;z-index:10;pointer-events:none;color:#86664c;font:600 clamp(18px,2.4cqi,27px)/1.04 Caveat,'Segoe Print','Comic Sans MS',cursive;transform:rotate(-6deg);text-align:center}
+#skills .skills-unpack-hint svg{display:block;width:48px;height:35px;margin:4px auto 0;transform:rotate(6deg)}
+#skills .skills-hint-touch{display:none}
+#skills .skills-object-popover{position:absolute;z-index:20;box-sizing:border-box;width:220px;padding:20px 22px;border:1px solid #e7dbc9;border-radius:18px;background:#fffefbf7;box-shadow:0 16px 40px #49342014;color:#141414;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+#skills .skills-object-popover[hidden]{display:none}
+#skills .skills-object-popover h3{margin:0;font:700 15px/1.35 Inter,'Microsoft YaHei',Arial,sans-serif;letter-spacing:.03em}
+#skills .skills-object-popover h3::after{content:'';display:block;width:24px;height:3px;border-radius:3px;background:#e87524;margin-top:10px}
+#skills .skills-object-popover ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px;font:400 14px/1.45 Inter,'Microsoft YaHei',Arial,sans-serif;color:#637381}
+#skills .skills-object-stage.skills-object-compact{align-content:start}
+#skills .skills-object-compact .skills-object-popover{left:0!important;right:0;top:auto!important;bottom:0;width:100%;max-height:156px!important;padding:16px 20px}
+#skills .skills-object-compact .skills-object-popover ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px;margin-top:10px;font-size:12px}
+#skills .skills-object-compact .skills-decor-orb{left:3%;top:12%;width:27px;height:27px}
+#skills .skills-object-compact .skills-decor-orbit{left:1%;bottom:28%;width:53px;height:53px}
+#skills .skills-object-compact .skills-decor-square{right:2%;top:9%;width:34px;height:34px}
+#skills .skills-object-compact .skills-decor-loop{right:0;bottom:28%;width:68px;height:47px}
+#skills .skills-object-compact .skills-decor-glasses{left:0;bottom:33%;width:84px;height:47px;opacity:.6}
+#skills .skills-object-compact .skills-decor-paperclip{right:2%;top:15%;width:28px;height:60px;opacity:.58}
+#skills .skills-object-compact .skills-decor-swatches{right:0;bottom:35%;width:68px;height:50px;opacity:.6}
+#skills .skills-object-compact .skills-decor-swatches i{width:48px;height:37px;border-width:3px}
+#skills .skills-object-compact .skills-workspace-wash{left:1%;right:1%;top:4%;bottom:28%}
+#skills .skills-object-compact .skills-unpack-hint{left:69%;top:0;width:30%;font-size:clamp(14px,2.4cqi,19px)}
+#skills .skills-object-compact .skills-unpack-hint svg{width:30px;height:22px;margin-top:2px}
+@media(hover:none){#skills .skills-hint-hover{display:none}#skills .skills-hint-touch{display:inline}}
+@container section-window (max-width:1100px){#skills.skills-panel{padding:34px 38px 40px}#skills .skills-head{margin-top:44px}#skills .skills-title{font-size:clamp(68px,8cqi,88px)}}
+@container section-window (max-width:850px){#skills.skills-panel{padding:30px 30px 44px}#skills .skills-title{font-size:clamp(68px,12cqi,98px)}}
+@container section-window (max-width:480px){#skills.skills-panel{padding:26px 20px 38px}#skills .skills-head{margin-top:36px}#skills .skills-title{font-size:clamp(60px,17cqi,80px)}#skills .skills-object-stage{margin-top:12px}#skills .skills-object-popover h3{font-size:14px}#skills .skills-decor-dots{opacity:.4}}
+@media(prefers-reduced-motion:reduce){#skills .skills-object-hit img{transition:none}#skills .skills-object-hit.is-active img{transform:none}}
