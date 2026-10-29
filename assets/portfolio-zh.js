@@ -214,6 +214,15 @@
         writeAttribute(element,name,translated ?? en);
       });
     });
+    // Heading support copy uses no closing punctuation in either language.
+    const captions='.hero-statement,.work-card-description,.wechat-subtitle,.wechat-logic-caption,.rn-subtitle,.rn-gallery-description,.dp-intro,.dp-format-description,.thinking-modal-subtitle,.thinking-node-description,.rn-analysis-group p,.wc-stage-description,.rn-decision-caption,.contact-invitation p';
+    document.querySelectorAll(captions).forEach(element=>{
+      const nodes=textNodes(element).filter(node=>node.nodeValue.trim());
+      const last=nodes.at(-1);
+      if(last)writeText(last,last.nodeValue.replace(/[.!?。！？；;，,:：…]+\s*$/u,''));
+    });
+    const galleryCaption=document.querySelector('.rn-gallery-description');
+    if(galleryCaption)galleryCaption.hidden=zh;
     // Details explicitly marked English use the active language for CJK speech.
     document.querySelectorAll('.experience-popover').forEach(element=>element.lang=zh?'zh':'en');
     observe();

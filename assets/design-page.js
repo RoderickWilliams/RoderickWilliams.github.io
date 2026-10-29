@@ -70,7 +70,9 @@
   const index=category.projects.indexOf(project);
   dialog.querySelector('h2').textContent=title(project);
   dialog.querySelector('p').textContent=project.images.length>1?imageTitle(project,imageIndex):title(category);
-  dialog.querySelector('.dp-viewer-image').src=project.images[imageIndex];dialog.querySelector('.dp-viewer-image').alt=title(project)+' · '+imageTitle(project,imageIndex);
+  const display=dialog.querySelector('.dp-viewer-image');
+  const source=dialog.classList.contains('dp-original-size')?project.images[imageIndex]:(project.displayImages?.[imageIndex]||project.images[imageIndex]);
+  if(display.getAttribute('src')!==source)display.src=source;display.decoding='async';dialog.querySelector('.dp-viewer-image').alt=title(project)+' · '+imageTitle(project,imageIndex);
   const company=companyFor(project),logo=dialog.querySelector('.dp-viewer-logo');logo.hidden=!company;
   if(company){logo.src=company.logo;logo.alt=title(company);}
   dialog.querySelector('.dp-viewer-close').setAttribute('aria-label',zh()?'关闭预览':'Close preview');

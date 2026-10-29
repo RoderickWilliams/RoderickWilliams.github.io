@@ -531,6 +531,15 @@ window.PortfolioChineseCopy = {"phrases":{"global":{"Zibo Wang — New Media Ope
         writeAttribute(element,name,translated ?? en);
       });
     });
+    // Heading support copy uses no closing punctuation in either language.
+    const captions='.hero-statement,.work-card-description,.wechat-subtitle,.wechat-logic-caption,.rn-subtitle,.rn-gallery-description,.dp-intro,.dp-format-description,.thinking-modal-subtitle,.thinking-node-description,.rn-analysis-group p,.wc-stage-description,.rn-decision-caption,.contact-invitation p';
+    document.querySelectorAll(captions).forEach(element=>{
+      const nodes=textNodes(element).filter(node=>node.nodeValue.trim());
+      const last=nodes.at(-1);
+      if(last)writeText(last,last.nodeValue.replace(/[.!?。！？；;，,:：…]+\s*$/u,''));
+    });
+    const galleryCaption=document.querySelector('.rn-gallery-description');
+    if(galleryCaption)galleryCaption.hidden=zh;
     // Details explicitly marked English use the active language for CJK speech.
     document.querySelectorAll('.experience-popover').forEach(element=>element.lang=zh?'zh':'en');
     observe();
@@ -1920,8 +1929,8 @@ window.portfolioDesign = [
           "assets/design/uploaded-20261013/brochures-20261013/industrial-simulation-solutions/page-002.webp"
         ],
         "thumbnails": [
-          "assets/design/uploaded-20261013/brochures-20261013/industrial-simulation-solutions/page-001-thumb.webp",
-          "assets/design/uploaded-20261013/brochures-20261013/industrial-simulation-solutions/page-002-thumb.webp"
+          "assets/design/screen-previews-20261029/industrial-simulation-solutions-01-thumb.webp",
+          "assets/design/screen-previews-20261029/industrial-simulation-solutions-02-thumb.webp"
         ],
         "width": 2041,
         "height": 2863,
@@ -1934,7 +1943,11 @@ window.portfolioDesign = [
           "第 2 页"
         ],
         "source": "F:\\国家超级计算西安中心\\02工业仿真行业解决方案彩页-1202(2)_1.pdf",
-        "pageCount": 2
+        "pageCount": 2,
+        "displayImages": [
+          "assets/design/screen-previews-20261029/industrial-simulation-solutions-01-fit.webp",
+          "assets/design/screen-previews-20261029/industrial-simulation-solutions-02-fit.webp"
+        ]
       },
       {
         "id": "national-supercomputing-center-b2b",
@@ -1946,8 +1959,8 @@ window.portfolioDesign = [
           "assets/design/uploaded-20261013/brochures-20261013/national-supercomputing-center-b2b/page-002.webp"
         ],
         "thumbnails": [
-          "assets/design/uploaded-20261013/brochures-20261013/national-supercomputing-center-b2b/page-001-thumb.webp",
-          "assets/design/uploaded-20261013/brochures-20261013/national-supercomputing-center-b2b/page-002-thumb.webp"
+          "assets/design/screen-previews-20261029/national-supercomputing-center-b2b-01-thumb.webp",
+          "assets/design/screen-previews-20261029/national-supercomputing-center-b2b-02-thumb.webp"
         ],
         "width": 7937,
         "height": 2693,
@@ -1960,7 +1973,11 @@ window.portfolioDesign = [
           "第 2 页"
         ],
         "source": "C:\\Users\\wzb02\\Desktop\\Zibo_WAMG_Brochure of National Supercomputing Center in Xi'an_to B.pdf",
-        "pageCount": 2
+        "pageCount": 2,
+        "displayImages": [
+          "assets/design/screen-previews-20261029/national-supercomputing-center-b2b-01-fit.webp",
+          "assets/design/screen-previews-20261029/national-supercomputing-center-b2b-02-fit.webp"
+        ]
       },
       {
         "id": "nsc-annual-report",
@@ -1986,22 +2003,10 @@ window.portfolioDesign = [
           "assets/design/annual-report-20261029/page-016.webp"
         ],
         "thumbnails": [
-          "assets/design/annual-report-20261029/page-001-thumb.webp",
-          "assets/design/annual-report-20261029/page-002-thumb.webp",
-          "assets/design/annual-report-20261029/page-003-thumb.webp",
-          "assets/design/annual-report-20261029/page-004-thumb.webp",
-          "assets/design/annual-report-20261029/page-005-thumb.webp",
-          "assets/design/annual-report-20261029/page-006-thumb.webp",
-          "assets/design/annual-report-20261029/page-007-thumb.webp",
-          "assets/design/annual-report-20261029/page-008-thumb.webp",
-          "assets/design/annual-report-20261029/page-009-thumb.webp",
-          "assets/design/annual-report-20261029/page-010-thumb.webp",
-          "assets/design/annual-report-20261029/page-011-thumb.webp",
-          "assets/design/annual-report-20261029/page-012-thumb.webp",
-          "assets/design/annual-report-20261029/page-013-thumb.webp",
-          "assets/design/annual-report-20261029/page-014-thumb.webp",
-          "assets/design/annual-report-20261029/page-015-thumb.webp",
-          "assets/design/annual-report-20261029/page-016-thumb.webp"
+          "assets/design/screen-previews-20261029/nsc-annual-report-01-thumb.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-02-thumb.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-03-thumb.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-04-thumb.webp"
         ],
         "width": 4026,
         "height": 2750,
@@ -2041,7 +2046,25 @@ window.portfolioDesign = [
           "第 15 页",
           "第 16 页"
         ],
-        "pageCount": 16
+        "pageCount": 16,
+        "displayImages": [
+          "assets/design/screen-previews-20261029/nsc-annual-report-01-fit.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-02-fit.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-03-fit.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-04-fit.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-05-fit.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-06-fit.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-07-fit.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-08-fit.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-09-fit.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-10-fit.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-11-fit.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-12-fit.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-13-fit.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-14-fit.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-15-fit.webp",
+          "assets/design/screen-previews-20261029/nsc-annual-report-16-fit.webp"
+        ]
       }
     ]
   },
@@ -2066,13 +2089,16 @@ window.portfolioDesign = [
           "assets/design/uploaded-20261013/posters-20261013/scnet-platform-01-preview.webp"
         ],
         "thumbnails": [
-          "assets/design/uploaded-20261013/posters-20261013/scnet-platform-01-thumb.webp"
+          "assets/design/screen-previews-20261029/scnet-platform-01-thumb.webp"
         ],
         "imageTitles": [
           "SCNet Computing Platform"
         ],
         "imageTitlesZh": [
           "超算互联网平台宣传海报"
+        ],
+        "displayImages": [
+          "assets/design/screen-previews-20261029/scnet-platform-01-fit.webp"
         ]
       },
       {
@@ -2089,13 +2115,16 @@ window.portfolioDesign = [
           "assets/design/uploaded-20261013/posters-20261013/labour-day-2026-01-preview.webp"
         ],
         "thumbnails": [
-          "assets/design/uploaded-20261013/posters-20261013/labour-day-2026-01-thumb.webp"
+          "assets/design/screen-previews-20261029/labour-day-2026-01-thumb.webp"
         ],
         "imageTitles": [
           "Labour Day 2026"
         ],
         "imageTitlesZh": [
           "五一劳动节海报"
+        ],
+        "displayImages": [
+          "assets/design/uploaded-20261013/posters-20261013/labour-day-2026-01-preview.webp"
         ]
       },
       {
@@ -2114,8 +2143,8 @@ window.portfolioDesign = [
           "assets/design/uploaded-20261013/posters-20261013/innovation-voucher-02-preview.webp"
         ],
         "thumbnails": [
-          "assets/design/uploaded-20261013/posters-20261013/innovation-voucher-01-thumb.webp",
-          "assets/design/uploaded-20261013/posters-20261013/innovation-voucher-02-thumb.webp"
+          "assets/design/screen-previews-20261029/innovation-voucher-01-thumb.webp",
+          "assets/design/screen-previews-20261029/innovation-voucher-02-thumb.webp"
         ],
         "imageTitles": [
           "Event poster",
@@ -2124,6 +2153,10 @@ window.portfolioDesign = [
         "imageTitlesZh": [
           "政策宣讲会海报",
           "政策宣讲会主视觉"
+        ],
+        "displayImages": [
+          "assets/design/screen-previews-20261029/innovation-voucher-01-fit.webp",
+          "assets/design/uploaded-20261013/posters-20261013/innovation-voucher-02-preview.webp"
         ]
       }
     ]
@@ -2147,8 +2180,8 @@ window.portfolioDesign = [
           "assets/design/uploaded-20261013/social-20261013/internship-return-offer-cover-01-preview.webp"
         ],
         "thumbnails": [
-          "assets/design/uploaded-20261013/social-20261013/university-choice-cover-01-thumb.webp",
-          "assets/design/uploaded-20261013/social-20261013/internship-return-offer-cover-01-thumb.webp"
+          "assets/design/screen-previews-20261029/social-cover-templates-01-thumb.webp",
+          "assets/design/screen-previews-20261029/social-cover-templates-02-thumb.webp"
         ],
         "imageTitles": [
           "University Application Advice Cover",
@@ -2161,6 +2194,10 @@ window.portfolioDesign = [
         "sources": [
           "C:/Users/wzb02/AppData/Local/Temp/codex-clipboard-f2b6b48f-5cb8-4959-ae49-008db0f23c65.jpg",
           "C:/Users/wzb02/AppData/Local/Temp/codex-clipboard-92ae29af-6a6b-41f9-9fba-3beee66e444c.jpg"
+        ],
+        "displayImages": [
+          "assets/design/uploaded-20261013/social-20261013/university-choice-cover-01-preview.webp",
+          "assets/design/uploaded-20261013/social-20261013/internship-return-offer-cover-01-preview.webp"
         ]
       },
       {
@@ -2176,9 +2213,9 @@ window.portfolioDesign = [
           "assets/design/uploaded-20261013/social-20261013/international-student-timeline-01-preview.webp"
         ],
         "thumbnails": [
-          "assets/design/uploaded-20261013/social-20261013/campus-onboarding-cover-01-thumb.webp",
-          "assets/design/uploaded-20261013/social-20261013/part-time-pay-template-01-thumb.webp",
-          "assets/design/uploaded-20261013/social-20261013/international-student-timeline-01-thumb.webp"
+          "assets/design/screen-previews-20261029/social-opening-templates-01-thumb.webp",
+          "assets/design/screen-previews-20261029/social-opening-templates-02-thumb.webp",
+          "assets/design/screen-previews-20261029/social-opening-templates-03-thumb.webp"
         ],
         "imageTitles": [
           "Campus Recruitment Onboarding Guide",
@@ -2194,6 +2231,11 @@ window.portfolioDesign = [
           "C:/Users/wzb02/AppData/Local/Temp/codex-clipboard-ddadfbd4-bf14-4e67-a285-b35f26585e52.jpg",
           "C:/Users/wzb02/AppData/Local/Temp/codex-clipboard-be3b8fc1-b45c-4216-bb9d-fc810f3153b2.jpg",
           "C:/Users/wzb02/AppData/Local/Temp/codex-clipboard-41c88c1a-11d0-4eca-bdda-32a9f6491b80.jpg"
+        ],
+        "displayImages": [
+          "assets/design/uploaded-20261013/social-20261013/campus-onboarding-cover-01-preview.webp",
+          "assets/design/uploaded-20261013/social-20261013/part-time-pay-template-01-preview.webp",
+          "assets/design/uploaded-20261013/social-20261013/international-student-timeline-01-preview.webp"
         ]
       },
       {
@@ -2212,8 +2254,8 @@ window.portfolioDesign = [
           "assets/design/uploaded-20261013/social-20261013/java-interview-cards-02-preview.webp"
         ],
         "thumbnails": [
-          "assets/design/uploaded-20261013/social-20261013/java-interview-cards-01-thumb.webp",
-          "assets/design/uploaded-20261013/social-20261013/java-interview-cards-02-thumb.webp"
+          "assets/design/screen-previews-20261029/java-interview-cards-01-thumb.webp",
+          "assets/design/screen-previews-20261029/java-interview-cards-02-thumb.webp"
         ],
         "imageTitles": [
           "Java Interview Questions",
@@ -2222,6 +2264,10 @@ window.portfolioDesign = [
         "imageTitlesZh": [
           "Java 面试题内页模板",
           "牛客面试题库尾图"
+        ],
+        "displayImages": [
+          "assets/design/uploaded-20261013/social-20261013/java-interview-cards-01-preview.webp",
+          "assets/design/uploaded-20261013/social-20261013/java-interview-cards-02-preview.webp"
         ]
       },
       {
@@ -2239,11 +2285,10 @@ window.portfolioDesign = [
           "assets/design/uploaded-20261013/social-20261013/recruitment-whitepaper-closing-card-01-preview.webp"
         ],
         "thumbnails": [
-          "assets/design/uploaded-20261013/social-20261013/interview-bank-closing-card-01-thumb.webp",
-          "assets/design/uploaded-20261013/social-20261013/app-interview-closing-card-01-thumb.webp",
-          "assets/design/uploaded-20261013/social-20261013/learning-resources-closing-card-01-thumb.webp",
-          "assets/design/uploaded-20261013/social-20261013/campus-resources-closing-card-01-thumb.webp",
-          "assets/design/uploaded-20261013/social-20261013/recruitment-whitepaper-closing-card-01-thumb.webp"
+          "assets/design/screen-previews-20261029/social-closing-templates-01-thumb.webp",
+          "assets/design/screen-previews-20261029/social-closing-templates-02-thumb.webp",
+          "assets/design/screen-previews-20261029/social-closing-templates-03-thumb.webp",
+          "assets/design/screen-previews-20261029/social-closing-templates-04-thumb.webp"
         ],
         "imageTitles": [
           "Interview Question Bank Closing Card",
@@ -2265,6 +2310,13 @@ window.portfolioDesign = [
           "C:/Users/wzb02/AppData/Local/Temp/codex-clipboard-21526e26-ea3f-48e9-9927-59743e8d907e.jpg",
           "C:/Users/wzb02/AppData/Local/Temp/codex-clipboard-89be2375-b555-4335-aae9-aa0042e9d532.jpg",
           "C:/Users/wzb02/AppData/Local/Temp/codex-clipboard-0d9a46a1-790c-4812-8fc9-b2d0f6159a32.jpg"
+        ],
+        "displayImages": [
+          "assets/design/uploaded-20261013/social-20261013/interview-bank-closing-card-01-preview.webp",
+          "assets/design/uploaded-20261013/social-20261013/app-interview-closing-card-01-preview.webp",
+          "assets/design/uploaded-20261013/social-20261013/learning-resources-closing-card-01-preview.webp",
+          "assets/design/uploaded-20261013/social-20261013/campus-resources-closing-card-01-preview.webp",
+          "assets/design/uploaded-20261013/social-20261013/recruitment-whitepaper-closing-card-01-preview.webp"
         ]
       },
       {
@@ -2285,9 +2337,9 @@ window.portfolioDesign = [
           "assets/design/uploaded-20261013/social-20261013/ai-product-interview-templates-03-preview.webp"
         ],
         "thumbnails": [
-          "assets/design/uploaded-20261013/social-20261013/ai-product-interview-templates-01-thumb.webp",
-          "assets/design/uploaded-20261013/social-20261013/ai-product-interview-templates-02-thumb.webp",
-          "assets/design/uploaded-20261013/social-20261013/ai-product-interview-templates-03-thumb.webp"
+          "assets/design/screen-previews-20261029/ai-product-interview-templates-01-thumb.webp",
+          "assets/design/screen-previews-20261029/ai-product-interview-templates-02-thumb.webp",
+          "assets/design/screen-previews-20261029/ai-product-interview-templates-03-thumb.webp"
         ],
         "imageTitles": [
           "MiniMax Hailuo AI Interview Template",
@@ -2298,6 +2350,11 @@ window.portfolioDesign = [
           "MiniMax 海螺 AI 产品面经模板",
           "百度文心一言 AI 产品面经模板",
           "蔚来 AI 产品经理面经模板"
+        ],
+        "displayImages": [
+          "assets/design/uploaded-20261013/social-20261013/ai-product-interview-templates-01-preview.webp",
+          "assets/design/uploaded-20261013/social-20261013/ai-product-interview-templates-02-preview.webp",
+          "assets/design/uploaded-20261013/social-20261013/ai-product-interview-templates-03-preview.webp"
         ]
       },
       {
@@ -2318,9 +2375,9 @@ window.portfolioDesign = [
           "assets/design/uploaded-20261013/social-20261013/graduate-salary-cover-templates-03-preview.webp"
         ],
         "thumbnails": [
-          "assets/design/uploaded-20261013/social-20261013/graduate-salary-cover-templates-01-thumb.webp",
-          "assets/design/uploaded-20261013/social-20261013/graduate-salary-cover-templates-02-thumb.webp",
-          "assets/design/uploaded-20261013/social-20261013/graduate-salary-cover-templates-03-thumb.webp"
+          "assets/design/screen-previews-20261029/graduate-salary-cover-templates-01-thumb.webp",
+          "assets/design/screen-previews-20261029/graduate-salary-cover-templates-02-thumb.webp",
+          "assets/design/screen-previews-20261029/graduate-salary-cover-templates-03-thumb.webp"
         ],
         "imageTitles": [
           "Huawei Graduate Salary Cover",
@@ -2331,6 +2388,11 @@ window.portfolioDesign = [
           "华为 24 届校招薪资首图模板",
           "小米 24 届校招薪资首图模板",
           "百度 24 届校招薪资首图模板"
+        ],
+        "displayImages": [
+          "assets/design/uploaded-20261013/social-20261013/graduate-salary-cover-templates-01-preview.webp",
+          "assets/design/uploaded-20261013/social-20261013/graduate-salary-cover-templates-02-preview.webp",
+          "assets/design/uploaded-20261013/social-20261013/graduate-salary-cover-templates-03-preview.webp"
         ]
       },
       {
@@ -2351,9 +2413,9 @@ window.portfolioDesign = [
           "assets/design/uploaded-20261013/social-20261013/employer-recruitment-cover-templates-03-preview.webp"
         ],
         "thumbnails": [
-          "assets/design/uploaded-20261013/social-20261013/employer-recruitment-cover-templates-01-thumb.webp",
-          "assets/design/uploaded-20261013/social-20261013/employer-recruitment-cover-templates-02-thumb.webp",
-          "assets/design/uploaded-20261013/social-20261013/employer-recruitment-cover-templates-03-thumb.webp"
+          "assets/design/screen-previews-20261029/employer-recruitment-cover-templates-01-thumb.webp",
+          "assets/design/screen-previews-20261029/employer-recruitment-cover-templates-02-thumb.webp",
+          "assets/design/screen-previews-20261029/employer-recruitment-cover-templates-03-thumb.webp"
         ],
         "imageTitles": [
           "DiDi Recruitment Cover",
@@ -2364,6 +2426,11 @@ window.portfolioDesign = [
           "滴滴招聘首图模板",
           "诺瓦星云招聘首图模板",
           "小米招聘首图模板"
+        ],
+        "displayImages": [
+          "assets/design/uploaded-20261013/social-20261013/employer-recruitment-cover-templates-01-preview.webp",
+          "assets/design/uploaded-20261013/social-20261013/employer-recruitment-cover-templates-02-preview.webp",
+          "assets/design/uploaded-20261013/social-20261013/employer-recruitment-cover-templates-03-preview.webp"
         ]
       }
     ]
@@ -2443,7 +2510,9 @@ window.portfolioDesign = [
   const index=category.projects.indexOf(project);
   dialog.querySelector('h2').textContent=title(project);
   dialog.querySelector('p').textContent=project.images.length>1?imageTitle(project,imageIndex):title(category);
-  dialog.querySelector('.dp-viewer-image').src=project.images[imageIndex];dialog.querySelector('.dp-viewer-image').alt=title(project)+' · '+imageTitle(project,imageIndex);
+  const display=dialog.querySelector('.dp-viewer-image');
+  const source=dialog.classList.contains('dp-original-size')?project.images[imageIndex]:(project.displayImages?.[imageIndex]||project.images[imageIndex]);
+  if(display.getAttribute('src')!==source)display.src=source;display.decoding='async';dialog.querySelector('.dp-viewer-image').alt=title(project)+' · '+imageTitle(project,imageIndex);
   const company=companyFor(project),logo=dialog.querySelector('.dp-viewer-logo');logo.hidden=!company;
   if(company){logo.src=company.logo;logo.alt=title(company);}
   dialog.querySelector('.dp-viewer-close').setAttribute('aria-label',zh()?'关闭预览':'Close preview');
