@@ -59,7 +59,7 @@
         svg.setAttribute('aria-label',note.title);
         svg.setAttribute('preserveAspectRatio','xMidYMid meet');
         const picture = document.createElementNS(svg.namespaceURI,'image');
-        picture.setAttribute('href',note.image);
+        window.PortfolioMedia.set(picture,note.image,null,'href');
         picture.setAttribute('width',note.panelRatio / note.panelWidth);
         picture.setAttribute('height','1');
         svg.append(picture);
@@ -264,7 +264,7 @@
     profileShot.dataset.account = account.id;
     if (account.image) {
       const image = make('img');
-      image.src = account.image;
+      window.PortfolioMedia.set(image,account.image,'rednote');
       image.alt = `${account.name} profile screenshot`;
       image.decoding = 'async';
       profileShot.replaceChildren(image);

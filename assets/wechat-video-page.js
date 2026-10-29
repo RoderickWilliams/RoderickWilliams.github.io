@@ -89,13 +89,13 @@
 
   function render() {
     const item = cases[current], next = cases[(current + 1) % cases.length];
-    player.poster = asset(item, 'jpg');
+    window.PortfolioMedia.set(player,asset(item, 'webp'),'wechat','poster');
     player.setAttribute('aria-label', item.title);
     panel.querySelector('.wv-title').textContent = item.title;
     panel.querySelector('.wv-date').textContent = item.date;
     panel.querySelector('.wv-counter').textContent = `${String(current + 1).padStart(2, '0')} / 02`;
     panel.querySelector('.wv-original').href = item.source;
-    panel.querySelector('.wv-next img').src = asset(next, 'jpg');
+    window.PortfolioMedia.set(panel.querySelector('.wv-next img'),asset(next, 'webp'),'wechat');
     panel.querySelector('.wv-next strong').textContent = next.title;
     switcher.setAttribute('aria-label', `Switch video to ${next.title}`);
     play.setAttribute('aria-label', `Play ${item.title}`);

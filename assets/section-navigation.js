@@ -1,6 +1,6 @@
 (() => {
   const viewport = document.querySelector('.section-viewport');
-  const order = ['home','about','work','wechat','rednote','rednote-notes','design','skills','contact'];
+  const order = ['home','work','wechat','rednote','rednote-notes','design','skills','contact'];
   const workSlides = ['work','wechat','rednote','rednote-notes','design'];
   const layers = order.map(id => viewport.querySelector(`[data-section="${id}"]`));
   const areas = layers.map(layer => layer.querySelector('.section-scroll-area'));
@@ -13,7 +13,7 @@
   let accumulator = 0, lastWheel = 0, lastContentWheel = -Infinity, cooldown = 0, gestureGuard = false;
   const resolve = hash => {
     const id = hash.replace(/^#/, '');
-    if (!id) return {index:0,target:hero};
+    if (!id || id === 'about') return {index:0,target:hero};
     const target = document.getElementById(id);
     const owner = target?.closest('.section-layer');
     return owner ? {index:order.indexOf(owner.dataset.section),target} : null;
