@@ -6,3 +6,20 @@
  #wechat #wechat-articles .wechat-item {align-content:center;}
 }
 #wechat.wc-paged-page .wechat-collection {padding-top:4px;}
+
+/* Reserve the entire arrow width, without moving a row outside its clipped column. */
+#wechat #wechat-articles .wechat-item {
+ --wc-arrow-thumb:clamp(112px,11.7cqi,168px);
+ grid-template-columns:var(--wc-arrow-thumb) minmax(0,1fr) 28px;
+ padding-right:8px;
+}
+#wechat.wc-paged-page #wechat-articles .wechat-item {--wc-arrow-thumb:96px;}
+html[lang="zh"] #wechat #wechat-articles .wechat-item {--wc-arrow-thumb:72px;}
+#wechat #wechat-articles .wechat-item:hover,
+#wechat #wechat-articles .wechat-item[aria-pressed="true"] {
+ border-color:transparent;box-shadow:none;transform:none;
+}
+#wechat #wechat-articles .wechat-item-arrow {width:23px;height:23px;justify-self:center;flex-shrink:0;}
+@container section-window (max-width:480px){
+ html[lang="zh"] #wechat #wechat-articles .wechat-item {--wc-arrow-thumb:64px;}
+}
