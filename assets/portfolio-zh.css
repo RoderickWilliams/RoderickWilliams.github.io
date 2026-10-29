@@ -274,7 +274,7 @@ html[lang="zh"] .zh-hero-cta:hover svg {transform:translateX(4px);}
 html[lang="zh"] .zh-hero-cta:focus-visible {outline:3px solid #0e1420;outline-offset:4px;}
 
 /* 右栏人物与背景按用户要求照搬英文版：不再隐藏 .hero-art，也不再使用中文专属分层背景。
-   人物素材本来就是同一张 assets/hero/zibo-character.png。 */
+   人物素材本来就是同一张 assets/hero/zibo-character.webp。 */
 
 /* 笔记本一档：收窄栏距与视觉规模 */
 @container section-window (max-width:1240px) {

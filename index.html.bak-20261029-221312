@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Zibo Wang — New Media Operations and Brand Marketing portfolio">
+  <title>Zibo Wang — New Media Operations & Brand Marketing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#070707;--paper:#f5f1e8;--cream:#fffaf0;--yellow:#ffd817;--red:#ff4a36;--blue:#7dbcf0;--blue2:#55a8ec;--muted:#5e5b55;--x:clamp(28px,6vw,92px);--ease:cubic-bezier(.22,1,.36,1)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#ddd9d1;color:var(--ink);font:400 16px/1.6 Inter,Arial,sans-serif;overflow-x:clip}.page{width:min(100%,1440px);margin:auto;background:var(--paper);position:relative;overflow:clip}.page:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:900;background-image:linear-gradient(rgba(7,7,7,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(7,7,7,.025) 1px,transparent 1px);background-size:54px 54px;background-position:0 var(--grid-y,0);mask-image:linear-gradient(to bottom,#0008,transparent 90%)}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit;color:inherit}.display{font-family:Anton,Impact,sans-serif;text-transform:uppercase;letter-spacing:-.025em}.hand{font-family:Caveat,"Comic Sans MS",cursive}.section-title{font:400 clamp(72px,7vw,112px)/.92 Anton,Impact,sans-serif;letter-spacing:-.02em;text-transform:uppercase;margin:0}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.body-copy{font-size:clamp(15px,1.05vw,17px);line-height:1.72;letter-spacing:.005em;max-width:58ch}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}section{scroll-margin-top:90px}.focusable:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:4px}
+    .scroll-progress{position:fixed;z-index:1100;left:0;top:0;width:100%;height:3px;transform-origin:left;background:var(--red);scale:0 1}.asterisk{width:44px;height:44px;position:relative}.asterisk i{position:absolute;left:19px;top:2px;width:7px;height:40px;background:var(--red);border-radius:8px}.asterisk i:nth-child(2){rotate:60deg}.asterisk i:nth-child(3){rotate:-60deg}
+    .experience{padding:clamp(110px,11vw,160px) var(--x);display:grid;grid-template-columns:38% 62%;position:relative}.experience:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.9%,rgba(0,0,0,.035) 50%,transparent 50.1%);pointer-events:none}.experience-heading{position:sticky;top:130px;align-self:start;padding-right:50px}.experience-heading .hand{color:var(--red);font-size:28px;display:block;margin-top:28px;rotate:-3deg}.active-year{font:400 clamp(90px,9vw,138px)/1 Anton;color:var(--blue);margin-top:35px;transition:opacity .25s}.timeline{position:relative}.experience-item{padding:56px 0 72px;border-top:1px solid rgba(7,7,7,.16);opacity:.32;translate:28px 0;transition:opacity .45s ease,translate .55s var(--ease)}.experience-item.active{opacity:1;translate:0}.experience-item .year{font:400 16px/1 Anton;letter-spacing:.06em;color:var(--red)}.experience-item h3{font-size:clamp(25px,2.5vw,38px);line-height:1.18;letter-spacing:-.01em;margin:18px 0 24px}.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}.tag{font-size:11px;font-weight:700;letter-spacing:.07em;border:1px solid;border-radius:999px;padding:8px 11px}
+    .services{min-height:90vh;padding:clamp(100px,10vw,150px) var(--x);display:grid;grid-template-columns:38% 62%;background:var(--cream);position:relative}.services-intro{position:sticky;top:130px;align-self:start}.good-badge{margin-top:46px;width:126px;height:126px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;text-align:center;font-size:12px;font-weight:700;rotate:-16deg;transition:rotate .3s,scale .3s}.good-badge:hover{rotate:-10deg;scale:1.04}.good-badge svg{width:43px;fill:#fff}.service-list{border-bottom:1px solid #0002}.service{min-height:160px;padding:30px 12px;border-top:1px solid rgba(7,7,7,.16);display:grid;grid-template-columns:64px 1fr minmax(220px,1.1fr) 50px;gap:24px;align-items:center;transition:background .25s}.service:nth-child(1):hover,.service:nth-child(4):hover{background:#ffd81722}.service:nth-child(2):hover{background:#7dbcf02c}.service:nth-child(3):hover{background:#ff4a361c}.service-index{font:400 22px/1 Anton;color:var(--muted)}.service h3{font-size:clamp(23px,2vw,30px);line-height:1.15;letter-spacing:-.01em;margin:0;transition:translate .25s var(--ease)}.service p{font-size:15px;line-height:1.65;margin:0}.service-arrow{font-size:30px;opacity:.35;transition:translate .25s,opacity .25s,rotate .25s}.service:hover h3{translate:6px 0}.service:hover .service-arrow{translate:5px 0;opacity:1;rotate:-25deg}
+    .work{background:var(--blue);padding:clamp(105px,10vw,150px) 0 0;position:relative}.work-head{padding:0 var(--x);display:flex;justify-content:space-between;align-items:end;gap:30px}.work-note{background:#090909;color:#fff;padding:9px 18px;font-size:22px;line-height:.9;rotate:-3deg}.work-tabs{position:sticky;z-index:60;top:82px;margin:48px var(--x) 0;display:flex;gap:12px;align-items:center}.work-tab{padding:12px 18px;border:1.5px solid;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.08em;background:var(--blue);transition:background .25s,color .25s,translate .25s}.work-tab:hover{translate:0 -2px}.work-tab.active{background:var(--ink);color:#fff}.category{scroll-margin-top:150px}.category-head{display:flex;justify-content:space-between;align-items:end;gap:24px;padding:0 var(--x);margin-bottom:44px}.category-title{font-size:clamp(58px,6vw,90px)}.category-label{font-size:12px;font-weight:700;letter-spacing:.09em}.vibe{height:220vh;padding-top:120px}.vibe-sticky{position:sticky;top:100px;height:calc(100vh - 112px);overflow:hidden;display:flex;align-items:center}.vibe-track{display:flex;gap:34px;width:max-content;padding:0 var(--x);will-change:transform}.project{width:min(78vw,1080px);background:var(--cream);padding:14px;border-radius:18px;flex:none;transform-origin:center;transition:box-shadow .25s}.project-media{height:min(56vh,560px);min-height:390px;border-radius:11px;overflow:hidden;position:relative;background:#ddd}.project-copy{min-height:105px;display:grid;grid-template-columns:70px 1fr auto 54px;align-items:center;gap:18px;padding:18px 8px 5px}.project-copy .no{font:400 25px/1 Anton}.project-copy h3{font-size:22px;margin:0;letter-spacing:-.01em}.project-copy p{font-size:12px;letter-spacing:.08em;text-transform:uppercase}.go{width:44px;height:44px;border:1.5px solid;border-radius:50%;display:grid;place-items:center;font-size:22px;transition:translate .2s,rotate .2s}.project:hover .go{translate:3px -3px;rotate:-35deg}.sample-brand{background:linear-gradient(145deg,#ddd5cc,#f8f3ed)}.sample-brand:before{content:"NOVA";position:absolute;right:12%;top:21%;padding:65px 42px;background:#294ea8;color:#fff;font:400 64px/1 Anton;rotate:-4deg;box-shadow:-90px 95px 0 -40px #111}.sample-web{background:linear-gradient(#0004,#0004),linear-gradient(135deg,#bda28d,#e2d6cb)}.sample-web:before{content:"ELEVATE\A YOUR BRAND\A ONLINE.";white-space:pre;position:absolute;left:12%;top:15%;color:#fff;font:700 clamp(34px,4vw,62px)/1.05 Inter}.sample-web:after{content:"ABOUT   SERVICES   WORK";position:absolute;left:12%;right:12%;bottom:12%;padding:25px;background:#f7f1e8;font-size:12px;letter-spacing:.14em}.wechat{background:var(--paper);padding:clamp(105px,10vw,150px) var(--x)}.wechat-tools{display:flex;gap:10px}.subtoggle{border:1.5px solid;border-radius:999px;background:transparent;padding:10px 16px;font-size:11px;font-weight:800;letter-spacing:.08em;cursor:pointer}.subtoggle.active{background:var(--yellow)}.archive{margin-top:60px}.article-row{position:relative;display:grid;grid-template-columns:70px 1fr 100px;gap:22px;align-items:center;padding:36px 0;border-top:1px solid #0003}.article-row:last-child{border-bottom:1px solid #0003}.article-row h3{font-size:clamp(24px,2.3vw,38px);line-height:1.22;letter-spacing:-.01em;margin:0;transition:translate .25s}.article-row:hover h3{translate:8px 0}.article-meta{font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:9px}.read{font-size:11px;font-weight:800;letter-spacing:.08em}.video-panel{display:none;margin-top:60px}.video-panel.active{display:block}.article-panel.hidden{display:none}.video-controls{display:flex;justify-content:flex-end;gap:9px;margin-bottom:18px}.rail-button{width:44px;height:44px;border:1.5px solid;border-radius:50%;background:transparent;cursor:pointer}.video-rail{display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.video-rail::-webkit-scrollbar{display:none}.video-card{width:clamp(300px,31vw,410px);flex:none;scroll-snap-align:start}.video-thumb{aspect-ratio:16/10;background:var(--blue);position:relative;overflow:hidden}.video-thumb:before{content:"PLAY ↗";position:absolute;inset:0;display:grid;place-items:center;background:#0007;color:#fff;font-size:12px;font-weight:800;letter-spacing:.1em;opacity:0;transition:opacity .25s}.video-card:hover .video-thumb:before{opacity:1}.video-card h3{font-size:22px;margin:18px 0 7px}.rednote{height:220vh;background:var(--cream);position:relative}.rednote-sticky{position:sticky;top:74px;height:calc(100vh - 74px);overflow:hidden;padding-top:60px}.rednote-head{padding:0 var(--x);display:flex;justify-content:space-between;align-items:end}.rednote-head .hand{font-size:30px;color:var(--red);rotate:-3deg}.rednote-track{display:flex;gap:28px;width:max-content;padding:55px var(--x);will-change:transform}.note-card{width:330px;background:var(--paper);padding:10px 10px 22px;border:1px solid #0002;flex:none;transition:scale .25s,rotate .25s}.note-card:nth-child(2n){translate:0 46px}.note-card:nth-child(3n){translate:0 14px}.note-card:hover{scale:1.018;rotate:1deg}.note-cover{height:390px;overflow:hidden;position:relative}.note-cover:after{content:"VIEW NOTE ↗";position:absolute;right:12px;bottom:12px;background:var(--yellow);padding:9px 11px;font-size:10px;font-weight:800;letter-spacing:.08em;translate:0 10px;opacity:0;transition:.25s}.note-card:hover .note-cover:after{opacity:1;translate:0}.note-card h3{font-size:20px;line-height:1.3;margin:18px 8px 8px}.note-card p{font-size:11px;letter-spacing:.08em;margin:0 8px}.cover-a{background:linear-gradient(160deg,#294ea8 0 55%,#fff 55%)}.cover-a:before{content:"NOVA\A BRAND\A SYSTEM";white-space:pre;position:absolute;left:24px;top:40px;color:#fff;font:400 45px/.95 Anton}.cover-b{background:var(--yellow)}.cover-b:before{content:"SUMMER\A VIBES\A FEST";white-space:pre;position:absolute;left:26px;top:48px;font:400 52px/.9 Anton;color:#111;rotate:-3deg}.cover-c{background:var(--red)}.cover-c:before{content:"CONTENT\A THAT\A CONNECTS";white-space:pre;position:absolute;left:27px;top:55px;font:400 45px/.95 Anton;color:#fff}.cover-d{background:var(--blue)}.cover-d:before{content:"FOCUS.\A BUILD.\A GROW.";white-space:pre;position:absolute;left:30px;top:55px;font:700 41px/1 Inter}.cover-e{background:#111}.cover-e:before{content:"MAKE\A IDEAS\A MOVE";white-space:pre;position:absolute;left:32px;top:55px;font:400 54px/.9 Anton;color:var(--yellow)}
+    .skills{padding:clamp(105px,10vw,150px) 0;background:var(--yellow);overflow:hidden}.skills-head{padding:90px var(--x) 55px}.skill-groups{display:grid;grid-template-columns:repeat(3,1fr);padding:0 var(--x)}.skill-group{min-height:350px;padding:36px 30px;border-top:1px solid;border-right:1px solid;transition:background .25s}.skill-group:last-child{border-right:0}.skill-group:nth-child(1):hover{background:#fff7a4}.skill-group:nth-child(2):hover{background:#b9dcf8}.skill-group:nth-child(3):hover{background:#ff8879}.skill-group h3{font:400 clamp(45px,4vw,64px)/1 Anton;margin:0 0 36px}.skill-group p{font-size:16px;line-height:1.9;color:#0009;margin:0;transition:translate .2s,color .2s}.skill-group:hover p{translate:0 -2px;color:#000}
+    .contact{min-height:78vh;position:relative;background:var(--yellow);padding:clamp(105px,10vw,150px) var(--x);display:grid;grid-template-columns:54% 46%;align-items:center;overflow:hidden}.create h2{font-size:clamp(86px,8vw,128px);line-height:.92;letter-spacing:-.02em;margin:0}.create p{font-size:clamp(58px,5vw,78px);line-height:1;color:var(--red);margin:10px 0 0;rotate:-3deg}.pitch{font-size:18px;font-weight:600;line-height:1.65;margin-top:46px}.red-panel{position:absolute;right:0;top:0;width:43%;height:100%;background:var(--red);clip-path:polygon(16% 0,100% 0,100% 100%,0 100%);padding:clamp(105px,10vw,145px) 42px 50px 12%;color:#fff;transition:clip-path .75s var(--ease)}.contact:not(.in) .red-panel{clip-path:polygon(100% 0,100% 0,100% 100%,96% 100%)}.contact-pill{display:inline-block;background:#fff;color:var(--red);padding:11px 18px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.07em}.contact-list{margin-top:34px;display:grid;gap:20px}.contact-list a,.contact-list span{display:flex;gap:13px;align-items:center;font-size:13px}.contact-icon{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}.footer{min-height:112px;background:var(--blue2);color:#fff;display:grid;grid-template-columns:1.2fr 1fr 1.1fr;align-items:center;padding:0 var(--x);gap:34px;font-size:12px;font-weight:700;letter-spacing:.04em}.footer>div+div{border-left:1px solid #fff8;padding-left:34px}.footer small{display:block}.footer-cta{background:#fff;color:#111;border-radius:999px;padding:15px 22px;text-align:center;transition:translate .2s}.footer-cta:hover{translate:0 -3px}
+    .reveal{opacity:0;translate:0 22px;transition:opacity .5s ease,translate .65s var(--ease)}.reveal.in{opacity:1;translate:0}.cursor-label{position:fixed;z-index:1200;pointer-events:none;left:0;top:0;padding:8px 11px;border-radius:999px;background:var(--ink);color:#fff;font-size:9px;font-weight:800;letter-spacing:.1em;opacity:0;scale:.8;transition:opacity .15s,scale .15s;will-change:transform}.cursor-label.show{opacity:1;scale:1}
+    @media(max-width:900px){.experience,.services{grid-template-columns:1fr;padding-inline:28px}.experience-heading,.services-intro{position:relative;top:auto;padding:0;margin-bottom:70px}.active-year{font-size:80px}.experience-item{translate:0 18px}.service{grid-template-columns:45px 1fr}.service p{grid-column:2}.service-arrow{display:none}.work-head{padding-inline:24px;display:block}.work-note{display:inline-block;margin-top:30px}.work-tabs{top:76px;margin-inline:20px;overflow-x:auto;scrollbar-width:none}.work-tab{white-space:nowrap}.vibe{height:auto;padding:95px 0}.vibe-sticky{position:relative;top:auto;height:auto;overflow:auto}.vibe-track{overflow-x:auto;width:auto;scroll-snap-type:x mandatory;padding:0 22px;scrollbar-width:none}.project{width:84vw;scroll-snap-align:start}.project-media{height:380px;min-height:0}.project-copy{grid-template-columns:45px 1fr 40px}.project-copy p{display:none}.category-head{padding-inline:24px}.wechat{padding-inline:24px}.article-row{grid-template-columns:45px 1fr}.article-row .read{display:none}.rednote{height:auto;padding:90px 0}.rednote-sticky{position:relative;top:auto;height:auto;overflow:visible}.rednote-head{padding-inline:24px}.rednote-track{overflow-x:auto;width:auto;scroll-snap-type:x mandatory;padding-inline:24px;scrollbar-width:none}.note-card{width:82vw;scroll-snap-align:center}.skill-groups{grid-template-columns:1fr;padding-inline:24px}.skill-group{border-right:0}.contact{display:block;padding:90px 24px 430px}.red-panel{top:auto;bottom:0;width:100%;height:390px;clip-path:polygon(0 13%,100% 0,100% 100%,0 100%);padding:80px 28px 30px}.contact:not(.in) .red-panel{clip-path:polygon(0 100%,100% 100%,100% 100%,0 100%)}.footer{grid-template-columns:1fr 1fr;padding:35px 24px;gap:24px}.footer-cta{grid-column:1/-1}.cursor-label{display:none}}
+    @media(max-width:560px){.experience,.services{padding-block:95px}.service{gap:12px;padding-block:28px}.work-tabs{margin-top:34px}.category-head{display:block}.wechat-tools{margin-top:24px}.article-row h3{font-size:23px}.rednote-head{display:block}.rednote-head .hand{margin-top:18px}.skills-head{padding:70px 24px 42px}.contact{min-height:760px}.create h2{font-size:72px}.create p{font-size:46px}.footer{grid-template-columns:1fr}.footer>div+div{border-left:0;padding-left:0}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1!important;translate:none!important;transition:none!important}.magnetic,.project,.note-card{transform:none!important;translate:none!important}.vibe,.rednote{height:auto}.vibe-sticky,.rednote-sticky{position:relative;top:auto;height:auto;overflow:auto}.vibe-track,.rednote-track{overflow-x:auto;width:auto}.red-panel{transition:none!important}}
+  </style>
+  <style>
+    :root{--content-max:1560px;--gutter:clamp(28px,5vw,88px)}html,body{width:100%;margin:0;overflow-x:clip}body{background:var(--paper)}.page{width:100%;max-width:none;margin:0;overflow:clip}.display,.section-title{letter-spacing:-.015em;text-wrap:balance}.section-title{font-size:clamp(72px,7.5vw,128px);line-height:.96}.body-copy{font-size:clamp(16px,1.05vw,18px);line-height:1.75;max-width:60ch}.button{transition:transform .28s var(--ease),background .28s ease}.button:hover{transform:translateY(-2px)}.arrow{display:inline-block;transition:transform .25s}.button:hover .arrow{transform:translate(3px,-3px)}
+    .experience{width:min(calc(100% - var(--gutter)*2),var(--content-max));margin:auto;padding-block:clamp(120px,11vw,190px);padding-inline:0;grid-template-columns:32% 68%}.timeline:before{content:"";position:absolute;left:-28px;top:0;width:3px;height:100%;background:#00000012}.timeline:after{content:"";position:absolute;left:-28px;top:0;width:3px;height:var(--timeline-progress,0%);background:var(--red);transition:height .15s linear}.experience-item h3{translate:12px 0;transition:translate .55s var(--ease)}.experience-item.active h3{translate:0}.active-year{clip-path:inset(0 0 0 0)}
+    .services{width:min(calc(100% - var(--gutter)*2),var(--content-max));margin:auto;padding-block:clamp(120px,11vw,190px);padding-inline:0;grid-template-columns:34% 66%;min-height:0;background:transparent}.services:before{content:"";position:absolute;z-index:-1;left:50%;top:0;width:100vw;height:100%;translate:-50% 0;background:var(--cream)}.service{min-height:150px}.service:hover .service-index{color:var(--red)}
+    .work{padding-top:clamp(120px,11vw,190px);overflow:visible}.work-head{width:min(calc(100% - var(--gutter)*2),var(--content-max));margin:auto;padding:0;align-items:start}.work-head>div:first-child:after{content:"A growing archive of products, content and experiments.";display:block;max-width:32ch;margin-top:42px;font-size:clamp(16px,1.05vw,18px);line-height:1.75}.work-tabs{width:min(calc(100% - var(--gutter)*2),var(--content-max));margin:55px auto 0;top:76px}.vibe{height:auto;padding:100px 0 150px}.vibe-sticky{position:relative;top:auto;height:auto;overflow:visible;width:min(calc(100% - var(--gutter)*2),var(--content-max));margin:auto}.vibe-track{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,2.2vw,36px);width:100%;padding:0;transform:none!important}.project{width:auto;padding:13px;transition:transform .3s var(--ease),box-shadow .3s}.project:nth-child(2){transition-delay:90ms}.project:hover{translate:0 -6px}.project-media{height:auto;min-height:0;aspect-ratio:16/10;transition:scale .3s var(--ease)}.project:hover .project-media{scale:1.025}.project-copy{grid-template-columns:54px 1fr auto auto;padding:20px 10px 8px;min-height:92px}.project-status{font-size:10px;letter-spacing:.08em;border:1px solid;border-radius:999px;padding:8px 10px;white-space:nowrap;color:var(--muted)}
+    .wechat{width:min(calc(100% - var(--gutter)*2),var(--content-max));margin:-60px auto 0;padding:clamp(120px,10vw,170px) var(--gutter);max-width:none;border-radius:32px 32px 0 0;position:relative;z-index:3}.wechat:before{content:"";position:absolute;z-index:-1;inset:0 calc(50% - 50vw);background:var(--paper);border-radius:32px 32px 0 0}.article-row{min-height:130px}.article-row:after{content:"";position:absolute;right:120px;width:240px;aspect-ratio:16/10;background:var(--blue);opacity:0;translate:0 12px;transition:.25s;pointer-events:none}.article-row:nth-child(2):after{background:var(--yellow)}.article-row:nth-child(3):after{background:var(--red)}.article-row:hover:after{opacity:1;translate:0}.video-card{width:clamp(290px,29vw,390px)}
+    .rednote{height:auto;background:var(--cream);padding:clamp(130px,11vw,190px) 0}.rednote-head{width:min(calc(100% - var(--gutter)*2),var(--content-max));margin:auto;padding:0;align-items:start}.rednote-head .body-copy{margin-top:42px}.rednote-head .hand{font-size:31px;color:var(--red);rotate:-3deg;margin-top:110px}.rednote-grid{width:min(calc(100vw - 48px),1800px);margin:90px auto 0;columns:4;column-gap:clamp(18px,2vw,30px)}.note-card{display:inline-block;width:100%;margin:0 0 clamp(18px,2vw,30px);padding:10px 10px 22px;break-inside:avoid;translate:0 0!important;opacity:1;transition:transform .3s var(--ease),opacity .6s var(--ease)}.note-card.note-reveal{opacity:0;transform:translateY(50px) scale(.97)}.note-card.note-reveal.in{opacity:1;transform:translateY(var(--note-depth,0)) scale(1)}.note-card:hover{transform:translateY(-5px)!important;scale:1;rotate:0}.note-cover{height:auto}.ratio-square{aspect-ratio:1}.ratio-tall{aspect-ratio:9/14}.ratio-four-five{aspect-ratio:4/5}.ratio-three-four{aspect-ratio:3/4}.note-card:hover .note-cover{scale:1.025}.note-card:nth-child(4n+2){transition-delay:60ms}.note-card:nth-child(4n+3){transition-delay:120ms}.note-card:nth-child(4n){transition-delay:180ms}
+    .skills{background:var(--paper);padding:0 0 clamp(120px,11vw,180px)}.skills-head{width:min(calc(100% - var(--gutter)*2),var(--content-max));margin:auto;padding:clamp(110px,9vw,150px) 0 65px}.skill-groups{width:min(calc(100% - var(--gutter)*2),var(--content-max));margin:auto;padding:0}
+    .contact{height:clamp(520px,55vw,680px);min-height:500px;padding:0;display:block;overflow:visible}.contact-inner{width:min(calc(100% - var(--gutter)*2),var(--content-max));height:100%;margin:auto;display:grid;grid-template-columns:42% 22% 36%;align-items:center}.create{grid-column:1}.pitch{grid-column:2;margin:0;padding:0 28px;font-size:17px;line-height:1.65}.hand-arrow{display:block;font-size:55px;line-height:1;color:var(--red);rotate:15deg;margin-top:18px}.red-panel{width:37%;height:100%;padding:clamp(80px,7vw,110px) var(--gutter) 45px clamp(9%,130px);clip-path:polygon(15% 0,100% 0,100% 100%,0 100%)}.contact:not(.in) .red-panel{clip-path:polygon(15% 0,100% 0,100% 100%,0 100%)}.thank{position:absolute;z-index:20;right:4%;bottom:-30px;width:150px;height:118px;background:#fff;color:#070707;clip-path:polygon(11% 7%,87% 0,98% 26%,90% 83%,62% 94%,18% 100%,0 71%,5% 24%);display:grid;place-items:center;text-align:center;font:bold 32px/.78 Caveat;rotate:8deg;filter:drop-shadow(0 2px 0 #070707)}.thank em{color:#4e9eea;font-style:normal}.footer{height:115px;min-height:115px;width:100%;padding-inline:max(var(--gutter),calc((100vw - var(--content-max))/2));}.footer-cta:hover{scale:1.015;background:var(--cream)}.section-title{clip-path:inset(100% 0 0 0);transition:clip-path .7s var(--ease)}.reveal.in .section-title,.section-title.in{clip-path:inset(0)}
+    @media(min-width:1600px){.rednote-grid{columns:5}}
+    @media(max-width:1199px){.rednote-grid{columns:3}.article-row:after{display:none}}
+    @media(max-width:900px){.experience,.services{width:calc(100% - 56px)}.vibe-sticky{width:calc(100% - 48px)}.vibe-track{grid-template-columns:1fr}.wechat{width:100%;padding-inline:28px}.rednote-grid{width:calc(100% - 32px);columns:3}.contact{height:auto;min-height:760px}.contact-inner{width:calc(100% - 48px);height:auto;display:block;padding:90px 0 410px}.pitch{margin-top:34px;padding:0}.red-panel{width:100%;height:370px;top:auto;bottom:0;padding:75px 28px 28px;clip-path:polygon(0 13%,100% 0,100% 100%,0 100%)}.footer{height:auto;min-height:210px}.thank{right:5%;bottom:-34px}}
+    @media(max-width:767px){.rednote-grid{columns:2}.project-copy{grid-template-columns:42px 1fr}.project-copy p,.project-status{grid-column:2}.project-status{justify-self:start}}
+    @media(max-width:520px){.rednote-grid{columns:2;column-gap:12px;width:calc(100% - 20px)}.note-card{padding:6px 6px 14px;margin-bottom:12px}.note-card h3{font-size:15px;margin:12px 4px 6px}.note-card p{font-size:8px;margin-inline:4px}.footer{height:auto}.contact-inner{padding-bottom:410px}}
+    @media(prefers-reduced-motion:reduce){.section-title{clip-path:none!important}.note-card.note-reveal{opacity:1!important;transform:none!important}}
+  </style>
+  <style>
+    /* V5 layout correction: full content visibility first, GSAP enhances it later. */
+    .page{overflow-x:clip;overflow-y:visible}.reveal,.note-card.note-reveal{opacity:1;visibility:visible;translate:none;clip-path:none;transform:none}.section-title{clip-path:none}.work-head{min-height:440px;align-items:flex-start}.work-title{font-size:clamp(110px,11vw,210px);line-height:.8;margin-top:28px}.work-title span{display:block}.work-head>div:first-child:after{margin-top:48px}.work-note{margin-top:125px}.work-tabs{margin-top:0}.vibe{padding-top:90px}.project{overflow:visible}.project-copy h3{font-size:clamp(20px,1.5vw,28px)}
+    .rednote{padding-bottom:clamp(145px,12vw,210px)}.rednote-head{min-height:390px}.rednote-grid{width:min(calc(100vw - 32px),1920px);columns:5;column-gap:clamp(14px,1.5vw,26px);margin-top:20px}.note-card{margin-bottom:clamp(14px,1.5vw,26px);background:#fffaf0}.note-cover{overflow:hidden}.note-card h3{font-size:clamp(16px,1.15vw,22px)}
+    .contact{height:clamp(500px,35vw,620px);min-height:500px}.contact-inner{grid-template-columns:44% 21% 35%}.create h2{font-size:clamp(92px,7vw,132px);line-height:.9}.create p{font-size:clamp(58px,4.5vw,82px);white-space:nowrap}.create p:after{content:"";display:block;width:min(430px,78%);border-top:5px solid var(--ink);border-radius:50%;margin-top:8px;rotate:-2deg}.pitch{position:relative;font-size:clamp(15px,1.05vw,18px);font-weight:700;padding:0 20px 0 0}.pitch:after{content:"";position:absolute;width:95px;height:55px;right:-5px;bottom:-58px;border-bottom:4px solid var(--ink);border-radius:0 0 75% 40%;rotate:-8deg}.hand-arrow{position:absolute;right:-48px;bottom:-55px;font-size:62px}.red-panel,.contact:not(.in) .red-panel{width:38%;padding-left:clamp(110px,9vw,175px);padding-right:var(--gutter);clip-path:polygon(15% 0,100% 0,100% 100%,0 100%)}.contact-list{gap:17px}.contact-list a,.contact-list span{min-width:0;overflow-wrap:anywhere}.thank{right:4.5%;bottom:-34px;width:170px;height:132px;font-size:37px}.footer{height:clamp(112px,8vw,140px);min-height:112px;font-size:clamp(11px,.8vw,14px)}.footer-cta{max-width:330px;justify-self:end;width:100%}.gsap-ready .reveal,.gsap-ready .note-reveal{will-change:transform,opacity;transition:none}.gsap-ready .section-title{transition:none}.project-media,.note-cover{will-change:transform}.article-row,.service,.skill-group{transform:translateZ(0)}
+    @media(max-width:1599px){.rednote-grid{columns:4}.work-title{font-size:clamp(105px,10.5vw,168px)}}
+    @media(max-width:1199px){.rednote-grid{columns:3}.work-head{min-height:390px}}
+    @media(max-width:900px){.work-head{min-height:340px}.work-title{font-size:clamp(78px,18vw,130px)}.work-note{margin-top:55px}.rednote-grid{columns:3}.contact{min-height:760px;height:auto}.contact-inner{grid-template-columns:1fr;padding-bottom:400px}.create p{white-space:normal}.red-panel,.contact:not(.in) .red-panel{width:100%;padding-left:32px;clip-path:polygon(0 13%,100% 0,100% 100%,0 100%)}.footer-cta{justify-self:stretch;max-width:none}}
+    @media(max-width:767px){.rednote-grid{columns:2}.work-head{display:block;min-height:400px}.work-note{display:inline-block}.vibe-track{display:grid!important}.contact{min-height:780px}}
+    @media(max-width:430px){.rednote-grid{width:calc(100% - 16px);column-gap:10px}.contact-inner{width:calc(100% - 34px)}.create h2{font-size:68px}.create p{font-size:44px}.thank{width:135px;height:105px;font-size:30px}.footer{padding-block:34px}}
+    @media(prefers-reduced-motion:reduce){.gsap-ready *{scroll-behavior:auto!important}.reveal,.note-reveal{opacity:1!important;visibility:visible!important;transform:none!important}}
+
+
+    /* V6 typography{z-index:8}
+    .display,.section-title,.category-title{letter-spacing:-.005em!important}
+    .section-title{line-height:.96!important;font-weight:400}
+    .category-title{line-height:.92!important}
+    .eyebrow{letter-spacing:.08em}
+    .body-copy,.skill-group p{line-height:1.75}
+    .service p{line-height:1.7}
+    .service h3,.article-row h3,.project-copy h3,.note-card h3{overflow-wrap:anywhere}
+    .pitch{position:relative}
+    .hand-arrow{right:-36px;bottom:-70px;font-size:48px;z-index:5}
+    .thank{bottom:-44px;z-index:30;width:145px;height:112px;font-size:30px}
+    .service:nth-of-type(1):hover,.service:nth-of-type(4):hover{background:rgba(255,216,23,.18)}
+    .service:nth-of-type(2):hover{background:rgba(125,188,240,.22)}
+    .service:nth-of-type(3):hover{background:rgba(255,74,54,.16)}
+    .timeline:before,.timeline:after{left:-20px}
+    .work-tabs{margin-top:40px;padding:16px 0 18px;background:rgba(125,188,240,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+    .red-panel{box-shadow:inset 20px 0 40px -20px rgba(0,0,0,.15)}
+    .footer{grid-template-columns:1fr 1fr auto;gap:40px}
+    .footer-cta{justify-self:end}
+
+    @media(max-width:1199px){
+    }
+    @media(max-width:900px){
+      .contact-inner{padding-bottom:440px}
+      .skill-group{border-right:0}
+      .footer{grid-template-columns:1fr 1fr;gap:24px}
+      .footer-cta{grid-column:1/-1;justify-self:stretch}
+      .thank{right:5%}
+    }
+    @media(max-width:520px){
+      .contact-inner{padding-bottom:460px}
+      .footer{grid-template-columns:1fr}
+      .footer-cta{grid-column:auto;justify-self:stretch;width:100%}
+    }
+  
+    /* Content owns its space; decoration never clips text. */
+    .display,.section-title,.category-title{line-height:1.08!important;letter-spacing:.015em!important;overflow-wrap:anywhere}
+    .body-copy,.skill-group p,.service p,.pitch{line-height:1.75}
+    h1,h2,h3,p,.eyebrow,.article-meta,.tag{overflow-wrap:anywhere}
+    .eyebrow{display:block;line-height:1.5;margin-bottom:14px}.create,.pitch,.service>*,.article-row>*,.project-copy>*,.skill-group,.work-head>*,.category-head>*{min-width:0;max-width:100%}
+    .experience,.services{grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(32px,5vw,88px)}
+    .experience-heading,.services-intro{padding-right:0;min-width:0}
+    .experience-heading .section-title,.services-intro .section-title{font-size:clamp(46px,4.4vw,80px)}
+    .timeline,.service-list{min-width:0}
+    .experience-item{opacity:1;translate:none;transition:border-color .3s}
+    .experience-item h3{translate:none;line-height:1.3;transition:none}
+    .service{grid-template-columns:34px minmax(0,1fr) minmax(0,1fr) 28px;gap:20px}
+    .service h3{line-height:1.3;letter-spacing:0}
+    .service:hover h3,.article-row:hover h3{translate:none}
+    .work-head,.rednote-head{min-height:0;height:auto;gap:32px;flex-wrap:wrap;padding-bottom:36px}
+    .work-title{font-size:clamp(72px,9vw,170px);margin-top:20px}
+    .work-note{line-height:1.3;margin-top:32px;rotate:0}
+    .work-tabs{position:relative;top:auto;flex-wrap:wrap;overflow:visible;height:auto}
+    .work-tab{line-height:1.5;white-space:normal}
+    .category-head{flex-wrap:wrap;gap:24px}
+    .category-title{font-size:clamp(44px,5.5vw,88px)}
+    .rednote-head .hand{margin-top:24px;line-height:1.3}
+    .rednote-head .body-copy{margin-top:24px}
+    .project-copy{grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:start}
+    .project-copy h3{line-height:1.3}
+    .project-copy p,.project-status{grid-column:2;display:block;margin:0;justify-self:start;white-space:normal;line-height:1.5}
+    .note-cover,.project-media,.video-thumb{container-type:inline-size}
+    .note-cover:before{inset:0;padding:12%;display:flex;align-items:center;font-size:clamp(16px,13cqi,54px);line-height:1.15;letter-spacing:.01em;white-space:pre-wrap;overflow-wrap:anywhere;rotate:0}
+    .cover-c:before{font-size:clamp(14px,11cqi,45px)}
+    .sample-brand:before{padding:9%;font-size:clamp(24px,12cqi,64px)}
+    .sample-web:before{font-size:clamp(22px,8cqi,62px);line-height:1.15}
+    .sample-web:after{padding:5%;font-size:clamp(8px,2.3cqi,12px);white-space:normal;line-height:1.5}
+    .note-card h3{line-height:1.4}.note-card p{line-height:1.6}
+    .note-card,.project{transition:box-shadow .25s;transition-delay:0s!important}
+    .note-card:hover{transform:none!important;scale:1;rotate:0}
+    .project:hover{translate:none}.project:hover .project-media,.note-card:hover .note-cover{scale:1}
+    .skill-group h3{font-size:clamp(36px,3.5vw,60px);line-height:1.15;letter-spacing:.01em}
+    .contact{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);height:auto;min-height:0;padding:0;isolation:isolate}
+    .contact-inner{width:auto;height:auto;display:grid;grid-template-columns:minmax(0,1fr);gap:36px;margin:0;padding:72px clamp(24px,4vw,72px)}
+    .create,.pitch{grid-column:1;margin:0;padding:0}
+    .create h2{font-size:clamp(54px,5vw,96px);line-height:1.12}
+    .create p{white-space:normal;rotate:0;font-size:clamp(36px,3.5vw,66px);line-height:1.25}
+    .pitch:after,.hand-arrow{display:none}
+    .red-panel,.contact:not(.in) .red-panel{position:relative;inset:auto;width:auto;height:auto;padding:76px clamp(24px,3vw,56px) 96px clamp(40px,5vw,88px);background:none;clip-path:none;box-shadow:none;transition:none;isolation:isolate;min-width:0}
+    .red-panel:before{content:'';position:absolute;inset:0;z-index:-1;background:var(--red);clip-path:polygon(10% 0,100% 0,100% 100%,0 100%)}
+    .contact-list a,.contact-list span{display:block;line-height:1.7;overflow-wrap:anywhere}
+    .contact-icon{display:inline-block;vertical-align:middle;margin-right:10px}
+    .thank{width:116px;height:96px;font-size:26px;line-height:.95;right:24px;bottom:12px;rotate:4deg;pointer-events:none}
+    .footer{position:relative;height:auto;min-height:130px;padding-block:32px;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:28px;line-height:1.6}
+    .footer>*{min-width:0}.footer-cta{width:auto;max-width:100%;white-space:normal}.reveal,.section-title,.note-reveal{clip-path:none!important;opacity:1;visibility:visible}.gsap-ready .reveal,.gsap-ready .note-reveal,.project-media,.note-cover{will-change:auto;transition:none}
+    .scroll-progress{scale:1 1;transform:scaleX(0)}
+    .page:before{z-index:0;position:absolute}
+    .cursor-label{display:none}
+    @media(max-width:1100px){
+      .service{grid-template-columns:32px minmax(0,1fr) 24px}.service p{grid-column:2}.service-arrow{grid-column:3;grid-row:1}
+      .contact{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+    }
+    @media(max-width:900px){
+      .experience,.services{grid-template-columns:minmax(0,1fr)}
+      .experience-heading,.services-intro{position:relative;top:auto;margin-bottom:0}
+      .experience-heading .section-title,.services-intro .section-title{font-size:clamp(48px,9vw,80px)}
+      .contact{grid-template-columns:minmax(0,1fr)}.contact-inner{padding:56px 28px;gap:28px}
+      .red-panel,.contact:not(.in) .red-panel{padding:64px 28px 112px}
+      .red-panel:before{clip-path:polygon(0 6%,100% 0,100% 100%,0 100%)}
+      .footer{grid-template-columns:1fr 1fr}.footer-cta{grid-column:1/-1;justify-self:stretch}
+    }
+    @media(max-width:600px){.work-title{font-size:clamp(64px,16vw,96px)}
+      .rednote-grid{columns:2}.note-card h3{font-size:15px}.note-cover:after{display:none}
+      .article-row{grid-template-columns:28px minmax(0,1fr);gap:14px}.article-row h3{font-size:22px;line-height:1.4}
+      .footer{grid-template-columns:1fr}.footer>div+div{border:0;padding-left:0}
+      .service{grid-template-columns:28px minmax(0,1fr);gap:14px}.service-arrow{display:none}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+  <link rel="stylesheet" href="assets/sidebar.css?v=20261015-0100">
+  <link rel="stylesheet" href="assets/hero-v2.css?v=20261015-0100">
+  <link rel="stylesheet" href="assets/section-navigation.css?v=astra-20261002">
+  <link rel="stylesheet" href="assets/about-astra.css?v=20261003">
+  <link rel="stylesheet" href="assets/work-landing.css?v=hub-20261007">
+<link rel="stylesheet" href="assets/thinking-modal.css?v=20261007">
+<link rel="stylesheet" href="assets/wechat-page.css?v=back-to-work-20261009">
+<style id="shared-trust-icon-style">
+.build-trust-icon{display:block;flex-shrink:0;width:26px;height:26px;object-fit:contain}
+.thinking-final-node .build-trust-icon{width:48px;height:48px}
+.wechat-trust-result{display:flex;align-items:center;justify-content:center;gap:9px}
+.wechat-trust-result .build-trust-icon{width:23px;height:23px}
+@media(max-width:900px){.thinking-final-node .build-trust-icon{width:40px;height:40px}}
+</style>
+<link rel="stylesheet" href="assets/wechat-analysis-template.css?v=research-cases-20261009">
+<link rel="stylesheet" href="assets/wechat-video-page.css?v=20261015-030908">
+<link rel="stylesheet" href="assets/rednote-page.css?v=separate-screens-20261010">
+<link rel="stylesheet" href="assets/wechat-layout-v3.css?v=single-screen-20261010">
+<link rel="stylesheet" href="assets/portfolio-typography.css?v=rednote-standard-20261010">
+<link rel="stylesheet" href="assets/rednote-screen-fit.css?v=gallery-scroll-20261012-184842">
+<link rel="stylesheet" href="assets/wechat-screen-fit.css?v=single-screen-20261010">
+  <link rel="stylesheet" href="assets/contact-page.css?v=20261015-0100">
+  <link rel="stylesheet" href="assets/rednote-gallery.css?v=visual-order-20261013-052143">
+<link rel="stylesheet" href="assets/design-page.css?v=20261014-185847">
+<link rel="stylesheet" href="assets/hero-resume-buttons.css?v=20261014-191125">
+<link rel="stylesheet" href="assets/skills-page.css?v=20261014-184738">
+<link rel="stylesheet" href="assets/portfolio-button.css?v=20261013-080845">
+<link rel="stylesheet" href="assets/portfolio-motion.css?v=20261014-192011">
+<link rel="stylesheet" href="assets/portfolio-zh.css?v=20261015-ref4">
+<link rel="stylesheet" href="assets/portfolio-zh-headings.css?v=20261015-021346">
+<link rel="stylesheet" href="assets/portfolio-zh-header.css?v=20261021-154811">
+<link rel="stylesheet" href="assets/rednote-zh-media.css?v=20261015-023904">
+<link rel="stylesheet" href="assets/portfolio-zh-content-type.css?v=20261015-025943">
+<link rel="stylesheet" href="assets/portfolio-position-refinements.css?v=20261015-031652">
+<link rel="stylesheet" href="assets/content-reading-flow.css?v=20261015-032617">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="sidebar-ambient" aria-hidden="true"></div>
+  <button class="sidebar-toggle" type="button" aria-expanded="false" aria-controls="portfolio-sidebar" aria-label="Open navigation"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="menu-lines" d="M4 6h16M4 12h16M4 18h16"/><path class="menu-close" d="m6 6 12 12M6 18 18 6"/></svg></button>
+  <div class="sidebar-backdrop" aria-hidden="true"></div>
+  <aside class="glass-sidebar" id="portfolio-sidebar" aria-label="Portfolio navigation">
+    <a class="sidebar-brand" data-locale-fixed="true" href="#home"><span class="asterisk" aria-hidden="true"><i></i><i></i><i></i></span><span>ZIBO WANG</span></a>
+    <nav class="sidebar-links" aria-label="Primary navigation"><a class="sidebar-link active" href="#home" aria-current="location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg><span>Home</span></a><a class="sidebar-link" href="#about"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2Z"/></svg><span>About</span></a><a class="sidebar-link" href="#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm0 2h18"/></svg><span>Work</span></a><a class="sidebar-link" href="#skills"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20v-6M9 20V9M14 20V4M19 20v-9"/></svg><span>Skills</span></a><a class="sidebar-link" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>Contact</span></a></nav>
+    <div class="language-switch" data-language="en" role="group" aria-label="Website language"><button type="button" data-language="zh" aria-label="Switch to Chinese" aria-pressed="false" lang="zh">中文</button><button type="button" data-language="en" aria-label="Switch to English" aria-pressed="true">English</button></div>
+  </aside>
+  <main class="page section-viewport">
+    <div class="section-layer" data-section="home"><div class="portfolio-button-slot"><a class="hero-portfolio portfolio-standard-button" href="#work"><span>MY PORTFOLIO</span></a></div><div class="section-scroll-area" tabindex="0" role="region" aria-label="Home content">
+    <section class="hero hero-card" id="home" aria-labelledby="hero-name">
+      <div class="hero-stage">
+        <div class="hero-ambient" aria-hidden="true"></div>
+        <div class="hero-topbar portfolio-header-reserved">
+          <div class="hero-category" data-locale-fixed="true"><span class="asterisk" aria-hidden="true"><i></i><i></i><i></i></span><span>NEW MEDIA<br>BRAND MARKETING</span></div>
+          <div class="hero-header-actions"></div>
+        </div>
+        <div class="hero-text">
+          <!-- 中文版 Hero 文案（依据 2026-10 设计说明）。整组 data-locale-fixed，英文版 display:none，原英文结构保持不动。 -->
+          <p class="zh-hero-eyebrow" data-locale-fixed="true"><i class="zh-hero-dash" aria-hidden="true"></i><span>HELLO, I'M ZIBO</span></p>
+          <div class="hero-greeting hero-hand"><span>Hello!</span><svg class="hello-sparks" viewBox="0 0 58 56" aria-hidden="true"><path d="m15 34 19-28m-5 40 22-9"/></svg><svg class="hello-underline" viewBox="0 0 260 30" preserveAspectRatio="none" aria-hidden="true"><path d="M2 28Q111-5 258 2Q140 12 2 28" fill="#ffd465"/></svg></div>
+          <h1 class="hero-name" id="hero-name"><span class="hero-word hero-im">I'M</span> <span class="hero-name-row"><span class="hero-word">ZIBO</span> <span class="hero-word hero-wang">WANG</span></span><span class="zh-hero-title" data-locale-fixed="true">你好，<br>我是<span class="zh-hero-name">王子博<svg class="zh-hero-underline" viewBox="0 0 320 16" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="zh-hero-line" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#FFB300"/><stop offset="1" stop-color="#F87521"/></linearGradient></defs><path d="M4 12C80 5 212 2 316 7" fill="none" stroke="url(#zh-hero-line)" stroke-width="7" stroke-linecap="round"/></svg></span>。</span></h1>
+          <div class="hero-statement-wrap"><p class="hero-statement hero-hand"><span>A New Media Specialist</span><span>&amp; Brand Marketer.</span><svg viewBox="0 0 350 26" preserveAspectRatio="none" aria-hidden="true"><path d="M3 24Q186-1 347 4Q175 11 3 24" fill="#ffbf24"/></svg></p><svg class="statement-sparks" viewBox="0 0 58 100" aria-hidden="true"><path d="m32 20-15-16M25 49 5 43m25 31-11 14"/></svg></div>
+          <div class="zh-hero-tail" data-locale-fixed="true">
+            <p class="zh-hero-role">新媒体运营 <span class="zh-hero-times">×</span> 品牌营销</p>
+            <a class="zh-hero-cta" href="#work"><span>查看作品</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <svg class="hero-art" viewBox="0 0 750 720">
+            <defs><linearGradient id="hero-yellow" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#ffe49a"/><stop offset="1" stop-color="#ffedb2" stop-opacity=".58"/></linearGradient><pattern id="hero-dots" width="19" height="19" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="2.7" fill="#ffc94a"/></pattern></defs>
+            <ellipse class="hero-peach" cx="269" cy="215" rx="207" ry="176" fill="#ffdfa0" opacity=".35" transform="rotate(-24 269 215)"/>
+            <path class="hero-blob" d="M137 239C194 180 254 143 345 128c119-19 226 11 295 89 70 80 58 182-5 259-56 69-169 132-281 124-126-9-233-14-257-103-26-95-24-192 40-258Z" fill="url(#hero-yellow)"/>
+            <circle class="hero-ring hero-ring-top" cx="628" cy="87" r="43" fill="none" stroke="#ffd465" stroke-width="3"/>
+            <circle class="hero-ring hero-ring-lower" cx="183" cy="455" r="40" fill="none" stroke="#ffd465" stroke-width="3"/>
+            <rect class="hero-dots" x="604" y="302" width="116" height="128" fill="url(#hero-dots)" opacity=".75"/>
+          </svg>
+          <!-- 中文版背景改回与英文版完全一致（复用上面的 .hero-art 与 .hero-wave） -->
+          <div class="hero-portrait-frame"><img class="hero-portrait" src="assets/hero/zibo-character.png" width="1024" height="1536" alt="" fetchpriority="high" decoding="async"></div>
+          <svg class="hero-wave" viewBox="0 0 750 720"><path fill="#fbf9f4" d="M0 580C145 658 285 610 406 564c140-54 258-82 344-84v240H0Z"/><path d="M0 580C145 658 285 610 406 564c140-54 258-82 344-84" fill="none" stroke="#ffd465" stroke-width="5"/></svg>
+        </div>
+      </div>
+    </section>
+    </div></div>
+    <div class="section-layer" data-section="about" hidden inert><div class="portfolio-button-slot"><a class="hero-portfolio portfolio-standard-button" href="#work"><span>MY PORTFOLIO</span></a></div><div class="section-scroll-area" tabindex="0" role="region" aria-label="About content">
+    <section class="about-panel" id="about" aria-labelledby="about-title">
+      <div class="about-glow" aria-hidden="true"></div><div class="about-utility portfolio-header-reserved"><div class="hero-category" data-locale-fixed="true"><span class="asterisk" aria-hidden="true"><i></i><i></i><i></i></span><span>NEW MEDIA<br>BRAND MARKETING</span></div></div>
+      <div class="about-content">
+        <div class="about-education"><h2 class="about-title" id="about-title"><span>ABOUT</span><span class="about-me">ME</span></h2><h3 class="about-label">Education</h3>
+          <div class="education-bound"><div class="education-motion" tabindex="0" role="group" aria-label="The Chinese University of Hong Kong, Master of Arts in Chinese Studies, September 2024 – July 2025">
+      <article class="education-card"><span class="education-eyelet top" aria-hidden="true"></span><span class="education-eyelet bottom" aria-hidden="true"></span>
+        <div class="school-logo logo-cuhk"><img src="assets/about/logos/cuhk.svg" alt="The Chinese University of Hong Kong logo" decoding="async"></div>
+        <div class="education-copy"><h3>The Chinese University of Hong Kong</h3><p>Master of Arts in Chinese Studies</p><p class="education-period">September 2024 – July 2025</p></div>
+      </article></div><div class="education-motion" tabindex="0" role="group" aria-label="Xi’an International Studies University, Bachelor of Arts in English Language and Literature, September 2020 – June 2024">
+      <article class="education-card"><span class="education-eyelet top" aria-hidden="true"></span><span class="education-eyelet bottom" aria-hidden="true"></span>
+        <div class="school-logo logo-xisu"><img src="assets/about/logos/xisu.svg" alt="Xi’an International Studies University logo" decoding="async"></div>
+        <div class="education-copy"><h3>Xi’an International Studies University</h3><p>Bachelor of Arts in English Language and Literature</p><p class="education-period">September 2020 – June 2024</p></div>
+      </article></div><div class="education-binding" aria-hidden="true"><svg><path class="cord-shadow"/><path class="cord"/></svg></div></div>
+        </div><div class="about-divider" aria-hidden="true"></div>
+        <div class="about-experience"><div class="experience-heading-row"><h3 class="about-label">Experience</h3></div><p class="experience-hint"><svg viewBox="0 0 16 20" aria-hidden="true"><path d="M2 2v13l4-4 3 6 3-2-3-6h5Z"/></svg><span>Click a logo to explore my experience</span></p>
+          <div class="experience-map" aria-label="Work experience, 2022 to 2026"><svg class="experience-path" viewBox="0 0 600 560" aria-hidden="true"><path class="timeline-track" d="M330 510C330 445 270 433 270 365C270 297 290 294 290 226C290 146 150 172 150 72L150 30"/><path class="timeline-progress" d="M330 510C330 445 270 433 270 365C270 297 290 294 290 226C290 146 150 172 150 72L150 30"/></svg><div class="experience-node" data-year="2026"><span class="year-pill">2026</span><span class="timeline-dot" aria-hidden="true"></span>
+      <div class="experience-logo-wrap"><button class="experience-logo" data-logo="nsc" type="button" aria-label="View 2026 experience at National Supercomputing Center in Xi’an" aria-expanded="false" aria-controls="experience-detail" aria-haspopup="dialog"><img src="assets/about/logos/nsc.svg" alt="" decoding="async"></button><span class="experience-tooltip" aria-hidden="true">View experience</span></div></div><div class="experience-node" data-year="2025"><span class="year-pill">2025</span><span class="timeline-dot" aria-hidden="true"></span>
+      <div class="experience-logo-wrap"><button class="experience-logo" data-logo="cmb" type="button" aria-label="View 2025 experience at China Merchants Bank Co., Ltd. (CMB)" aria-expanded="false" aria-controls="experience-detail" aria-haspopup="dialog"><img src="assets/about/logos/cmb.svg" alt="" decoding="async"></button><span class="experience-tooltip" aria-hidden="true">View experience</span></div></div><div class="experience-node" data-year="2024"><span class="year-pill">2024</span><span class="timeline-dot" aria-hidden="true"></span>
+      <div class="experience-logo-wrap"><button class="experience-logo" data-logo="nowcoder" type="button" aria-label="View 2024 experience at Beijing Niuke Technology Co., Ltd. (Nowcoder)" aria-expanded="false" aria-controls="experience-detail" aria-haspopup="dialog"><img src="assets/about/logos/nowcoder.svg" alt="" decoding="async"></button><span class="experience-tooltip" aria-hidden="true">View experience</span></div></div><div class="experience-node" data-year="2022"><span class="year-pill">2022</span><span class="timeline-dot" aria-hidden="true"></span>
+      <div class="experience-logo-wrap"><button class="experience-logo" data-logo="bytedance" type="button" aria-label="View 2022 experience at Beijing ByteDance Network Technology Co., Ltd." aria-expanded="false" aria-controls="experience-detail" aria-haspopup="dialog"><img src="assets/about/logos/bytedance.svg" alt="" decoding="async"></button><span class="experience-tooltip" aria-hidden="true">View experience</span></div></div></div>
+        </div>
+      </div>
+      <div class="experience-popover" id="experience-detail" popover="manual" hidden role="dialog" aria-modal="false" aria-labelledby="experience-detail-company" lang="en">
+        <div class="popover-header"><button class="popover-close" type="button" aria-label="Close experience details">×</button><div class="popover-brand"><img alt=""><span></span></div><h3 class="popover-company" id="experience-detail-company"></h3></div><div class="popover-content" tabindex="0" role="region" aria-label="Experience details"><p class="popover-role"></p><p class="popover-date"></p><p class="popover-location"></p><ul class="popover-bullets"></ul></div>
+      </div><script type="application/json" id="about-resume-data">{"education": [{"id": "cuhk", "school": "The Chinese University of Hong Kong", "degree": "Master of Arts in Chinese Studies", "period": "September 2024 – July 2025", "logo": "cuhk"}, {"id": "xisu", "school": "Xi’an International Studies University", "degree": "Bachelor of Arts in English Language and Literature", "period": "September 2020 – June 2024", "logo": "xisu"}], "experience": [{"year": 2026, "id": "nsc", "company": "National Supercomputing Center in Xi’an", "role": "Assistant to the Marketing Director", "period": "April 2026 – June 2026", "location": "Xi’an, Shaanxi, China", "logo": "nsc", "bullets": ["Managed visits for government, industry and research delegations, identified partnership opportunities and contributed to 10+ project conversions.", "Planned 20+ events and seminars; managed official WeChat and video content, generating 10,000+ views and an engagement rate of 75%+."]}, {"year": 2025, "id": "cmb", "company": "China Merchants Bank Co., Ltd. (CMB)", "role": "Account Manager", "period": "August 2025 – February 2026", "location": "Xi’an Branch, Shaanxi, China", "logo": "cmb", "bullets": ["Managed retail clients with assets under management (AUM) below RMB 200,000 through segmented services and multi-channel engagement, increasing monthly active users by approximately 40%.", "Managed the full lifecycle of dozens of enterprise accounts, identifying leads and developing tailored solutions for long-term partnerships."]}, {"year": 2024, "id": "nowcoder", "company": "Beijing Niuke Technology Co., Ltd. (Nowcoder)", "role": "Social Media Operations Assistant", "period": "May 2024 – August 2024", "location": "Shenzhen Branch, Guangdong, China", "logo": "nowcoder", "bullets": ["Managed social media accounts, developed 10+ reusable templates, produced 140+ posts, and increased the follower count by 1,200+.", "Analyzed account and competitor data to improve content strategy, delivering 10+ high-performing posts monthly."]}, {"year": 2022, "id": "bytedance", "company": "Beijing ByteDance Network Technology Co., Ltd.", "role": "English Translation Assistant", "period": "August 2022 – September 2022", "location": "Beijing, China", "logo": "bytedance", "bullets": ["Localized product, website, marketing and social content for overseas markets, improving translation efficiency by 20%.", "Built a terminology database and translated 10,000+ Chinese characters of source text per week."]}]}</script>
+    </section></div></div>
+    <div class="section-layer" data-section="work" hidden inert><div class="portfolio-button-slot"><a class="hero-portfolio portfolio-standard-button" href="#work"><span>MY PORTFOLIO</span></a></div><div class="section-scroll-area" tabindex="0" role="region" aria-label="Work experience and thinking"><section class="work-landing" id="work" aria-labelledby="work-landing-title"><div class="work-utility portfolio-header-reserved"><div class="hero-category" data-locale-fixed="true"><span class="asterisk" aria-hidden="true"><i></i><i></i><i></i></span><span>NEW MEDIA<br>BRAND MARKETING</span></div></div><h2 class="work-landing-title" id="work-landing-title"><span>WHAT DID I DO &amp; HOW DO I</span> <span class="accent">THINK</span></h2><div class="work-hub-grid"><section class="work-experience" aria-labelledby="work-experience-title"><h3 class="work-hub-heading" id="work-experience-title">MY EXPERIENCE</h3><nav class="work-card-list" aria-label="Work categories"><div class="work-category-entry"><a class="work-category-card" href="#wechat" aria-label="Explore WeChat work"><span class="work-logo-slot"><img src="assets/work/logos/wechat.svg?v=20261006-new" alt="" decoding="async"></span><div class="work-category-copy"><h3 class="work-card-title">WeChat</h3><p class="work-card-description">Content management, brand promotion, video editing, and user growth.</p></div><svg class="work-card-arrow" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 16h23M17 6l10 10-10 10"/></svg></a></div><div class="work-category-entry"><a class="work-category-card" href="#rednote" aria-label="Explore RedNote work"><span class="work-logo-slot"><img src="assets/work/logos/rednote.svg?v=20261006-new" alt="" decoding="async"></span><div class="work-category-copy"><h3 class="work-card-title">RedNote</h3><p class="work-card-description">Content strategy, data analysis, and community management.</p></div><svg class="work-card-arrow" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 16h23M17 6l10 10-10 10"/></svg></a></div><div class="work-category-entry"><a class="work-category-card" href="#design" aria-label="Explore Design work"><span class="work-logo-slot"><img src="assets/work/logos/design.png" alt="" decoding="async"></span><div class="work-category-copy"><h3 class="work-card-title">Design</h3><p class="work-card-description">Brochure, poster, and social media content design.</p></div><svg class="work-card-arrow" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 16h23M17 6l10 10-10 10"/></svg></a></div></nav></section><section class="work-thinking" aria-labelledby="work-thinking-title"><h3 class="work-hub-heading" id="work-thinking-title">HOW I THINK</h3><div class="trust-model"><button type="button" class="trust-root" data-thinking-branch="business"><img class="build-trust-icon" src="assets/icons/trust-handshake-unified.svg" alt="" aria-hidden="true">BUILD TRUST</button><svg class="trust-connectors" viewBox="0 0 500 44" preserveAspectRatio="none" aria-hidden="true"><path class="logic-path" pathLength="100" d="M146 2Q119 10 115 38m-5-7 5 8 6-7M354 2Q381 10 385 38m-6-7 6 8 5-7"/></svg><div class="trust-branches"><button type="button" class="trust-branch" data-thinking-branch="business"><span class="trust-branch-top"><span class="trust-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 28V18h5v10Zm9 0V11h5v17Zm9 0V4h5v24Z"/></svg></span><strong>Business</strong></span><small>Value · Growth · ROI</small></button><button type="button" class="trust-branch" data-thinking-branch="consumer"><span class="trust-branch-top"><span class="trust-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27 5 16C-3 7 9-1 16 7c7-8 19 0 11 9Z"/></svg></span><strong>Consumer</strong></span><small>Emotion · Identity · Social Value</small></button></div><svg class="trust-connectors" viewBox="0 0 500 80" preserveAspectRatio="none" aria-hidden="true"><path class="logic-path" pathLength="100" d="M115 2Q115 34 160 34H210Q245 34 250 73m-7-7 7 8 7-8"/><path class="logic-path" pathLength="100" d="M385 2Q385 34 340 34H290Q255 34 250 73"/></svg><button type="button" class="thinking-cta" data-thinking-branch="business">EXPLORE MY THINKING <svg class="thinking-arrow" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 16h23M17 6l10 10-10 10"/></svg></button></div></section></div></section></div></div>
+<div class="section-layer" data-section="wechat" hidden inert><div class="portfolio-button-slot has-back-to-work"><a class="wechat-back-link portfolio-standard-button portfolio-back-button" href="#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg><span>BACK TO WORK</span></a><a class="hero-portfolio portfolio-standard-button" href="#work"><span>MY PORTFOLIO</span></a></div>
+ <div class="section-scroll-area" tabindex="0" role="region" aria-label="WeChat work">
+ <section class="wechat-page" id="wechat" aria-labelledby="wechat-title"><div class="work-utility portfolio-header-reserved portfolio-header-with-back"><div class="hero-category" data-locale-fixed="true"><span class="asterisk" aria-hidden="true"><i></i><i></i><i></i></span><span>NEW MEDIA<br>BRAND MARKETING</span></div></div>
+ <div class="wechat-heading-row"><div><h1 class="wechat-title portfolio-page-title" id="wechat-title">WECHAT</h1><p class="wechat-subtitle">Content Management &amp; Brand Communication</p></div>
+ <div class="wechat-tabs" role="tablist" aria-label="WeChat content type">
+ <button type="button" id="wechat-articles-tab" role="tab" aria-selected="true" aria-controls="wechat-articles" data-wechat-tab="articles"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h8l4 4v16H5V2h2Zm8 0v5h4M8 11h8m-8 4h8m-8 4h6"/></svg>Articles</button>
+ <button type="button" id="wechat-videos-tab" role="tab" aria-selected="false" aria-controls="wechat-videos" tabindex="-1" data-wechat-tab="videos"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="17" height="16" rx="2"/><path d="m19 8 3-2v12l-3-2M8 8l6 4-6 4Z"/></svg>Videos</button>
+ </div></div>
+ <div class="wechat-content-grid"><div class="wechat-collection">
+ <div class="wechat-tab-panel" id="wechat-articles" role="tabpanel" aria-labelledby="wechat-articles-tab"><section class="wechat-group"><h3 class="wechat-group-heading">EVENT STORIES<span>02</span></h3><button type="button" class="wechat-item" data-wechat-sample="event1" aria-pressed="false" aria-controls="wechat-selection"><img src="assets/work/wechat-lanzhou-seminar.png" width="1080" height="755" alt=""/><span class="wechat-item-copy"><span class="wechat-item-tag">Event Story</span><strong>AI &amp; Computing Innovation Seminar at Lanzhou University</strong><small>2026.04.18 · Lanzhou University</small></span><svg class="wechat-item-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M6 5h13v13"/></svg></button><button type="button" class="wechat-item" data-wechat-sample="event2" aria-pressed="false" aria-controls="wechat-selection"><img src="assets/work/wechat-western-expo.jpg" width="1143" height="357" alt=""/><span class="wechat-item-copy"><span class="wechat-item-tag">Event Story</span><strong>Xi’an Supercomputing at the 7th Western Digital Economy Expo</strong><small>2026.06.29 · Xi’an</small></span><svg class="wechat-item-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M6 5h13v13"/></svg></button></section><section class="wechat-group"><h3 class="wechat-group-heading">RESEARCH UPDATES<span>02</span></h3><button type="button" class="wechat-item" data-wechat-sample="research2" aria-pressed="false" aria-controls="wechat-selection"><img src="assets/work/wechat-xjtu-battery-research.png" width="1031" height="723" alt=""/><span class="wechat-item-copy"><span class="wechat-item-tag">Research Update</span><strong>Computing Support for More Stable Fast-Charging Batteries</strong><small>2026.06.03 · Xi’an Jiaotong University</small></span><svg class="wechat-item-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M6 5h13v13"/></svg></button><button type="button" class="wechat-item" data-wechat-sample="research1" aria-pressed="false" aria-controls="wechat-selection"><img src="assets/work/wechat-npu-aerospace-research.png" width="1080" height="444" alt=""/><span class="wechat-item-copy"><span class="wechat-item-tag">Research Update</span><strong>Computing Support for Aerospace Design Research</strong><small>2026.06.16 · Northwestern Polytechnical University</small></span><svg class="wechat-item-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M6 5h13v13"/></svg></button></section></div>
+ <div class="wechat-tab-panel" id="wechat-videos" role="tabpanel" aria-labelledby="wechat-videos-tab" hidden>
+ <section class="wv-showcase" aria-label="Selected WeChat video">
+  <div class="wv-stage"><div class="wv-player-frame" aria-busy="false">
+   <video id="wechat-video-player" width="1080" height="1920" playsinline preload="none" poster="assets/work/wechat-videos/lanzhou.jpg" aria-label="AI &amp; Computing Seminar at Lanzhou University">Your browser does not support embedded video. Use the Open on WeChat link below.</video>
+   <button class="wv-play" type="button" aria-label="Play AI &amp; Computing Seminar at Lanzhou University"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 3 14 9-14 9Z"/></svg><span>PLAY VIDEO</span></button>
+  </div></div>
+  <div class="wv-details"><h3 class="wv-title">AI &amp; Computing Seminar at Lanzhou University</h3>
+   <div class="wv-meta"><span class="wv-date">Event: 18 Apr 2026</span><a class="wv-original" href="https://weixin.qq.com/sph/AsM0rSxx9u" target="_blank" rel="noopener noreferrer">OPEN ON WECHAT ↗</a></div>
+   <div class="wv-toolbar"><span class="wv-counter">01 / 02</span><button class="wv-switch" type="button" aria-controls="wechat-video-player wechat-selection">SWITCH VIDEO <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h17m-4-4 4 4-4 4M21 17H4m4-4-4 4 4 4"/></svg></button><div class="wv-next"><img src="assets/work/wechat-videos/northwest-normal.jpg" width="28" height="46" alt=""/><span><small>UP NEXT</small><strong>Computing Service Workshop at Northwest Normal University</strong></span></div></div>
+   <p class="wv-playback-status" role="status"></p><noscript><p>Use Open on WeChat to watch the video.</p></noscript>
+  </div>
+ </section>
+</div>
+ </div><aside class="wechat-logic" aria-labelledby="wechat-logic-title"><p class="wechat-logic-label">MY CONTENT LOGIC</p><div class="wc-logic-header"><h3 class="wechat-logic-title" id="wechat-logic-title">WHY THIS <em>CONTENT</em></h3></div><p class="wechat-logic-caption">How content strategy translates B2B communication goals into brand trust.</p><div class="wechat-selection" id="wechat-selection" aria-live="polite" aria-atomic="true"></div></aside></div>
+ </section></div></div>
+<div class="section-layer" data-section="rednote" hidden inert><div class="portfolio-button-slot has-back-to-work"><a class="wechat-back-link portfolio-standard-button portfolio-back-button" href="#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg><span>BACK TO WORK</span></a><a class="hero-portfolio portfolio-standard-button" href="#work"><span>MY PORTFOLIO</span></a></div>
+  <div class="section-scroll-area" tabindex="0" role="region" aria-label="RedNote work">
+    <section class="rn-page" id="rednote" aria-labelledby="rednote-title">
+      <div class="rn-intro" id="rednote-overview">
+        <header class="rn-utility portfolio-header-reserved portfolio-header-with-back">
+          <div class="hero-category" data-locale-fixed="true"><span class="asterisk" aria-hidden="true"><i></i><i></i><i></i></span><span>NEW MEDIA<br>BRAND MARKETING</span></div>
+          
+        </header>
+        <nav class="rn-overview-tabs" aria-label="RedNote overview content"><button type="button" data-rn-view="account" aria-pressed="true">Account Analysis</button><button type="button" data-rn-view="note1" aria-pressed="false">Post 01</button><button type="button" data-rn-view="note2" aria-pressed="false">Post 02</button></nav>
+        <div class="rn-layout">
+          <section class="rn-account-panel" aria-labelledby="rn-account-heading">
+            <h1 class="rn-title portfolio-page-title" id="rednote-title">REDNOTE</h1>
+            <p class="rn-subtitle">Social Media Account Management &amp; Content Strategy</p>
+            <div class="rn-account-heading"><h2 class="rn-label" id="rn-account-heading">ACCOUNT MANAGEMENT STRATEGY</h2><p>Select an Account</p></div>
+            <div class="rn-account-switch" aria-label="Select an Account">
+              <button class="rn-account-button" type="button" data-account="01" aria-pressed="true" aria-controls="rn-account-detail"><span class="rn-avatar" aria-hidden="true">01</span><span><strong>Nowcoder</strong><small>CURRENT ACCOUNT</small></span></button>
+              <button class="rn-account-button" type="button" data-account="02" aria-pressed="false" aria-controls="rn-account-detail"><span class="rn-avatar" aria-hidden="true">02</span><span><strong>Career Mentor</strong><small>⇄ SWITCH ACCOUNT</small></span></button>
+            </div>
+            <div class="rn-account-body" id="rn-account-detail">
+              <div><button type="button" class="rn-profile-preview" data-open-profile aria-label="Open Nowcoder profile"><div class="rn-profile-shot" data-account="01"><img src="assets/rednote/nowcoder-profile.jpg" alt="Nowcoder profile screenshot" decoding="async"></div></button></div>
+              <div class="rn-account-copy"><span class="rn-demo">ACCOUNT POSITIONING</span><h3 data-positioning>Job opportunities, job-search advice, and job-search tools.</h3><dl><dt data-account-field="audience">TARGET AUDIENCE</dt><dd data-audience>Students and graduates preparing for job applications.</dd><dt data-account-field="approach">APPROACH</dt><dd data-approach>Publish employer lists and job-search advice, along with guides to using Nowcoder&#x27;s job-search tools.</dd><dt data-account-field="framework">FRAMEWORK</dt><dd data-framework>Understand job-seeker needs → Provide practical resources → Support job applications → Guide readers to Nowcoder.</dd></dl></div>
+            </div>
+            <footer class="rn-account-footer"><span data-account-status aria-live="polite">01 / 02 · NOWCODER</span><button type="button" class="rn-profile-link" data-open-profile>VIEW ACCOUNT PROFILE ↗</button></footer>
+          </section>
+          <section class="rn-featured" aria-labelledby="rn-featured-title"><div class="rn-featured-heading"><h2 id="rn-featured-title">FEATURED POSTS</h2><span class="rn-demo">2 CASE STUDIES</span></div><noscript><p>Enable JavaScript to view the two featured posts and their analysis.</p></noscript></section>
+        </div>
+        <a class="rn-scroll-cue" href="#rednote-notes"><span>Scroll down to explore more posts</span><svg viewBox="0 0 32 40" aria-hidden="true"><path d="M10 2c18 6 18 19 8 31m-5-8 5 9 10-4"/></svg></a>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="section-layer" data-section="rednote-notes" hidden inert><div class="portfolio-button-slot has-back-to-work"><a class="wechat-back-link portfolio-standard-button portfolio-back-button" href="#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg><span>BACK TO WORK</span></a><a class="hero-portfolio portfolio-standard-button" href="#work"><span>MY PORTFOLIO</span></a></div>
+  <div class="section-scroll-area rn-gallery-area" tabindex="0" role="region" aria-label="More RedNote posts">
+      <section class="rn-page rn-gallery" id="rednote-notes" aria-labelledby="rn-gallery-title">
+        <header class="rn-utility portfolio-header-reserved portfolio-header-with-back">
+          <div class="hero-category" data-locale-fixed="true"><span class="asterisk" aria-hidden="true"><i></i><i></i><i></i></span><span>NEW MEDIA<br>BRAND MARKETING</span></div>
+          
+        </header>
+        <header class="rn-gallery-header"><h1 class="rn-gallery-title portfolio-page-title" id="rn-gallery-title">MORE POSTS</h1><p class="rn-gallery-description">Explore more posts and their engagement.</p></header>
+        <div class="rn-wall-scroll" tabindex="0" role="region" aria-label="Scroll through RedNote posts"><div class="rn-wall"></div></div>
+      </section>
+  </div>
+</div>
+<dialog class="rn-preview" role="dialog" aria-labelledby="rn-preview-title"><button type="button" class="rn-preview-close" aria-label="Close preview">×</button><h2 id="rn-preview-title">Placeholder preview</h2><div class="rn-preview-body"></div><p>This is placeholder content. Once the original link is provided, the account profile or post will open here.</p></dialog>
+
+<div class="section-layer" data-section="design" hidden inert><div class="portfolio-button-slot has-back-to-work"><a class="wechat-back-link portfolio-standard-button portfolio-back-button" href="#work"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg><span>BACK TO WORK</span></a><a class="hero-portfolio portfolio-standard-button" href="#work"><span>MY PORTFOLIO</span></a></div>
+  <div class="section-scroll-area dp-area" tabindex="0" role="region" aria-label="Design collection">
+    <section class="dp-page" id="design" aria-labelledby="design-title">
+      <div class="work-utility dp-utility portfolio-header-reserved portfolio-header-with-back"><div class="hero-category" data-locale-fixed="true"><span class="asterisk" aria-hidden="true"><i></i><i></i><i></i></span><span>NEW MEDIA<br>BRAND MARKETING</span></div></div>
+      <header class="dp-heading"><h1 class="portfolio-page-title" id="design-title">DESIGN</h1><nav class="dp-format-nav" aria-label="Design formats"></nav></header>
+      <div class="dp-copy"><p class="dp-intro" data-dp-en="Selected print and social media work for NSC Xi’an and Nowcoder." data-dp-zh="国家超算西安中心与牛客的平面及社媒作品。">Selected print and social media work for NSC Xi’an and Nowcoder.</p><p class="dp-format-description" id="dp-format-description" hidden></p></div>
+      <div class="dp-album" tabindex="0" role="region" aria-label="Design project album" aria-describedby="dp-format-description"><div class="dp-album-grid"></div></div>
+      <footer class="dp-album-footer"><span class="dp-preview-status"></span><nav class="dp-album-pages" aria-label="Album pages"><button type="button" data-album-page="-1" aria-label="Previous album page">‹</button><span class="dp-album-position" aria-live="polite"></span><button type="button" data-album-page="1" aria-label="Next album page">›</button></nav></footer>
+    </section>
+  </div>
+</div>
+
+<div class="section-layer" data-section="skills" hidden inert><div class="portfolio-button-slot"><a class="hero-portfolio portfolio-standard-button" href="#work"><span>MY PORTFOLIO</span></a></div><div class="section-scroll-area" tabindex="0" role="region" aria-label="Skills content">
+    <section class="skills skills-panel" id="skills" aria-labelledby="skills-title"><div class="about-utility portfolio-header-reserved"><div class="hero-category" data-locale-fixed="true"><span class="asterisk" aria-hidden="true"><i></i><i></i><i></i></span><span>NEW MEDIA<br>BRAND MARKETING</span></div></div><div class="skills-head"><h2 class="skills-title" id="skills-title">SKILLS</h2></div><div class="skills-object-stage">
+  <div class="skills-scene-decor" aria-hidden="true">
+    <span class="skills-workspace-wash"></span><span class="skills-workspace-grid"></span><span class="skills-decor-orb"></span>
+    <svg class="skills-decor-glasses" viewBox="0 0 180 100" fill="none"><defs><linearGradient id="skills-mint-glass" x2=".8" y2="1"><stop stop-color="#c3f0e2"/><stop offset=".5" stop-color="#75bbaa"/><stop offset="1" stop-color="#aecfc0"/></linearGradient></defs><path d="M9 43Q90-6 171 43" stroke="#bbe6d5" stroke-width="8" stroke-linecap="round"/><path d="M71 56Q90 45 109 56M10 50L3 37M170 50L177 37" stroke="#79b8a6" stroke-width="7" stroke-linecap="round"/><circle cx="41" cy="59" r="29" fill="#e1f2e67a" stroke="url(#skills-mint-glass)" stroke-width="8"/><circle cx="139" cy="59" r="29" fill="#e1f2e67a" stroke="url(#skills-mint-glass)" stroke-width="8"/></svg>
+    <svg class="skills-decor-paperclip" viewBox="0 0 64 136" fill="none"><path d="M48 84V29C48-1 10-1 10 29v79c0 25 35 25 35 0V34c0-17-21-17-21 0v63" stroke="#ba7d4359" stroke-width="12" stroke-linecap="round"/><path d="M47 81V26C47-3 9-3 9 26v79c0 25 35 25 35 0V31c0-17-21-17-21 0v63" stroke="#e9b176" stroke-width="7" stroke-linecap="round"/></svg>
+    <span class="skills-decor-swatches"><i></i><i></i><i></i></span>
+    <svg class="skills-decor-loop" viewBox="0 0 170 120" fill="none"><path d="M8 99C15 38 143 6 151 53c7 42-85 53-84 20 1-24 48-22 63-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+  </div>
+  <figure class="skills-object-scene">
+    <span class="skills-ground-shadow" aria-hidden="true"></span>
+    <p class="skills-unpack-hint" lang="en"><span class="skills-hint-hover">Hover to unpack<br>my skills.</span><span class="skills-hint-touch">Tap to unpack<br>my skills.</span><svg viewBox="0 0 64 46" fill="none" aria-hidden="true" focusable="false"><path d="M49 4C55 14 46 23 35 22C21 21 19 29 15 39M12 29L15 39L26 35" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+    <!-- These paths only control rendering; all original image files stay unchanged.
+         The aperture and near wall share exactly the same curved rim coordinates. -->
+    <svg class="skills-depth-defs" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs>
+        <clipPath id="skills-container-aperture" clipPathUnits="objectBoundingBox"><path d="M.13 0H.87V.46L.8525 .4825C.7458 .52125 .6417 .59125 .5 .59125C.3667 .59125 .275 .51875 .1483 .48L.13 .46Z"/></clipPath>
+        <clipPath id="skills-container-front" clipPathUnits="objectBoundingBox"><path d="M.1483 .48C.275 .51875 .3667 .59125 .5 .59125C.6417 .59125 .7458 .52125 .8525 .4825L.89 1H.11Z"/></clipPath>
+        <clipPath id="skills-aperture-svg" clipPathUnits="userSpaceOnUse"><path d="M156 0H1044V368L1023 386C895 417 770 473 600 473C440 473 330 415 178 384L156 368Z"/></clipPath>
+        <clipPath id="skills-front-svg" clipPathUnits="userSpaceOnUse"><path d="M178 384C330 415 440 473 600 473C770 473 895 417 1023 386L1068 800H132Z"/></clipPath>
+        <clipPath id="skills-handle-svg" clipPathUnits="userSpaceOnUse"><path id="skills-handle-contour" d="M405.6 488C429.6 408 492 340 576 340C654 338.4 716.4 408 758.4 509.6L681.6 519.2C655.2 432.8 620.4 382.4 576 382.4C526.8 382.4 490.8 431.2 471.6 496Z"/></clipPath>
+        <filter id="skills-contact-blur" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="5"/></filter>
+        <linearGradient id="skills-rim-shade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2f1d15" stop-opacity=".32"/><stop offset="1" stop-color="#2f1d15" stop-opacity="0"/></linearGradient>
+      </defs>
+    </svg>
+    <svg class="skills-bag-rear" viewBox="0 0 1200 800" aria-hidden="true" focusable="false"><image href="assets/skills/independent-20261014/bag-shell.png" x="174" y="344" width="852" height="408" preserveAspectRatio="xMidYMid meet"/></svg>
+    <svg class="skills-inner-contact" viewBox="0 0 1200 800" aria-hidden="true" focusable="false"><g clip-path="url(#skills-aperture-svg)" filter="url(#skills-contact-blur)" fill="#29180f" fill-opacity=".42"><ellipse cx="350" cy="403" rx="96" ry="19" transform="rotate(15 350 403)"/><ellipse cx="627" cy="432" rx="141" ry="25"/><ellipse cx="885" cy="403" rx="69" ry="18" transform="rotate(-12 885 403)"/></g></svg>
+    <div class="skills-packed-contents" style="clip-path:url(#skills-container-aperture)">
+    <button type="button" class="skills-object-hit" data-object="ai" aria-label="AI and web skills" aria-controls="skills-object-popover" aria-expanded="false"><img src="assets/skills/independent-20261014/laptop.png" alt="" aria-hidden="true" decoding="async" draggable="false"></button>
+    <button type="button" class="skills-object-hit" data-object="content" aria-label="Content skills" aria-controls="skills-object-popover" aria-expanded="false"><img src="assets/skills/independent-20261014/content-notebook.png" alt="" aria-hidden="true" decoding="async" draggable="false"></button>
+    <button type="button" class="skills-object-hit" data-object="design" aria-label="Design skills" aria-controls="skills-object-popover" aria-expanded="false"><img src="assets/skills/independent-20261014/design-tablet.png" alt="" aria-hidden="true" decoding="async" draggable="false"></button>
+    <button type="button" class="skills-object-hit" data-object="office" aria-label="Office skills" aria-controls="skills-object-popover" aria-expanded="false"><img src="assets/skills/independent-20261014/office-planner.png" alt="" aria-hidden="true" decoding="async" draggable="false"></button>
+    <button type="button" class="skills-object-hit" data-object="language" aria-label="Language skills" aria-controls="skills-object-popover" aria-expanded="false"><img src="assets/skills/independent-20261014/headphones.png" alt="" aria-hidden="true" decoding="async" draggable="false"></button>
+    <button type="button" class="skills-object-hit" data-object="social" aria-label="Social media and event skills" aria-controls="skills-object-popover" aria-expanded="false"><img src="assets/skills/independent-20261014/social-phone.png" alt="" aria-hidden="true" decoding="async" draggable="false"></button>
+    <button type="button" class="skills-object-hit" data-object="video" aria-label="Video editing skills" aria-controls="skills-object-popover" aria-expanded="false"><img src="assets/skills/independent-20261014/video-camera.png" alt="" aria-hidden="true" decoding="async" draggable="false"></button>
+    </div>
+    <div class="skills-bag-front-plane" style="clip-path:url(#skills-container-front)"><span class="skills-bag-shell"><img src="assets/skills/independent-20261014/bag-shell.png" alt="Zibo's orange canvas bag" decoding="async" draggable="false"></span></div>
+    <svg class="skills-near-contact" viewBox="0 0 1200 800" aria-hidden="true" focusable="false"><g clip-path="url(#skills-front-svg)"><path d="M178 384C330 415 440 473 600 473C770 473 895 417 1023 386L1023 416C895 446 770 497 600 497C440 497 330 444 178 412Z" fill="url(#skills-rim-shade)"/><g filter="url(#skills-contact-blur)" fill="#342016" fill-opacity=".22"><ellipse cx="385" cy="449" rx="70" ry="12" transform="rotate(16 385 449)"/><ellipse cx="656" cy="481" rx="68" ry="16"/><ellipse cx="899" cy="424" rx="45" ry="13" transform="rotate(-18 899 424)"/></g></g></svg>
+    <svg class="skills-bag-handle" viewBox="0 0 1200 800" aria-hidden="true" focusable="false"><g clip-path="url(#skills-handle-svg)"><image href="assets/skills/independent-20261014/bag-shell.png" x="174" y="344" width="852" height="408" preserveAspectRatio="xMidYMid meet"/></g></svg>
+    <svg class="skills-bag-cover-hit" viewBox="0 0 1200 800" aria-hidden="true"><path d="M178 384C330 415 440 473 600 473C770 473 895 417 1023 386L1068 800H132Z" fill="transparent"/><use href="#skills-handle-contour" fill="transparent"/></svg>
+  </figure>
+  <aside class="skills-object-popover" id="skills-object-popover" role="region" aria-labelledby="skills-object-detail-title" hidden><h3 id="skills-object-detail-title"></h3><ul></ul></aside>
+</div>
+</section>
+    </div></div>
+<div class="section-layer" data-section="contact" hidden inert><div class="portfolio-button-slot"><a class="hero-portfolio portfolio-standard-button" href="#work"><span>MY PORTFOLIO</span></a></div>
+  <div class="section-scroll-area contact-scroll-area" tabindex="0" role="region" aria-label="Contact content">
+    <section class="contact-page" id="contact" aria-labelledby="contact-title">
+      <header class="contact-utility">
+        <div class="hero-category" data-locale-fixed="true"><span class="asterisk" aria-hidden="true"><i></i><i></i><i></i></span><span>NEW MEDIA<br>BRAND MARKETING</span></div>
+        
+      </header>
+      <nav class="contact-view-toggle" aria-label="Contact views" hidden>
+        <button type="button" data-contact-view="intro" aria-pressed="true" aria-controls="contact-intro">Introduction</button>
+        <button type="button" data-contact-view="details" aria-pressed="false" aria-controls="contact-details">Contact details</button>
+      </nav>
+      <div class="contact-body">
+        <div class="contact-intro" id="contact-intro" data-contact-panel="intro">
+          <div class="contact-heading">
+            <h1 class="portfolio-page-title" id="contact-title">LET'S CREATE</h1>
+            <p class="contact-handline hand">SOMETHING GREAT!</p>
+            <svg class="contact-underline" viewBox="0 0 500 24" preserveAspectRatio="none" aria-hidden="true"><path d="M3 20Q220 7 497 3"/></svg>
+          </div>
+          <div class="contact-invitation">
+            <p>Have a project in mind?</p>
+            <p>Let's bring the idea to life.</p>
+          </div>
+          <p class="contact-scope">Brand communication<span aria-hidden="true"> / </span>Social content<span class="contact-scope-event">Event coverage</span></p>
+        </div>
+        <div class="contact-details" id="contact-details" data-contact-panel="details">
+          <div class="contact-card-identity">
+            <p class="contact-card-label">Get in touch</p>
+            <h2>ZIBO WANG</h2>
+            <p class="contact-card-role">New Media &amp; Brand Marketing</p>
+          </div>
+          <dl class="contact-channels">
+            <div class="contact-channel contact-channel-phone">
+              <dt><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 2a15 15 0 0 1-7-7l2-2-2-5Z"/></svg><span>Phone</span></dt>
+              <dd><a href="tel:13149232818">131-4923-2818</a></dd>
+            </div>
+            <div class="contact-channel contact-channel-email">
+              <dt><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg><span>Email</span></dt>
+              <dd><a href="mailto:wzb13149232818@163.com">wzb13149232818@163.com</a></dd>
+            </div>
+            <div class="contact-channel contact-channel-location">
+              <dt><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Location</span></dt>
+              <dd>Xi'an, China</dd>
+            </div>
+          </dl>
+          <a class="contact-email-button" href="mailto:wzb13149232818@163.com"><span>CONTACT ME</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+        </div>
+      </div>
+      <footer class="contact-closing">
+        <p><span>PASSIONATE ABOUT CONTENT.</span><span>FOCUSED ON RESULTS.</span></p>
+        <p><span>✦ AVAILABLE FOR</span><span>BRAND &amp; CONTENT PROJECTS</span></p>
+        <span class="contact-thanks hand">Thank you!<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27 5 16C-3 7 9-1 16 7c7-8 19 0 11 9Z"/></svg></span>
+      </footer>
+    </section>
+  </div>
+</div>
+  </main>
+  <div class="cursor-label" aria-hidden="true"></div>
+  
+  <dialog class="thinking-modal" id="thinking-modal" role="dialog" aria-modal="true" aria-labelledby="thinking-modal-title" aria-describedby="thinking-modal-subtitle"><div class="thinking-backdrop" aria-hidden="true"></div><div class="thinking-surface"><button type="button" class="thinking-close" aria-label="Close thinking model" autofocus>×</button><header class="thinking-modal-header"><div><p class="thinking-modal-eyebrow">MY THINKING MODEL</p><h2 class="thinking-modal-title" id="thinking-modal-title">HOW DO I <span>THINK</span></h2><p class="thinking-modal-subtitle" id="thinking-modal-subtitle">Different audiences build trust in different ways.</p></div><div class="thinking-modal-tabs" role="tablist" aria-label="Thinking audience"><button type="button" role="tab" data-audience="business" aria-selected="true" aria-controls="thinking-framework"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 28V18h5v10Zm9 0V11h5v17Zm9 0V4h5v24Z"/></svg>Business</button><button type="button" role="tab" data-audience="consumer" aria-selected="false" tabindex="-1" aria-controls="thinking-framework"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28 5 17C-3 8 9 0 16 8c7-8 19 0 11 9Z"/></svg>Consumer</button></div></header><div class="thinking-framework" id="thinking-framework" role="tabpanel" aria-label="Trust framework"></div><svg class="thinking-final-path" viewBox="0 0 30 28" aria-hidden="true"><path pathLength="100" d="M15 1v24m-5-6 5 7 5-7"/></svg><div class="thinking-final-node"><img class="build-trust-icon" src="assets/icons/trust-handshake-unified.svg" alt="" aria-hidden="true">BUILD TRUST</div></div><div class="thinking-detail" id="thinking-node-detail" role="tooltip" hidden></div></dialog>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="assets/screen-cuts.js?v=20261015-022519"></script>
+<script src="assets/section-navigation.js?v=20261015-032617"></script>
+  <script src="assets/portfolio-zh-data.js?v=20261029-053725"></script>
+<script src="assets/portfolio-zh-about.js?v=20261014-235031"></script>
+<script src="assets/portfolio-zh.js?v=20261015-greeting"></script>
+  <script src="assets/sidebar.js?v=20261015-panel"></script>
+  <script src="assets/hero-v2.js?v=20261015-022519"></script>
+  <script src="assets/about-astra.js?v=20261015-031012"></script>
+  <script src="assets/work-landing.js?v=20261015-022519"></script>
+<script src="assets/thinking-modal.js?v=20261015-022519"></script>
+<script src="assets/wechat-analysis-data.js?v=research-caption-aligned-20261009"></script>
+<script src="assets/wechat-analysis-template.js?v=20261015-022519"></script>
+<script src="assets/wechat-video-page.js?v=20261015-032617"></script>
+<script src="assets/wechat-page.js?v=20261015-032617"></script>
+<script src="assets/rednote-data.js?v=design-20261013-064652"></script>
+<script src="assets/rednote-page.js?v=20261015-032617"></script>
+<script src="assets/wechat-screen-fit.js?v=20261015-032617"></script>
+<script src="assets/contact-page.js?v=contact-card-20261012-021710"></script>
+<script src="assets/design-data.js?v=20261029-053725"></script>
+<script src="assets/design-page.js?v=20261015-0040"></script>
+<script src="assets/skills-bag.js?v=20261015-0040"></script>
+<script src="assets/portfolio-motion.js?v=20261015-022519"></script>
+<script src="assets/portfolio-zh-header.js?v=20261015-023306"></script>
+<script src="assets/portfolio-zh-headings.js?v=20261015-030908"></script>
+<script src="assets/rednote-zh-media.js?v=20261015-023904"></script>
+<script src="assets/portfolio-position-refinements.js?v=20261015-031652"></script>
+<script src="assets/content-reading-flow.js?v=20261015-032617"></script>
+</body>
+</html>
